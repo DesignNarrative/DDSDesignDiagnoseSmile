@@ -1,0 +1,514 @@
+{
+  "pages": {
+    "home": {
+      "key": "home",
+      "url": "/",
+      "title": "DDS Dental Clinic | Expert Care, Beautiful Smiles",
+      "description": "Diagnose. Design. Smile. Experience high-quality dental care in a soothing and sophisticated environment under Dr. Priti Munde.",
+      "keywords": "dental clinic, dentist Pune, cosmetic dentist, dental implants, teeth whitening, invisible braces",
+      "focusKeyword": "dental clinic",
+      "searchIntent": "Informational",
+      "notes": "Main landing page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "DDS Dental Clinic | Expert Care, Beautiful Smiles",
+        "ogDescription": "Diagnose. Design. Smile.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "DDS Dental Clinic",
+        "twitterDescription": "Diagnose. Design. Smile."
+      },
+      "schema": [
+        {
+          "type": "DentalClinic",
+          "active": true,
+          "fields": {
+            "name": "DDS Dental Clinic",
+            "streetAddress": "Model Colony, Shivajinagar",
+            "addressLocality": "Pune",
+            "postalCode": "411016",
+            "addressCountry": "IN",
+            "telephone": "+91 96730 04407"
+          }
+        }
+      ]
+    },
+    "about": {
+      "key": "about",
+      "url": "/about",
+      "title": "About Dr. Priti Munde & DDS Dental Clinic",
+      "description": "Learn about our clinical director Dr. Priti Munde (BDS) and our 15+ years of delivering world-class dental care in Pune.",
+      "keywords": "Dr Priti Munde, dental team Pune, dentist profile, clinic history",
+      "focusKeyword": "Dr Priti Munde",
+      "searchIntent": "Informational",
+      "notes": "Team and biography profile page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "About Dr. Priti Munde & DDS Dental Clinic",
+        "ogDescription": "Learn about our clinical director Dr. Priti Munde (BDS)",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "About Dr. Priti Munde",
+        "twitterDescription": "Biographies and dental team qualifications."
+      },
+      "schema": []
+    },
+    "contact": {
+      "key": "contact",
+      "url": "/contact",
+      "title": "Contact DDS Dental Clinic | Book Appointment",
+      "description": "Get in touch with us. Fill out our form or call directly at +91 96730 04407 for cosmetic and general dentistry services in Pune.",
+      "keywords": "contact dentist, book appointment Pune, dental clinic phone number",
+      "focusKeyword": "contact dentist",
+      "searchIntent": "Transactional",
+      "notes": "Contact and routing form details page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Contact DDS Dental Clinic | Book Appointment",
+        "ogDescription": "Get in touch with us. Fill out our form.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Contact DDS Dental Clinic",
+        "twitterDescription": "Clinic coordinates, maps, and messaging details."
+      },
+      "schema": []
+    },
+    "technology": {
+      "key": "technology",
+      "url": "/technology",
+      "title": "State-of-the-Art Dental Technology | DDS Clinic",
+      "description": "Explore our high-precision equipment including Zeiss Microscopes, Zoom Whitening, CEREC digital milling, and 3Shape scanners.",
+      "keywords": "dental technology, Zeiss microscope, CEREC CAD CAM, Zoom whitening",
+      "focusKeyword": "dental technology",
+      "searchIntent": "Informational",
+      "notes": "Equipment catalog page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "State-of-the-Art Dental Technology",
+        "ogDescription": "Explore our high-precision dental equipment.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Dental Technology",
+        "twitterDescription": "State of the art technology in clinic."
+      },
+      "schema": []
+    },
+    "gallery": {
+      "key": "gallery",
+      "url": "/gallery",
+      "title": "Smile Gallery & Clinical Portfolio | DDS Dental",
+      "description": "Browse happy celebrity patients and view our state-of-the-art clinic interior facilities.",
+      "keywords": "smile transformation gallery, dental before after, clinic interior pictures",
+      "focusKeyword": "smile transformation gallery",
+      "searchIntent": "Commercial",
+      "notes": "Facilties and portfolio images page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Smile Gallery & Clinical Portfolio",
+        "ogDescription": "Browse happy celebrity patients.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Smile Gallery",
+        "twitterDescription": "Portfolios and clinical transformation."
+      },
+      "schema": []
+    },
+    "achievements": {
+      "key": "achievements",
+      "url": "/achievements",
+      "title": "Awards & Recognitions | Dr. Priti Munde",
+      "description": "Review our clinical milestones, Famdent Awards, and Narishakti Puraskar highlights from 2015 to 2024.",
+      "keywords": "dentist awards, dental recognition Pune, Famdent awards",
+      "focusKeyword": "dentist awards",
+      "searchIntent": "Informational",
+      "notes": "Awards timeline and milestone list",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Awards & Recognitions | Dr. Priti Munde",
+        "ogDescription": "Review our clinical milestones and awards.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Awards & Recognitions",
+        "twitterDescription": "Clinical and social impact awards."
+      },
+      "schema": []
+    },
+    "services": {
+      "key": "services",
+      "url": "/services",
+      "title": "Dental Treatments & Services | DDS Dental",
+      "description": "Full-spectrum dental care in Pune. General, Cosmetic, Endodontics, Implants, Orthodontics, Invisalign, and Pediatric treatments.",
+      "keywords": "dental treatments, services, root canals, invisible braces",
+      "focusKeyword": "dental treatments",
+      "searchIntent": "Commercial",
+      "notes": "Treatments catalog and index list page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Dental Treatments & Services",
+        "ogDescription": "Full-spectrum dental care in Pune.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Treatments",
+        "twitterDescription": "Services details index page."
+      },
+      "schema": []
+    },
+    "general-dentistry": {
+      "key": "general-dentistry",
+      "url": "/services/general-dentistry",
+      "title": "General & Family Dentistry Services | DDS Dental",
+      "description": "Painless tooth extraction, dental crowns, scaling, and general dental checkups in Pune under Dr. Priti Munde.",
+      "keywords": "scaling, tooth filling, tooth extraction, general dentist",
+      "focusKeyword": "general dentist",
+      "searchIntent": "Transactional",
+      "notes": "General dentistry details page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "General & Family Dentistry Services",
+        "ogDescription": "Painless dental extraction and fillings.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "General Dentistry",
+        "twitterDescription": "General oral hygiene checkups."
+      },
+      "schema": []
+    },
+    "cosmetic-dentistry": {
+      "key": "cosmetic-dentistry",
+      "url": "/services/cosmetic-dentistry",
+      "title": "Cosmetic Dentistry & Smile Makeover | DDS Clinic",
+      "description": "Improve your smile appearance with porcelain veneers, cosmetic composite bonding, and teeth whitening treatments.",
+      "keywords": "porcelain veneers, smile makeover, composite bonding, teeth whitening",
+      "focusKeyword": "smile makeover",
+      "searchIntent": "Commercial",
+      "notes": "Cosmetic services details page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Cosmetic Dentistry & Smile Makeover",
+        "ogDescription": "Veneers, bonding, and whitening.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Cosmetic Dentistry",
+        "twitterDescription": "Cosmetics, laminates, and teeth bleaching."
+      },
+      "schema": []
+    },
+    "dental-implants": {
+      "key": "dental-implants",
+      "url": "/services/dental-implants",
+      "title": "Dental Implants Treatment & Tooth Replacement | DDS",
+      "description": "Restore chewing stability and aesthetic spacing with premium single, multiple, or full-mouth dental implants.",
+      "keywords": "dental implants, tooth implant, full mouth implants, replacement teeth",
+      "focusKeyword": "dental implants",
+      "searchIntent": "Transactional",
+      "notes": "Implant surgery details page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Dental Implants Treatment & Tooth Replacement",
+        "ogDescription": "Premium implant restoration services.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Dental Implants",
+        "twitterDescription": "Implants surgery and abutment prosthetics."
+      },
+      "schema": []
+    },
+    "pediatric-dentistry": {
+      "key": "pediatric-dentistry",
+      "url": "/services/pediatric-dentistry",
+      "title": "Pediatric Dentistry & Children Dental Care | DDS",
+      "description": "Specialized kid-friendly dental treatments, cavity sealants, and early orthodontic evaluations in a gentle environment.",
+      "keywords": "children dentist, pediatric dentistry, kid teeth care, cavity prevention",
+      "focusKeyword": "pediatric dentistry",
+      "searchIntent": "Informational",
+      "notes": "Pediatric dentistry details page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Pediatric Dentistry & Children Dental Care",
+        "ogDescription": "Kid-friendly checkups and sealants.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Pediatric Dentistry",
+        "twitterDescription": "Child tooth care, sealants and fluoride."
+      },
+      "schema": []
+    },
+    "orthodontics": {
+      "key": "orthodontics",
+      "url": "/services/orthodontics",
+      "title": "Orthodontics & Teeth Alignment Braces | DDS Dentistry",
+      "description": "Achieve a healthy tooth alignment with modern ceramic braces, self-ligating brackets, or traditional braces.",
+      "keywords": "ceramic braces, metallic braces, braces treatment, teeth alignment",
+      "focusKeyword": "braces treatment",
+      "searchIntent": "Commercial",
+      "notes": "Orthodontic braces page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Orthodontics & Teeth Alignment Braces",
+        "ogDescription": "Ceramic and metallic braces alignment.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Orthodontics",
+        "twitterDescription": "Braces and bite corrections."
+      },
+      "schema": []
+    },
+    "invisalign": {
+      "key": "invisalign",
+      "url": "/services/invisalign",
+      "title": "Invisalign Clear Aligners Treatment | DDS clinic",
+      "description": "Straighten your teeth invisibly without metal wires. Certified Invisalign provider in Pune under Dr. Priti Munde.",
+      "keywords": "Invisalign, clear aligners, invisible braces, aligners Pune",
+      "focusKeyword": "Invisalign",
+      "searchIntent": "Transactional",
+      "notes": "Invisalign details page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Invisalign Clear Aligners Treatment",
+        "ogDescription": "Certified Invisalign clear aligners provider.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Invisalign Aligners",
+        "twitterDescription": "Removable clear trays alignment."
+      },
+      "schema": []
+    },
+    "micro-endodontics": {
+      "key": "micro-endodontics",
+      "url": "/services/micro-endodontics",
+      "title": "Micro-Endodontics & Microscopic Root Canal | DDS Clinic",
+      "description": "Precision root canal treatment using Zeiss microscope. High success rate retreatments to preserve infected teeth.",
+      "keywords": "micro endodontics, root canal treatment, Zeiss microscope, retreatment",
+      "focusKeyword": "root canal treatment",
+      "searchIntent": "Transactional",
+      "notes": "Microscopic endodontics details page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Micro-Endodontics & Microscopic Root Canal",
+        "ogDescription": "Microscope-guided root canal treatment.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Micro-Endodontics",
+        "twitterDescription": "Zeiss microscope root canal treatments."
+      },
+      "schema": []
+    },
+    "gum-aesthetic-gum-care": {
+      "key": "gum-aesthetic-gum-care",
+      "url": "/services/gum-aesthetic-gum-care",
+      "title": "Aesthetic Gum Care & Gingival Depigmentation | DDS",
+      "description": "Treat bleeding gums and optimize your smile margins with laser gum depigmentation and aesthetic contouring.",
+      "keywords": "gum care, gum depigmentation, gummy smile, laser contouring",
+      "focusKeyword": "gum care",
+      "searchIntent": "Commercial",
+      "notes": "Gum care and gingivectomy page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Aesthetic Gum Care & Gingival Depigmentation",
+        "ogDescription": "Laser gum care and margin contouring.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Gum Care",
+        "twitterDescription": "Aesthetic gum corrections."
+      },
+      "schema": []
+    },
+    "additional-specialized-care": {
+      "key": "additional-specialized-care",
+      "url": "/services/additional-specialized-care",
+      "title": "Advanced Specialized Dental Care & 3D CBCT | DDS",
+      "description": "Precision 3D CBCT x-ray diagnostics, wisdom teeth removal, joint therapy, and specialized dental care in Pune.",
+      "keywords": "CBCT scan, wisdom tooth extraction, joint therapy, sedation",
+      "focusKeyword": "CBCT scan",
+      "searchIntent": "Informational",
+      "notes": "Advanced and diagnostic care details page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Advanced Specialized Dental Care & 3D CBCT",
+        "ogDescription": "3D CBCT diagnostics and joint therapy.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Specialized Care",
+        "twitterDescription": "Advanced clinical diagnostics."
+      },
+      "schema": []
+    },
+    "blog": {
+      "key": "blog",
+      "url": "/blog",
+      "title": "DDS Dentistry Blog | Dental Health & Oral Care Guides",
+      "description": "Read our latest articles on smile transformations, Invisalign tips, oral care advice, and dental wellness updates.",
+      "keywords": "dental blog, oral care tips, health guides",
+      "focusKeyword": "dental blog",
+      "searchIntent": "Informational",
+      "notes": "Articles listing index page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "DDS Dentistry Blog | Dental Health & Oral Care Guides",
+        "ogDescription": "Read our latest articles on dental wellness.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "DDS Blog",
+        "twitterDescription": "Articles and oral hygiene wellness guide."
+      },
+      "schema": []
+    }
+  },
+  "redirects": [],
+  "logs_404": [],
+  "seo_settings": {
+    "websiteName": "DDS Dental Clinic",
+    "websiteUrl": "https://dentsspaclinic.com",
+    "googleAnalyticsId": "G-XXXXXXXXXX",
+    "googleTagManagerId": "GTM-XXXXXXX",
+    "facebookPixelId": "FB-XXXXXXXXX",
+    "defaultOgImage": "/images/dds_final_logo_white.png",
+    "defaultRobotsBehavior": "index, follow",
+    "organizationName": "DDS Dental Clinic",
+    "organizationTelephone": "+91 96730 04407",
+    "organizationLogo": "/images/dds_final_logo_white.png",
+    "streetAddress": "Model Colony, Shivajinagar",
+    "addressLocality": "Pune",
+    "postalCode": "411016",
+    "addressCountry": "IN"
+  },
+  "seo_issues": [],
+  "seo_audits": [],
+  "seo_versions": []
+}

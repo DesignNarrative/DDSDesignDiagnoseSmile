@@ -1,0 +1,43 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+
+# Next.js build output
+/.next/
+/out/
+/build
+
+# Vercel
+.vercel
+
+# Environment files
+.env*
+
+# Raw backups and client original source files (exceeds 100MB GitHub limit)
+/DDS/
+/Website data/
+
+# Unused large files in public/images/ (exceeds 100MB GitHub limit)
+public/images/untitled_design.gif
+public/images/untitled_design_1.gif
+public/images/untitled_design_2.gif
+public/images/download_3.gif
+
+# Loose root media assets (they are copied to public/images/)
+/*.jpg
+/*.png
+/*.gif
+/*.webp
+/*.mp4
+
+# IDE and system files
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

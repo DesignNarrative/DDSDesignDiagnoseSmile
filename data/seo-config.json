@@ -1,0 +1,44 @@
+{
+  "pages": {
+    "home": {
+      "title": "DDS Dental Clinic | Expert Care, Beautiful Smiles",
+      "description": "Diagnose. Design. Smile. Experience high-quality dental care in a soothing and sophisticated environment under Dr. Priti Munde.",
+      "keywords": "dental clinic, dentist Pune, cosmetic dentist, dental implants, teeth whitening, invisible braces"
+    },
+    "about": {
+      "title": "About Dr. Priti Munde & DDS Dental Clinic",
+      "description": "Learn about our clinical director Dr. Priti Munde (BDS) and our 15+ years of delivering world-class dental care in Pune.",
+      "keywords": "Dr Priti Munde, dental team Pune, dentist profile, clinic history"
+    },
+    "contact": {
+      "title": "Contact DDS Dental Clinic | Book Appointment",
+      "description": "Get in touch with us. Fill out our form or call directly at +91 96730 04407 for cosmetic and general dentistry services in Pune.",
+      "keywords": "contact dentist, book appointment Pune, dental clinic phone number"
+    },
+    "technology": {
+      "title": "State-of-the-Art Dental Technology | DDS Clinic",
+      "description": "Explore our high-precision equipment including Zeiss Microscopes, Zoom Whitening, CEREC digital milling, and 3Shape scanners.",
+      "keywords": "dental technology, Zeiss microscope, CEREC CAD CAM, Zoom whitening"
+    },
+    "gallery": {
+      "title": "Smile Gallery & Clinical Portfolio | DDS Dental",
+      "description": "Browse happy celebrity patients and view our state-of-the-art clinic interior facilities.",
+      "keywords": "smile transformation gallery, dental before after, clinic interior pictures"
+    },
+    "achievements": {
+      "title": "Awards & Recognitions | Dr. Priti Munde",
+      "description": "Review our clinical milestones, Famdent Awards, and Narishakti Puraskar highlights from 2015 to 2024.",
+      "keywords": "dentist awards, dental recognition Pune, Famdent awards"
+    }
+  },
+  "analytics": {
+    "googleAnalyticsId": "G-XXXXXXXXXX",
+    "googleTagManagerId": "GTM-XXXXXXX",
+    "facebookPixelId": "FB-XXXXXXXXX"
+  },
+  "openGraph": {
+    "defaultOgImage": "/images/dds_final_logo_white.png",
+    "defaultOgTitle": "DDS Dental Clinic",
+    "defaultOgDescription": "Diagnose. Design. Smile."
+  }
+}

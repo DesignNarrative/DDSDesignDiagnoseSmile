@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-alex: var(--font-alex), cursive;
+  --font-caudex: var(--font-caudex), serif;
+  --font-instrument: var(--font-instrument), sans-serif;
+  --font-montserrat: var(--font-montserrat), sans-serif;
+
+  --color-primary: #411928;
+  --color-primary-deep: #380920;
+  --color-cream: #FDEED9;
+  --color-cream-light: #FFF8EE;
+  --color-card-bg: #F4F2EE;
+  --color-dark: #050505;
+  --color-text-dark: #3A3B3D;
+  --color-text-muted: #A49C9C;
+  --color-text-light: #CAC3C3;
+  --color-accent-green: #61826B;
+  --color-border-neutral: #D9D9D9;
+}
+
+:root {
+  --background: #FFF8EE;
+  --foreground: #3A3B3D;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-instrument);
+}
+
+/* Custom scrollbar matching clinic theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #411928;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #380920;
+}
