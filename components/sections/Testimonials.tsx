@@ -23,6 +23,16 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const reviewScrollRef = useRef<HTMLDivElement>(null);
   const [activeDot, setActiveDot] = useState(0);
+  const [expandedReviews, setExpandedReviews] = useState<Record<string, boolean>>({});
+
+  const toggleReview = (id: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setExpandedReviews((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
 
   const instagramReels = [
     {
@@ -302,7 +312,38 @@ export default function Testimonials() {
 
                   {/* Review Text */}
                   <p className="font-instrument text-sm text-text-dark leading-relaxed pr-2 whitespace-pre-line">
-                    {review.text}
+                    {(() => {
+                      const isExpanded = expandedReviews[review.id];
+                      const threshold = 110;
+                      if (review.text.length <= threshold || isExpanded) {
+                        return (
+                          <>
+                            {review.text}
+                            {review.text.length > threshold && (
+                              <button
+                                onClick={(e) => toggleReview(review.id, e)}
+                                className="text-[#380920] hover:underline font-semibold ml-1.5 focus:outline-none"
+                              >
+                                Show less
+                              </button>
+                            )}
+                          </>
+                        );
+                      }
+                      
+                      const truncatedText = review.text.slice(0, threshold) + "...";
+                      return (
+                        <>
+                          {truncatedText}
+                          <button
+                            onClick={(e) => toggleReview(review.id, e)}
+                            className="text-[#f2a900] hover:underline font-semibold ml-1.5 focus:outline-none"
+                          >
+                            +more
+                          </button>
+                        </>
+                      );
+                    })()}
                   </p>
                 </div>
 

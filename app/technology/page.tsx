@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Phone, Clock, Mail } from "lucide-react";
+import { Clock, Mail } from "lucide-react";
 import CTABanner from "@/components/sections/CTABanner";
 
 export default function TechnologyPage() {
@@ -73,7 +73,7 @@ export default function TechnologyPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/gallery_banner_141824.png"
+            src="/images/technology_banner_new_v2.png"
             alt="DDS Dental Clinic Treatment Rooms"
             fill
             className="object-cover object-center"
@@ -89,7 +89,7 @@ export default function TechnologyPage() {
           {/* Column 1: WhatsApp Specialist */}
           <div className="flex items-center space-x-4 md:border-r border-white/10 pr-4 last:border-none">
             <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
-              <Phone className="w-5 h-5" />
+              <Image src="/images/whatsapp_icon.svg" alt="WhatsApp" width={20} height={20} className="filter brightness-0 invert" />
             </div>
             <div className="flex flex-col">
               <span className="font-instrument text-xs md:text-sm font-semibold text-cream">Talk to our specialist?</span>

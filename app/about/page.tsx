@@ -12,15 +12,15 @@ export default function AboutPage() {
 
   const infoItems = [
     {
-      icon: "/images/soothing_environment_icon.svg",
+      icon: "/images/soothing_environment_new.svg",
       title: "Soothing Environment"
     },
     {
-      icon: "/images/care_after_treatment_icon.svg",
+      icon: "/images/care_after_treatment_new.svg",
       title: "Care After Treatment"
     },
     {
-      icon: "/images/experts_team_icon.svg",
+      icon: "/images/experts_team_new.svg",
       title: "Experts Team"
     }
   ];
@@ -158,7 +158,7 @@ export default function AboutPage() {
           {/* Column 1: WhatsApp Specialist */}
           <div className="flex items-center space-x-4 md:border-r border-white/10 pr-4 last:border-none">
             <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
-              <Phone className="w-5 h-5" />
+              <Image src="/images/whatsapp_icon.svg" alt="WhatsApp" width={20} height={20} className="filter brightness-0 invert" />
             </div>
             <div className="flex flex-col">
               <span className="font-instrument text-xs md:text-sm font-semibold text-cream">Talk to our specialist?</span>
@@ -477,7 +477,7 @@ export default function AboutPage() {
                   src={item.icon}
                   alt={item.title}
                   fill
-                  className="object-contain filter brightness-0 invert"
+                  className={`object-contain filter brightness-0 invert ${idx === 0 ? "scale-[1.35]" : ""}`}
                 />
               </div>
               <span className="font-caudex font-bold text-lg md:text-xl text-white leading-tight whitespace-nowrap">

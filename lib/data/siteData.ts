@@ -169,8 +169,8 @@ export const faqs = [
     a: "Yes, we offer prompt emergency care for severe toothaches, dental trauma, knocked-out teeth, and other urgent dental issues."
   },
   {
-    q: "How often should I visit the dentist?",
-    a: "It is generally recommended to visit the dentist every six months for a routine checkup and professional cleaning to maintain optimal oral health."
+    q: "Can Invisalign treat gaps and crowded teeth?",
+    a: "Yes. Invisalign can treat many cases involving crowded teeth, gaps, overbite, underbite, crossbite, and open bite. Your orthodontist will determine whether it is suitable for your specific case."
   }
 ];
 

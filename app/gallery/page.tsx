@@ -12,14 +12,18 @@ export default function GalleryPage() {
   const [visibleCelebrityCount, setVisibleCelebrityCount] = useState(6);
 
   const localGalleryImages = [
-    { src: "/images/service_cosmetic.png", alt: "Smile Makeover Cases", type: "services" },
-    { src: "/images/service_cosmetic.png", alt: "Teeth Shade matching", type: "services" },
-    { src: "/images/service_cosmetic.png", alt: "Porcelain Veneers Prep", type: "services" },
-    { src: "/images/service_cosmetic.png", alt: "Laser Whitening Session", type: "services" },
-    { src: "/images/service_cosmetic.png", alt: "Aesthetic Restoration", type: "services" },
-    { src: "/images/service_cosmetic.png", alt: "Cosmetic Bonding Case", type: "services" },
-    { src: "/images/service_cosmetic.png", alt: "Dental Veneers Design", type: "services" },
-    { src: "/images/service_cosmetic.png", alt: "Confidence Redefined Case", type: "services" },
+    { src: "/images/gallery_service_1.jpg", alt: "Smile Makeover Cases", type: "services" },
+    { src: "/images/gallery_service_2.jpg", alt: "Teeth Shade Matching", type: "services" },
+    { src: "/images/gallery_service_3.jpg", alt: "Porcelain Veneers Prep", type: "services" },
+    { src: "/images/gallery_service_4.jpg", alt: "Laser Whitening Session", type: "services" },
+    { src: "/images/gallery_service_5.jpg", alt: "Aesthetic Restoration", type: "services" },
+    { src: "/images/gallery_service_6.jpg", alt: "Cosmetic Bonding Case", type: "services" },
+    { src: "/images/gallery_service_7.jpg", alt: "Dental Veneers Design", type: "services" },
+    { src: "/images/gallery_service_8.jpg", alt: "Confidence Redefined Case", type: "services" },
+    { src: "/images/gallery_service_9.jpg", alt: "Dental Treatment Case", type: "services" },
+    { src: "/images/gallery_service_10.jpg", alt: "Oral Care Case", type: "services" },
+    { src: "/images/gallery_service_11.jpg", alt: "Smile Transformation", type: "services" },
+    { src: "/images/gallery_service_12.jpeg", alt: "Happy Patient", type: "services" },
     { src: "/images/carousel_1.png", alt: "DDS Consultation Room", type: "facilities" },
     { src: "/images/carousel_2.png", alt: "Treatment Operatory Suite", type: "facilities" },
     { src: "/images/carousel_3.png", alt: "Digital Scanning Station", type: "facilities" },
@@ -31,7 +35,8 @@ export default function GalleryPage() {
     { src: "/images/celebrity_patient_141413.png", alt: "Happy Patient 2" },
     { src: "/images/celebrity_patient_141525.png", alt: "Happy Patient 3" },
     { src: "/images/celebrity_patient_141740.png", alt: "Happy Patient 4" },
-    { src: "/images/celebrity_patient_142717.png", alt: "Happy Patient 5" }
+    { src: "/images/celebrity_patient_142717.png", alt: "Happy Patient 5" },
+    { src: "/images/celebrity_patient_new.jpeg", alt: "Happy Patient 6" }
   ];
 
   const filteredImages = localGalleryImages.filter((img) => {
@@ -55,7 +60,7 @@ export default function GalleryPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/gallery_banner_141824.png"
+            src="/images/gallery_banner_new.png"
             alt="DDS Gallery Banner"
             fill
             className="object-cover object-center"
@@ -93,7 +98,7 @@ export default function GalleryPage() {
           {/* Column 1: WhatsApp Specialist */}
           <div className="flex items-center space-x-4 md:border-r border-white/10 pr-4 last:border-none">
             <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
-              <Phone className="w-5 h-5" />
+              <Image src="/images/whatsapp_icon.svg" alt="WhatsApp" width={20} height={20} className="filter brightness-0 invert" />
             </div>
             <div className="flex flex-col">
               <span className="font-instrument text-xs md:text-sm font-semibold text-cream">Talk to our specialist?</span>
@@ -285,8 +290,8 @@ export default function GalleryPage() {
             )}
           </div>
 
-          {/* Load More Celebrity Button (if needed, though we have 5 currently) */}
-          {visibleCelebrityCount < 5 && (
+          {/* Load More Celebrity Button */}
+          {visibleCelebrityCount < 6 && (
             <div className="text-center pt-12">
               <button
                 onClick={loadMoreCelebrity}
