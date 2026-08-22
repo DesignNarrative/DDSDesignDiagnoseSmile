@@ -331,7 +331,7 @@ export default function AboutPage() {
           <div className="space-y-16 max-w-5xl w-full">
             
             {/* Pillar 1: Diagnose (Text Left, Image Right) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -369,34 +369,19 @@ export default function AboutPage() {
                   alt="Diagnose technology checkup"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 45vw"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
                 />
               </motion.div>
             </div>
 
-            {/* Pillar 2: Design (Image Left, Text Right) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-border-neutral md:order-1"
-              >
-                <Image
-                  src="/images/pm_4449.jpg"
-                  alt="Smile Design CAD planning"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 45vw"
-                />
-              </motion.div>
+            {/* Pillar 2: Design (Image Left, Text Right on desktop, Text first on mobile/tablet) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="flex flex-col space-y-4 md:order-2"
+                className="flex flex-col space-y-4 lg:order-2"
               >
                 <h3 className="font-caudex font-bold text-2xl text-primary flex items-center gap-3">
                   <div className="relative w-8 h-8 flex-shrink-0">
@@ -412,14 +397,29 @@ export default function AboutPage() {
                   </div>
                   Design
                 </h3>
-                <p className="font-instrument text-text-dark text-sm md:text-base leading-relaxed pl-2">
+                <p className="font-instrument text-text-dark text-sm md:text-base leading-relaxed lg:pl-2">
                   For me, a smile isn&apos;t fixed — it&apos;s designed. I use Digital Smile Design and CAD-based planning to map every case with precision, balancing function, aesthetics, and your natural facial harmony — before a single instrument ever touches your tooth.
                 </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-border-neutral lg:order-1"
+              >
+                <Image
+                  src="/images/pm_4449.jpg"
+                  alt="Smile Design CAD planning"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
               </motion.div>
             </div>
 
             {/* Pillar 3: Smile (Text Left, Image Right) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -457,7 +457,7 @@ export default function AboutPage() {
                   alt="Transformation Smile results"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 45vw"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
                 />
               </motion.div>
             </div>
