@@ -65,9 +65,9 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[750px] md:h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[750px] md:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -188,9 +188,9 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[750px] md:h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[750px] md:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -311,9 +311,9 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[750px] md:h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[750px] md:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -434,9 +434,9 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[750px] md:h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[750px] md:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -557,9 +557,9 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[750px] md:h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[750px] md:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -667,9 +667,9 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[750px] md:h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[750px] md:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -777,9 +777,9 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[750px] md:h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[750px] md:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -887,9 +887,9 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[750px] md:h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[750px] md:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -1010,7 +1010,7 @@ export default function ServicesGrid() {
                   initial={{ opacity: 0, y: 25 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="snap-center flex-shrink-0 flex flex-col h-[680px]"
+                  className="snap-center flex-shrink-0 flex flex-col h-[750px] md:h-[680px]"
                 >
                   <Link
                     href={`/services/${service.slug}`}
