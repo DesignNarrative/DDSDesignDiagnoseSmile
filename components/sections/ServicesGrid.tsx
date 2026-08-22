@@ -46,7 +46,7 @@ export default function ServicesGrid() {
           <button
             onClick={() => pan("left")}
             aria-label="Previous services"
-            className="hidden md:flex flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 items-center justify-center shadow-sm"
+            className="hidden lg:flex flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 items-center justify-center shadow-sm"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -1048,7 +1048,7 @@ export default function ServicesGrid() {
           <button
             onClick={() => pan("right")}
             aria-label="Next services"
-            className="hidden md:flex flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 items-center justify-center shadow-sm"
+            className="hidden lg:flex flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 items-center justify-center shadow-sm"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
