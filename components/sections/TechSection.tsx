@@ -87,7 +87,7 @@ export default function TechSection() {
           <button
             onClick={() => scroll("left")}
             aria-label="Previous technology"
-            className="flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 flex items-center justify-center shadow-sm"
+            className="hidden md:flex flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 items-center justify-center shadow-sm"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -138,7 +138,7 @@ export default function TechSection() {
           <button
             onClick={() => scroll("right")}
             aria-label="Next technology"
-            className="flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 flex items-center justify-center shadow-sm"
+            className="hidden md:flex flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 items-center justify-center shadow-sm"
           >
             <ChevronRight className="w-5 h-5" />
           </button>

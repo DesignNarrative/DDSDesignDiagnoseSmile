@@ -46,7 +46,7 @@ export default function ServicesGrid() {
           <button
             onClick={() => pan("left")}
             aria-label="Previous services"
-            className="flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 flex items-center justify-center shadow-sm"
+            className="hidden md:flex flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 items-center justify-center shadow-sm"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -67,7 +67,7 @@ export default function ServicesGrid() {
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                     className="snap-center flex-shrink-0 flex flex-col h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -190,7 +190,7 @@ export default function ServicesGrid() {
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                     className="snap-center flex-shrink-0 flex flex-col h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -313,7 +313,7 @@ export default function ServicesGrid() {
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                     className="snap-center flex-shrink-0 flex flex-col h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -436,7 +436,7 @@ export default function ServicesGrid() {
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                     className="snap-center flex-shrink-0 flex flex-col h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -559,7 +559,7 @@ export default function ServicesGrid() {
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                     className="snap-center flex-shrink-0 flex flex-col h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -669,7 +669,7 @@ export default function ServicesGrid() {
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                     className="snap-center flex-shrink-0 flex flex-col h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -779,7 +779,7 @@ export default function ServicesGrid() {
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                     className="snap-center flex-shrink-0 flex flex-col h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -889,7 +889,7 @@ export default function ServicesGrid() {
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                     className="snap-center flex-shrink-0 flex flex-col h-[680px]"
                   >
-                    <div className="flex flex-col h-[680px] w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                    <div className="flex flex-col h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Top Image */}
                       <div className="relative w-full h-[220px] flex-shrink-0">
                         <Image
@@ -1048,7 +1048,7 @@ export default function ServicesGrid() {
           <button
             onClick={() => pan("right")}
             aria-label="Next services"
-            className="flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 flex items-center justify-center shadow-sm"
+            className="hidden md:flex flex-shrink-0 w-11 h-11 rounded-full border-2 border-primary/20 bg-white hover:bg-primary hover:border-primary text-primary hover:text-white transition-all duration-200 items-center justify-center shadow-sm"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
