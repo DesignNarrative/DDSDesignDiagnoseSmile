@@ -109,14 +109,14 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       
       {/* ── 1. Header Banner Section ── */}
-      <section className="relative w-full h-[55vh] sm:h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[350px] sm:min-h-[500px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
+      <section className="relative w-full h-[45vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh] min-h-[300px] sm:min-h-[450px] lg:min-h-[700px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/about_banner.jpg"
             alt="Dentsspa Dental Studio Experience"
             fill
-            className="object-cover object-center"
+            className="object-cover object-[70%_center] lg:object-center"
             priority
           />
           {/* Subtle dark overlay for text readability while maintaining banner image clarity */}
@@ -468,19 +468,19 @@ export default function AboutPage() {
       </section>
 
       {/* ── 6. Green Bar Section (Soothing Environment, Care After Treatment, Experts Team) ── */}
-      <section className="bg-[#62826B] text-white py-12 md:py-16 shadow-inner">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-center items-center gap-12 md:gap-32 w-full">
+      <section className="bg-[#62826B] text-white py-10 lg:py-16 shadow-inner">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-32 w-full">
           {infoItems.map((item, idx) => (
-            <div key={idx} className="flex items-center gap-5 w-full md:w-auto justify-center md:justify-start">
-              <div className="relative w-18 h-18 flex-shrink-0">
+            <div key={idx} className="flex flex-col lg:flex-row items-center gap-3 lg:gap-5 w-full lg:w-auto justify-center">
+              <div className="relative w-14 h-14 lg:w-18 lg:h-18 flex-shrink-0">
                 <Image
                   src={item.icon}
                   alt={item.title}
                   fill
-                  className={`object-contain filter brightness-0 invert ${idx === 0 ? "scale-[1.35]" : ""}`}
+                  className="object-contain filter brightness-0 invert"
                 />
               </div>
-              <span className="font-caudex font-bold text-lg md:text-xl text-white leading-tight whitespace-nowrap">
+              <span className="font-caudex font-bold text-base lg:text-xl text-white leading-tight whitespace-nowrap text-center lg:text-left">
                 {item.title}
               </span>
             </div>
