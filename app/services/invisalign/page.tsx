@@ -380,7 +380,7 @@ export default function InvisalignPage() {
           >
             <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-md border border-border-neutral/30 bg-[#FFF8EE]">
               <Image
-                src="/images/untitled_design_2_first_frame.jpg"
+                src="/images/invisalign_journey_1.png"
                 alt="Invisalign flyer - Built for your Smile"
                 fill
                 className="object-cover"
@@ -389,7 +389,7 @@ export default function InvisalignPage() {
             </div>
             <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-md border border-border-neutral/30 bg-[#FFF8EE]">
               <Image
-                src="/images/untitled_design_1_first_frame.jpg"
+                src="/images/invisalign_journey_2.png"
                 alt="Invisalign flyer - Smile, designed better"
                 fill
                 className="object-cover"

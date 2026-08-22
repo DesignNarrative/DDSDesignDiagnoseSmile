@@ -97,12 +97,12 @@ export default function AboutPage() {
 
   // Placeholder images for gallery
   const galleryImages = [
-    "/images/74143.jpg",
-    "/images/74143.jpg",
-    "/images/74143.jpg",
-    "/images/74143.jpg",
-    "/images/74143.jpg",
-    "/images/74143.jpg"
+    "/images/about_gallery_1_v3.jpg",
+    "/images/about_gallery_2.jpg",
+    "/images/about_gallery_3.jpg",
+    "/images/about_gallery_4.jpg",
+    "/images/about_gallery_5.jpg",
+    "/images/about_gallery_6.jpg"
   ];
 
   return (
