@@ -71,7 +71,7 @@ export default function GumAestheticCarePage() {
     <div className="flex flex-col min-h-screen">
       
       {/* ── 1. Header Banner Section ── */}
-      <section className="relative w-full h-[85vh] md:h-[90vh] lg:h-[95vh] min-h-[600px] md:min-h-[750px] overflow-hidden flex items-center bg-[#FFF8EE]">
+      <section className="relative w-full h-[55vh] sm:h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[350px] sm:min-h-[500px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image

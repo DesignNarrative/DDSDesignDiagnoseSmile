@@ -56,7 +56,7 @@ export default function GalleryPage() {
     <div className="flex flex-col min-h-screen">
       
       {/* ── 1. Header Banner Section ── */}
-      <section className="relative w-full h-[85vh] md:h-[90vh] lg:h-[95vh] min-h-[600px] md:min-h-[750px] overflow-hidden flex items-center bg-[#FFF8EE]">
+      <section className="relative w-full h-[55vh] sm:h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[350px] sm:min-h-[500px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -81,7 +81,7 @@ export default function GalleryPage() {
             <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-white/80">
               CLINICAL PORTFOLIO
             </span>
-            <h1 className="font-caudex font-bold text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
+            <h1 className="font-caudex font-bold text-3xl sm:text-5xl md:text-6xl text-white leading-tight">
               Gallery
             </h1>
             <p className="font-instrument text-base sm:text-lg md:text-xl text-white/95 font-semibold">

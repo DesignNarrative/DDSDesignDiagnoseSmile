@@ -270,7 +270,7 @@ export default function Testimonials() {
                 href={review.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="snap-center flex-shrink-0 w-full md:w-[calc(50%-12px)] bg-white rounded-[16px] p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer group"
+                className="snap-center flex-shrink-0 w-[88vw] sm:w-[calc(50%-12px)] md:w-[calc(50%-12px)] bg-white rounded-[16px] p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer group"
               >
                 <div>
                   {/* Card Header */}

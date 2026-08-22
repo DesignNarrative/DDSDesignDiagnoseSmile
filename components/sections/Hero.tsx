@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <div className="w-full flex flex-col">
       {/* ── PART 1: Main Banner section with 683.jpg background ── */}
-      <section className="relative w-full h-[85vh] md:h-[90vh] lg:h-[95vh] min-h-[600px] md:min-h-[750px] overflow-hidden flex items-center bg-[#FFF8EE]">
+      <section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[85vh] lg:h-[90vh] min-h-[420px] sm:min-h-[550px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -32,7 +32,7 @@ export default function Hero() {
             className="max-w-xl flex flex-col space-y-6 text-left"
           >
             {/* Heading in three lines */}
-            <h1 className="font-caudex text-primary text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+            <h1 className="font-caudex text-primary text-4xl xs:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
               Diagnose.<br />
               Design.<br />
               Smile.

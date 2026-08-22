@@ -69,7 +69,7 @@ export default function TechnologyPage() {
     <div className="flex flex-col min-h-screen">
       
       {/* ── 1. Header Banner Section (Clean, no text overlay) ── */}
-      <section className="relative w-full h-[85vh] md:h-[90vh] lg:h-[95vh] min-h-[600px] md:min-h-[750px] overflow-hidden flex items-center bg-[#FFF8EE]">
+      <section className="relative w-full h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[85vh] min-h-[250px] sm:min-h-[450px] md:min-h-[600px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
