@@ -44,8 +44,8 @@
     "about": {
       "key": "about",
       "url": "/about",
-      "title": "About Dr. Priti Munde & DDS Dental Clinic",
-      "description": "Learn about our clinical director Dr. Priti Munde (BDS) and our 15+ years of delivering world-class dental care in Pune.",
+      "title": "Dr. Priti Munde | 15+ Years of Dental Care in Pune",
+      "description": "Meet Dr. Priti Munde (BDS), Clinical Director, and explore 15+ years of trusted, world-class dental care in Pune with personalized treatments.",
       "keywords": "Dr Priti Munde, dental team Pune, dentist profile, clinic history",
       "focusKeyword": "Dr Priti Munde",
       "searchIntent": "Informational",
@@ -67,7 +67,15 @@
         "twitterTitle": "About Dr. Priti Munde",
         "twitterDescription": "Biographies and dental team qualifications."
       },
-      "schema": []
+      "schema": [
+        {
+          "type": "LocalBusiness",
+          "active": true,
+          "fields": {
+            "name": "DDS Dental Clinic"
+          }
+        }
+      ]
     },
     "contact": {
       "key": "contact",
@@ -490,6 +498,7 @@
       "schema": []
     }
   },
+  "blogs": [],
   "redirects": [],
   "logs_404": [],
   "seo_settings": {
@@ -508,7 +517,27 @@
     "postalCode": "411016",
     "addressCountry": "IN"
   },
+  "image_alts": {},
   "seo_issues": [],
   "seo_audits": [],
-  "seo_versions": []
+  "seo_versions": [
+    {
+      "id": "v_1787568304419_bczy",
+      "pageKey": "about",
+      "user": "seo_admin",
+      "timestamp": "2026-08-24T10:45:04.419Z",
+      "field": "SEO Title",
+      "before": "About Dr. Priti Munde & DDS Dental Clinic",
+      "after": "Dr. Priti Munde | 15+ Years of Dental Care in Pune"
+    },
+    {
+      "id": "v_1787568304419_2ks0",
+      "pageKey": "about",
+      "user": "seo_admin",
+      "timestamp": "2026-08-24T10:45:04.419Z",
+      "field": "Meta Description",
+      "before": "Learn about our clinical director Dr. Priti Munde (BDS) and our 15+ years of delivering world-class dental care in Pune.",
+      "after": "Meet Dr. Priti Munde (BDS), Clinical Director, and explore 15+ years of trusted, world-class dental care in Pune with personalized treatments."
+    }
+  ]
 }
