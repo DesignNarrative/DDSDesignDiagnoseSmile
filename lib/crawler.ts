@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { saveSeoDatabase } from "./seo";
 
 const dbPath = path.join(process.cwd(), "data", "seo-db.json");
 
@@ -244,7 +245,7 @@ export async function runCrawlerAudit(origin: string) {
   db.seo_audits = db.seo_audits.slice(-5);
   db.seo_issues = issues;
 
-  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), "utf8");
+  await saveSeoDatabase(db);
   return { success: true, healthScore: globalScore, issuesCount: issues.length };
 }
 

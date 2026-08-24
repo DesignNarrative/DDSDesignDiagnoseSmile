@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
+import { saveSeoDatabase } from "@/lib/seo";
 import fs from "fs";
 import path from "path";
 
@@ -118,61 +119,14 @@ export async function POST(request: Request) {
     const mergedVersions = [...newVersions, ...(oldDbState.seo_versions || [])].slice(0, 100);
     newDbState.seo_versions = mergedVersions;
 
-    // Save back to JSON Database
-    fs.writeFileSync(dbPath, JSON.stringify(newDbState, null, 2), "utf8");
-
-    // Commit to GitHub (for production persistence & automated rebuild deployments)
-    const githubToken = process.env.GITHUB_TOKEN;
-    const repoName = process.env.GITHUB_REPO || "DDSDesignDiagnoseSmile";
-    const repoOwner = process.env.GITHUB_OWNER || "DesignNarrative";
-    const repoBranch = process.env.GITHUB_BRANCH || "main";
-    const dbGitPath = "data/seo-db.json";
-
-    if (githubToken) {
-      try {
-        // 1. Get file SHA from GitHub Contents API
-        const fileUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${dbGitPath}?ref=${repoBranch}`;
-        const getRes = await fetch(fileUrl, {
-          headers: {
-            "Authorization": `Bearer ${githubToken}`,
-            "Accept": "application/vnd.github.v3+json"
-          }
-        });
-
-        let fileSha = "";
-        if (getRes.ok) {
-          const fileData = await getRes.json();
-          fileSha = fileData.sha;
-        }
-
-        // 2. Commit payload
-        const contentBase64 = Buffer.from(JSON.stringify(newDbState, null, 2)).toString("base64");
-        const putUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${dbGitPath}`;
-        const putRes = await fetch(putUrl, {
-          method: "PUT",
-          headers: {
-            "Authorization": `Bearer ${githubToken}`,
-            "Accept": "application/vnd.github.v3+json",
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            message: "Update SEO configuration via Admin Dashboard Panel",
-            content: contentBase64,
-            sha: fileSha || undefined,
-            branch: repoBranch
-          })
-        });
-
-        if (!putRes.ok) {
-          const errMsg = await putRes.text();
-          throw new Error(`GitHub API commit failed (Status ${putRes.status}): ${errMsg}`);
-        }
-      } catch (err: any) {
-        console.error("Error committing to GitHub:", err);
-        return NextResponse.json({ 
-          error: err.message || "Failed to commit changes to GitHub repository." 
-        }, { status: 500 });
-      }
+    // Save back to JSON Database & Sync with Git
+    try {
+      await saveSeoDatabase(newDbState);
+    } catch (err: any) {
+      console.error("Error committing to GitHub:", err);
+      return NextResponse.json({ 
+        error: err.message || "Failed to commit changes to GitHub repository." 
+      }, { status: 500 });
     }
 
     // Ping search engine indexers to crawl sitemap

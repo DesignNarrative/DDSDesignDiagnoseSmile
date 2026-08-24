@@ -193,3 +193,70 @@ export function getImageTitle(src: string, defaultTitle: string = ""): string {
     return defaultTitle;
   }
 }
+
+export async function saveSeoDatabase(newDbState: any): Promise<{ success: boolean; message: string }> {
+  try {
+    const fs = require("fs");
+    const path = require("path");
+    const dbPath = path.join(process.cwd(), "data", "seo-db.json");
+
+    // 1. Save locally (development fallback)
+    try {
+      fs.writeFileSync(dbPath, JSON.stringify(newDbState, null, 2), "utf8");
+    } catch (localErr: any) {
+      console.warn("Local filesystem write skipped/failed:", localErr.message);
+    }
+
+    // 2. Commit to GitHub in production if GITHUB_TOKEN is present
+    const githubToken = process.env.GITHUB_TOKEN;
+    const repoName = process.env.GITHUB_REPO || "DDSDesignDiagnoseSmile";
+    const repoOwner = process.env.GITHUB_OWNER || "DesignNarrative";
+    const repoBranch = process.env.GITHUB_BRANCH || "main";
+    const dbGitPath = "data/seo-db.json";
+
+    if (githubToken) {
+      // 2a. Get file SHA from GitHub Contents API
+      const fileUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${dbGitPath}?ref=${repoBranch}`;
+      const getRes = await fetch(fileUrl, {
+        headers: {
+          "Authorization": `Bearer ${githubToken}`,
+          "Accept": "application/vnd.github.v3+json"
+        }
+      });
+
+      let fileSha = "";
+      if (getRes.ok) {
+        const fileData = await getRes.json();
+        fileSha = fileData.sha;
+      }
+
+      // 2b. Commit payload
+      const contentBase64 = Buffer.from(JSON.stringify(newDbState, null, 2)).toString("base64");
+      const putUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${dbGitPath}`;
+      const putRes = await fetch(putUrl, {
+        method: "PUT",
+        headers: {
+          "Authorization": `Bearer ${githubToken}`,
+          "Accept": "application/vnd.github.v3+json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: "Update SEO configuration via Admin Dashboard Panel (Save/Audit)",
+          content: contentBase64,
+          sha: fileSha || undefined,
+          branch: repoBranch
+        })
+      });
+
+      if (!putRes.ok) {
+        const errMsg = await putRes.text();
+        throw new Error(`GitHub API commit failed (Status ${putRes.status}): ${errMsg}`);
+      }
+      return { success: true, message: "Committed changes to GitHub successfully." };
+    }
+
+    return { success: true, message: "Saved changes to local filesystem." };
+  } catch (err: any) {
+    throw new Error(err.message || "Failed to save SEO database changes.");
+  }
+}
