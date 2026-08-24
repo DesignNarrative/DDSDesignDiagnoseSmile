@@ -32,26 +32,29 @@ export async function runCrawlerAudit(origin: string) {
   let totalScore = 0;
   let crawledCount = 0;
 
-  for (const pageKey of pageKeys) {
-    const page = pages[pageKey];
-    const pageUrl = page.url === "/" ? "" : page.url;
-    const fetchTarget = `${origin}${pathUrlClean(pageUrl)}`;
-
-    let html = "";
-    let status = 200;
-
-    try {
-      const res = await fetch(fetchTarget, {
-        headers: { "User-Agent": "DDS-SEO-Audit-Engine/1.0" },
-      });
-      status = res.status;
-      if (res.ok) {
-        html = await res.text();
+  const crawlResults = await Promise.all(
+    pageKeys.map(async (pageKey) => {
+      const page = pages[pageKey];
+      const pageUrl = page.url === "/" ? "" : page.url;
+      const fetchTarget = `${origin}${pathUrlClean(pageUrl)}`;
+      let html = "";
+      let status = 200;
+      try {
+        const res = await fetch(fetchTarget, {
+          headers: { "User-Agent": "DDS-SEO-Audit-Engine/1.0" },
+        });
+        status = res.status;
+        if (res.ok) {
+          html = await res.text();
+        }
+      } catch (e) {
+        status = 500;
       }
-    } catch (e) {
-      status = 500;
-    }
+      return { pageKey, page, html, status };
+    })
+  );
 
+  for (const { pageKey, page, html, status } of crawlResults) {
     let pageScore = 100;
 
     // --- 1. HTTP STATUS CODE CHECKS ---
@@ -175,7 +178,6 @@ export async function runCrawlerAudit(origin: string) {
       let missingAltCount = 0;
       imgMatches.forEach((img) => {
         const hasAlt = img.match(/alt=["']([^"']*)["']/i);
-        // Ignore decorative logo alt triggers
         if (!hasAlt || (hasAlt && hasAlt[1].trim() === "")) {
           missingAltCount++;
         }

@@ -62,6 +62,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   for (const blog of dbBlogs) {
+    if (blog.status === "draft") {
+      continue;
+    }
     sitemapEntries.push({
       url: `${baseUrl}/blog/${blog.slug}`,
       lastModified: new Date(),

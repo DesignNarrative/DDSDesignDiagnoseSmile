@@ -20,9 +20,11 @@ export async function GET(request: Request) {
     const fileContent = fs.readFileSync(dbPath, "utf8");
     const db = JSON.parse(fileContent);
 
+    const normalizePath = (p: string) => p.replace(/\/+$/, "").toLowerCase().trim();
+
     // Search active redirects
     const activeRedirect = db.redirects?.find(
-      (r: any) => r.active && r.source.toLowerCase() === urlParam.toLowerCase()
+      (r: any) => r.active && normalizePath(r.source) === normalizePath(urlParam)
     );
 
     if (activeRedirect) {

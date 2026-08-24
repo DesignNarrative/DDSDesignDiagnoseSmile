@@ -64,6 +64,7 @@ interface BlogPost {
   seoDescription?: string;
   seoKeywords?: string;
   indexing?: { noindex: boolean; nofollow: boolean };
+  status?: "published" | "draft";
 }
 
 export default function SeoAdminDashboard() {
@@ -84,7 +85,8 @@ export default function SeoAdminDashboard() {
   const [redirects, setRedirects] = useState<any[]>([]);
   const [logs404, setLogs404] = useState<any[]>([]);
   const [seoSettings, setSeoSettings] = useState<SeoSettings>({
-    websiteName: "", websiteUrl: "", googleAnalyticsId: "", googleTagManagerId: "", facebookPixelId: "", defaultOgImage: "", googleSiteVerification: "", bingSiteVerification: ""
+    websiteName: "", websiteUrl: "", googleAnalyticsId: "", googleTagManagerId: "", facebookPixelId: "", defaultOgImage: "", googleSiteVerification: "", bingSiteVerification: "",
+    organizationName: "", organizationTelephone: "", streetAddress: "", addressLocality: "", postalCode: "", addressCountry: ""
   });
   const [imageAlts, setImageAlts] = useState<{ [key: string]: { alt: string; title: string; src?: string } }>({});
   const [uploadingImages, setUploadingImages] = useState<{ [key: string]: boolean }>({});
@@ -117,6 +119,7 @@ export default function SeoAdminDashboard() {
   const [blogSeoDesc, setBlogSeoDesc] = useState("");
   const [blogSeoKeywords, setBlogSeoKeywords] = useState("");
   const [blogNoIndex, setBlogNoIndex] = useState(false);
+  const [blogStatus, setBlogStatus] = useState<"published" | "draft">("published");
   
   // Page Manager search / filter states
   const [searchQuery, setSearchQuery] = useState("");
@@ -347,7 +350,8 @@ export default function SeoAdminDashboard() {
       seoTitle: blogSeoTitle.trim() || undefined,
       seoDescription: blogSeoDesc.trim() || undefined,
       seoKeywords: blogSeoKeywords.trim() || undefined,
-      indexing: { noindex: blogNoIndex, nofollow: blogNoIndex }
+      indexing: { noindex: blogNoIndex, nofollow: blogNoIndex },
+      status: blogStatus
     };
 
     let updatedBlogs = [];
@@ -379,6 +383,35 @@ export default function SeoAdminDashboard() {
 
     if (!newRedirectSource.startsWith("/") || !newRedirectDest.startsWith("/")) {
       setRedirectError("Paths must be absolute, starting with '/' (e.g., /old-page)");
+      return;
+    }
+
+    const src = newRedirectSource.trim().replace(/\/+$/, "").toLowerCase();
+    const dest = newRedirectDest.trim().replace(/\/+$/, "").toLowerCase();
+
+    if (src === dest) {
+      setRedirectError("Redirect loop detected: Source and Destination cannot be the same.");
+      return;
+    }
+
+    const isCycle = redirects.some(r => {
+      const rSrc = r.source.trim().replace(/\/+$/, "").toLowerCase();
+      const rDest = r.destination.trim().replace(/\/+$/, "").toLowerCase();
+      return r.active !== false && rSrc === dest && rDest === src;
+    });
+
+    if (isCycle) {
+      setRedirectError("Redirect cycle detected: An active redirect already exists from the destination back to this source.");
+      return;
+    }
+
+    const isDuplicate = redirects.some(r => {
+      const rSrc = r.source.trim().replace(/\/+$/, "").toLowerCase();
+      return r.active !== false && rSrc === src;
+    });
+
+    if (isDuplicate) {
+      setRedirectError("An active redirect already exists for this source path. Please delete or disable the existing redirect first.");
       return;
     }
 
@@ -1294,6 +1327,7 @@ export default function SeoAdminDashboard() {
                         setBlogSeoDesc("");
                         setBlogSeoKeywords("");
                         setBlogNoIndex(false);
+                        setBlogStatus("published");
                       }}
                       className="bg-[#380920] hover:bg-[#380920]/90 text-white font-instrument text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center gap-1.5"
                     >
@@ -1325,6 +1359,12 @@ export default function SeoAdminDashboard() {
                                     <span className="text-red-500 font-bold uppercase tracking-wider text-[9px]">NOINDEX</span>
                                   </>
                                 )}
+                                {b.status === "draft" && (
+                                  <>
+                                    <span>•</span>
+                                    <span className="text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded font-bold uppercase tracking-wider text-[9px]">DRAFT</span>
+                                  </>
+                                )}
                               </p>
                               <p className="text-xs text-text-muted line-clamp-1 italic max-w-xl">{b.excerpt}</p>
                             </div>
@@ -1346,6 +1386,7 @@ export default function SeoAdminDashboard() {
                                 setBlogSeoDesc(b.seoDescription || "");
                                 setBlogSeoKeywords(b.seoKeywords || "");
                                 setBlogNoIndex(!!b.indexing?.noindex);
+                                setBlogStatus(b.status || "published");
                               }}
                               className="px-3 py-1.5 rounded-lg border border-border-neutral bg-white hover:bg-cream-light/20 text-xs font-semibold flex items-center gap-1 transition-all"
                             >
@@ -1400,14 +1441,14 @@ export default function SeoAdminDashboard() {
                         />
                       </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
                         <div className="flex flex-col space-y-1.5">
                           <label className="text-xs font-bold text-text-dark uppercase tracking-wider">Slug (URL path)</label>
                           <input
                             type="text"
                             required
                             value={blogSlug}
-                            onChange={(e) => setBlogSlug(e.target.value)}
+                            onChange={(e) => setBlogSlug(e.target.value.toLowerCase().replace(/[^a-z0-9_-]+/g, "-"))}
                             placeholder="my-custom-slug"
                             className="w-full font-instrument text-xs border border-border-neutral rounded-xl px-4 py-3 outline-none focus:border-[#62826B] bg-white text-text-dark"
                           />
@@ -1430,6 +1471,17 @@ export default function SeoAdminDashboard() {
                             onChange={(e) => setBlogAuthor(e.target.value)}
                             className="w-full font-instrument text-xs border border-border-neutral rounded-xl px-4 py-3 outline-none focus:border-[#62826B] bg-white text-text-dark"
                           />
+                        </div>
+                        <div className="flex flex-col space-y-1.5">
+                          <label className="text-xs font-bold text-text-dark uppercase tracking-wider">Status</label>
+                          <select
+                            value={blogStatus}
+                            onChange={(e) => setBlogStatus(e.target.value as "published" | "draft")}
+                            className="w-full font-instrument text-xs border border-border-neutral rounded-xl px-4 py-3 outline-none focus:border-[#62826B] bg-white text-text-dark"
+                          >
+                            <option value="published">Published</option>
+                            <option value="draft">Draft</option>
+                          </select>
                         </div>
                       </div>
 
@@ -1567,6 +1619,24 @@ export default function SeoAdminDashboard() {
                           <p className="text-xs text-[#4d5156] leading-snug line-clamp-3">
                             {blogSeoDesc || blogExcerpt || "Meta Description matches excerpt by default."}
                           </p>
+                        </div>
+                      </div>
+
+                      <div className="p-5 rounded-2xl bg-cream-light/10 border border-border-neutral/30 flex flex-col space-y-4 text-left">
+                        <h3 className="font-caudex font-bold text-base text-primary flex items-center gap-2">
+                          <CheckCircle className="w-5 h-5 text-[#62826B]" />
+                          Yoast Live SEO Scorecard
+                        </h3>
+                        
+                        <div className="flex flex-col space-y-2 text-xs">
+                          {runSeoAnalysis(blogSeoTitle || blogTitle, blogSeoDesc || blogExcerpt || blogContent, blogSeoKeywords || "").map((item, idx) => (
+                            <div key={idx} className="flex items-center gap-2 text-text-dark font-medium">
+                              <span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${
+                                item.status === "green" ? "bg-green-500" : item.status === "orange" ? "bg-yellow-500" : "bg-red-500"
+                              }`} />
+                              <span>{item.text}</span>
+                            </div>
+                          ))}
                         </div>
                       </div>
 
@@ -1895,6 +1965,82 @@ export default function SeoAdminDashboard() {
                           placeholder="e.g. FB-XXXXXXXXX"
                           className="w-full font-instrument text-sm border border-border-neutral rounded-xl px-4 py-3 outline-none bg-white text-text-dark"
                         />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Local Business & Schema details */}
+                  <div className="flex flex-col space-y-4 pt-4 border-t border-border-neutral/20 text-left">
+                    <div className="pb-2 border-b border-border-neutral/30">
+                      <h2 className="font-caudex font-bold text-xl text-primary font-bold">Local Business & Organization Schema</h2>
+                      <p className="text-xs text-text-muted">Configure structured data details used by search engines to populate local maps and knowledge panels.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div className="flex flex-col space-y-1.5">
+                        <label className="text-xs font-bold text-text-dark uppercase tracking-wider">Organization Name</label>
+                        <input
+                          type="text"
+                          value={seoSettings.organizationName || ""}
+                          onChange={(e) => setSeoSettings((prev: any) => ({ ...prev, organizationName: e.target.value }))}
+                          placeholder="e.g. DDS Dental Clinic"
+                          className="w-full font-instrument text-sm border border-border-neutral rounded-xl px-4 py-3 outline-none bg-white text-text-dark"
+                        />
+                      </div>
+
+                      <div className="flex flex-col space-y-1.5">
+                        <label className="text-xs font-bold text-text-dark uppercase tracking-wider">Contact Phone Number</label>
+                        <input
+                          type="text"
+                          value={seoSettings.organizationTelephone || ""}
+                          onChange={(e) => setSeoSettings((prev: any) => ({ ...prev, organizationTelephone: e.target.value }))}
+                          placeholder="e.g. +91 96730 04407"
+                          className="w-full font-instrument text-sm border border-border-neutral rounded-xl px-4 py-3 outline-none bg-white text-text-dark"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
+                      <div className="sm:col-span-2 flex flex-col space-y-1.5">
+                        <label className="text-xs font-bold text-text-dark uppercase tracking-wider">Street Address</label>
+                        <input
+                          type="text"
+                          value={seoSettings.streetAddress || ""}
+                          onChange={(e) => setSeoSettings((prev: any) => ({ ...prev, streetAddress: e.target.value }))}
+                          placeholder="e.g. Model Colony, Shivajinagar"
+                          className="w-full font-instrument text-sm border border-border-neutral rounded-xl px-4 py-3 outline-none bg-white text-text-dark"
+                        />
+                      </div>
+
+                      <div className="flex flex-col space-y-1.5">
+                        <label className="text-xs font-bold text-text-dark uppercase tracking-wider">City/Locality</label>
+                        <input
+                          type="text"
+                          value={seoSettings.addressLocality || ""}
+                          onChange={(e) => setSeoSettings((prev: any) => ({ ...prev, addressLocality: e.target.value }))}
+                          placeholder="e.g. Pune"
+                          className="w-full font-instrument text-sm border border-border-neutral rounded-xl px-4 py-3 outline-none bg-white text-text-dark"
+                        />
+                      </div>
+
+                      <div className="flex flex-col space-y-1.5">
+                        <label className="text-xs font-bold text-text-dark uppercase tracking-wider">Postal / Country Code</label>
+                        <div className="flex gap-2">
+                          <input
+                            type="text"
+                            value={seoSettings.postalCode || ""}
+                            onChange={(e) => setSeoSettings((prev: any) => ({ ...prev, postalCode: e.target.value }))}
+                            placeholder="Postal"
+                            className="w-1/2 font-instrument text-xs border border-border-neutral rounded-xl px-2 py-3 outline-none bg-white text-text-dark text-center"
+                          />
+                          <input
+                            type="text"
+                            value={seoSettings.addressCountry || ""}
+                            onChange={(e) => setSeoSettings((prev: any) => ({ ...prev, addressCountry: e.target.value }))}
+                            placeholder="Country"
+                            className="w-1/2 font-instrument text-xs border border-border-neutral rounded-xl px-2 py-3 outline-none bg-white text-text-dark text-center"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -18,7 +18,8 @@ export default function BlogPage() {
       .then((res) => res.json())
       .then((data) => {
         if (data.blogs && data.blogs.length > 0) {
-          setBlogs(data.blogs);
+          const activeBlogs = data.blogs.filter((b: any) => b.status !== "draft");
+          setBlogs(activeBlogs);
         } else {
           setBlogs(blogPosts);
         }

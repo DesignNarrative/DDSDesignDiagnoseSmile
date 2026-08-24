@@ -148,6 +148,23 @@ export function getSeoSchemaJson(pageKey: string): string | null {
         }
       });
 
+      // Inject dynamic global contact/location details for LocalBusiness/Organization
+      if ((s.type === "LocalBusiness" || s.type === "Organization") && db.seo_settings) {
+        const settings = db.seo_settings;
+        if (settings.organizationName) baseSchema["name"] = settings.organizationName;
+        if (settings.organizationTelephone) baseSchema["telephone"] = settings.organizationTelephone;
+        if (settings.organizationLogo) baseSchema["logo"] = settings.organizationLogo;
+        if (settings.streetAddress || settings.addressLocality || settings.postalCode || settings.addressCountry) {
+          baseSchema["address"] = {
+            "@type": "PostalAddress",
+            ...(settings.streetAddress && { "streetAddress": settings.streetAddress }),
+            ...(settings.addressLocality && { "addressLocality": settings.addressLocality }),
+            ...(settings.postalCode && { "postalCode": settings.postalCode }),
+            ...(settings.addressCountry && { "addressCountry": settings.addressCountry })
+          };
+        }
+      }
+
       return baseSchema;
     });
 

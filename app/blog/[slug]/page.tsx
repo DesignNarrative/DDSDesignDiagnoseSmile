@@ -23,6 +23,9 @@ export default function BlogDetailPage() {
       .then((data) => {
         const dbBlogs = data.blogs || [];
         let matched = dbBlogs.find((b: any) => b.slug === slug);
+        if (matched && matched.status === "draft") {
+          matched = null;
+        }
         if (!matched) {
           matched = blogPosts.find((b: any) => b.slug === slug);
         }
