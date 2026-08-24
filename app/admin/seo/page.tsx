@@ -86,7 +86,7 @@ export default function SeoAdminDashboard() {
   const [seoSettings, setSeoSettings] = useState<SeoSettings>({
     websiteName: "", websiteUrl: "", googleAnalyticsId: "", googleTagManagerId: "", facebookPixelId: "", defaultOgImage: "", googleSiteVerification: "", bingSiteVerification: ""
   });
-  const [imageAlts, setImageAlts] = useState<{ [key: string]: { alt: string; title: string } }>({});
+  const [imageAlts, setImageAlts] = useState<{ [key: string]: { alt: string; title: string; src?: string } }>({});
   const [seoIssues, setSeoIssues] = useState<any[]>([]);
   const [seoAudits, setSeoAudits] = useState<any[]>([]);
   const [seoVersions, setSeoVersions] = useState<any[]>([]);
@@ -438,12 +438,13 @@ export default function SeoAdminDashboard() {
   };
 
   // Image Alt SEO updates
-  const handleImageAltChange = (src: string, field: "alt" | "title", value: string) => {
+  const handleImageAltChange = (src: string, field: "alt" | "title" | "src", value: string) => {
     const updated = {
       ...imageAlts,
       [src]: {
         alt: field === "alt" ? value : (imageAlts[src]?.alt || ""),
-        title: field === "title" ? value : (imageAlts[src]?.title || "")
+        title: field === "title" ? value : (imageAlts[src]?.title || ""),
+        src: field === "src" ? value : (imageAlts[src]?.src || "")
       }
     };
     setImageAlts(updated);
@@ -1656,11 +1657,21 @@ export default function SeoAdminDashboard() {
                     {publicImages.map((img) => (
                       <div key={img.src} className="p-4 rounded-xl border border-border-neutral/30 flex items-start gap-4 bg-white shadow-sm hover:shadow-md transition-shadow">
                         <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100 border border-border-neutral/20">
-                          <img src={img.src} alt="Source thumbnail" className="object-cover w-full h-full" />
+                          <img src={imageAlts[img.src]?.src || img.src} alt="Source thumbnail" className="object-cover w-full h-full" />
                         </div>
                         <div className="flex-grow flex flex-col space-y-2">
                           <span className="text-xs font-bold text-primary">{img.label}</span>
                           <span className="text-[10px] font-mono text-text-light truncate block max-w-[200px]" title={img.src}>{img.src}</span>
+                          <div className="flex flex-col space-y-1">
+                            <label className="text-[9px] uppercase font-bold text-text-muted">Image Source URL Override</label>
+                            <input
+                              type="text"
+                              value={imageAlts[img.src]?.src || ""}
+                              onChange={(e) => handleImageAltChange(img.src, "src", e.target.value)}
+                              placeholder="Default path: e.g. /images/... or enter external url"
+                              className="font-instrument text-xs border border-border-neutral rounded-lg px-2.5 py-1.5 bg-white outline-none w-full text-text-dark"
+                            />
+                          </div>
                           <div className="flex flex-col space-y-1">
                             <label className="text-[9px] uppercase font-bold text-text-muted">Alt Text (Crawl Description)</label>
                             <input

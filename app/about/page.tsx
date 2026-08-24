@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
+import { getImageSrc, getImageAlt, getImageTitle } from "@/lib/seo";
 import { Phone, Clock, Mail, CheckCircle2 } from "lucide-react";
 
 export default function AboutPage() {
@@ -365,8 +366,9 @@ export default function AboutPage() {
                 className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-border-neutral"
               >
                 <Image
-                  src="/images/pm_4437.jpg"
-                  alt="Diagnose technology checkup"
+                  src={getImageSrc("/images/pm_4437.jpg")}
+                  alt={getImageAlt("/images/pm_4437.jpg", "Diagnose technology checkup")}
+                  title={getImageTitle("/images/pm_4437.jpg", "Diagnose technology checkup")}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 45vw"
@@ -409,8 +411,9 @@ export default function AboutPage() {
                 className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-border-neutral lg:order-1"
               >
                 <Image
-                  src="/images/pm_4449.jpg"
-                  alt="Smile Design CAD planning"
+                  src={getImageSrc("/images/pm_4449.jpg")}
+                  alt={getImageAlt("/images/pm_4449.jpg", "Smile Design CAD planning")}
+                  title={getImageTitle("/images/pm_4449.jpg", "Smile Design CAD planning")}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 45vw"
@@ -453,8 +456,9 @@ export default function AboutPage() {
                 className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-border-neutral"
               >
                 <Image
-                  src="/images/gemini_generated_smile.png"
-                  alt="Transformation Smile results"
+                  src={getImageSrc("/images/gemini_generated_smile.png")}
+                  alt={getImageAlt("/images/gemini_generated_smile.png", "Transformation Smile results")}
+                  title={getImageTitle("/images/gemini_generated_smile.png", "Transformation Smile results")}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 45vw"

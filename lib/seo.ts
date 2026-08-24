@@ -1,9 +1,9 @@
-import fs from "fs";
-import path from "path";
 import { Metadata } from "next";
 
 export function getSeoMetadata(pageKey: string): Metadata {
   try {
+    const fs = eval('require')("fs");
+    const path = eval('require')("path");
     const dbPath = path.join(process.cwd(), "data", "seo-db.json");
     if (!fs.existsSync(dbPath)) {
       return {};
@@ -95,6 +95,8 @@ export function getSeoMetadata(pageKey: string): Metadata {
 // Helper to inject JSON-LD script schemas dynamically inside layouts
 export function getSeoSchemaJson(pageKey: string): string | null {
   try {
+    const fs = eval('require')("fs");
+    const path = eval('require')("path");
     const dbPath = path.join(process.cwd(), "data", "seo-db.json");
     if (!fs.existsSync(dbPath)) return null;
 
@@ -158,11 +160,15 @@ export function getSeoSchemaJson(pageKey: string): string | null {
 // Image Alt SEO dynamic mapping helpers (Browser-safe using dynamic require)
 export function getImageAlt(src: string, defaultAlt: string = ""): string {
   if (typeof window !== "undefined") {
+    const win = window as any;
+    if (win.__SEO_DB__ && win.__SEO_DB__[src]) {
+      return win.__SEO_DB__[src].alt || defaultAlt;
+    }
     return defaultAlt;
   }
   try {
-    const fs = require("fs");
-    const path = require("path");
+    const fs = eval('require')("fs");
+    const path = eval('require')("path");
     const dbPath = path.join(process.cwd(), "data", "seo-db.json");
     if (!fs.existsSync(dbPath)) return defaultAlt;
     const db = JSON.parse(fs.readFileSync(dbPath, "utf8"));
@@ -177,11 +183,15 @@ export function getImageAlt(src: string, defaultAlt: string = ""): string {
 
 export function getImageTitle(src: string, defaultTitle: string = ""): string {
   if (typeof window !== "undefined") {
+    const win = window as any;
+    if (win.__SEO_DB__ && win.__SEO_DB__[src]) {
+      return win.__SEO_DB__[src].title || defaultTitle;
+    }
     return defaultTitle;
   }
   try {
-    const fs = require("fs");
-    const path = require("path");
+    const fs = eval('require')("fs");
+    const path = eval('require')("path");
     const dbPath = path.join(process.cwd(), "data", "seo-db.json");
     if (!fs.existsSync(dbPath)) return defaultTitle;
     const db = JSON.parse(fs.readFileSync(dbPath, "utf8"));
@@ -194,10 +204,33 @@ export function getImageTitle(src: string, defaultTitle: string = ""): string {
   }
 }
 
+export function getImageSrc(src: string, defaultSrc: string = src): string {
+  if (typeof window !== "undefined") {
+    const win = window as any;
+    if (win.__SEO_DB__ && win.__SEO_DB__[src]) {
+      return win.__SEO_DB__[src].src || defaultSrc;
+    }
+    return defaultSrc;
+  }
+  try {
+    const fs = eval('require')("fs");
+    const path = eval('require')("path");
+    const dbPath = path.join(process.cwd(), "data", "seo-db.json");
+    if (!fs.existsSync(dbPath)) return defaultSrc;
+    const db = JSON.parse(fs.readFileSync(dbPath, "utf8"));
+    if (db.image_alts && db.image_alts[src]) {
+      return db.image_alts[src].src || defaultSrc;
+    }
+    return defaultSrc;
+  } catch (e) {
+    return defaultSrc;
+  }
+}
+
 export async function saveSeoDatabase(newDbState: any): Promise<{ success: boolean; message: string }> {
   try {
-    const fs = require("fs");
-    const path = require("path");
+    const fs = eval('require')("fs");
+    const path = eval('require')("path");
     const dbPath = path.join(process.cwd(), "data", "seo-db.json");
 
     // 1. Save locally (development fallback)

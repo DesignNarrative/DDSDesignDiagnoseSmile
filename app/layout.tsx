@@ -53,11 +53,15 @@ export default function RootLayout({
     googleTagManagerId: "",
     facebookPixelId: ""
   };
+  let imageAlts = {};
   try {
     if (fs.existsSync(dbPath)) {
       const db = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
       if (db.seo_settings) {
         seoSettings = db.seo_settings;
+      }
+      if (db.image_alts) {
+        imageAlts = db.image_alts;
       }
     }
   } catch (e) {}
@@ -72,6 +76,13 @@ export default function RootLayout({
       className={`${alexBrush.variable} ${caudex.variable} ${instrumentSans.variable} ${montserrat.variable} h-full scroll-smooth`}
     >
       <head>
+        {/* Inject SEO Image Database for browser-safe dynamic overrides */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.__SEO_DB__ = ${JSON.stringify(imageAlts)};`
+          }}
+        />
+
         {/* Google Tag Manager - Header Script */}
         {gtmId && (
           <script
