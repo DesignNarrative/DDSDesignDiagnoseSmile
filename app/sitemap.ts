@@ -42,16 +42,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Include dynamic blog slug routes
-  const blogRoutes = [
-    "/blog/teeth-whitening-safe-effective",
-    "/blog/braces-vs-clear-aligners",
-    "/blog/protect-child-teeth-prevent-cavities",
-  ];
+  // Include dynamic blog slug routes from database
+  let dbBlogs: any[] = [];
+  try {
+    if (fs.existsSync(dbPath)) {
+      const fileContent = fs.readFileSync(dbPath, "utf8");
+      const db = JSON.parse(fileContent);
+      dbBlogs = db.blogs || [];
+    }
+  } catch (e) {}
 
-  for (const route of blogRoutes) {
+  // Fallback to default posts if database blogs are empty
+  if (dbBlogs.length === 0) {
+    dbBlogs = [
+      { slug: "teeth-whitening-safe-effective" },
+      { slug: "braces-vs-clear-aligners" },
+      { slug: "protect-child-teeth-prevent-cavities" }
+    ];
+  }
+
+  for (const blog of dbBlogs) {
     sitemapEntries.push({
-      url: `${baseUrl}${route}`,
+      url: `${baseUrl}/blog/${blog.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.6,

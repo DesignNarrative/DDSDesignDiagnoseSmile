@@ -22,6 +22,13 @@ export default function robots(): MetadataRoute.Robots {
           disallowRules.push(page.url);
         }
       });
+
+      // Load disallows from noindexed blogs
+      (db.blogs || []).forEach((blog: any) => {
+        if (blog.indexing?.noindex) {
+          disallowRules.push(`/blog/${blog.slug}`);
+        }
+      });
     }
   } catch (error) {
     // Fallback if read fails

@@ -1,55 +1,98 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import CTABanner from "@/components/sections/CTABanner";
+import { useParams } from "next/navigation";
+import { blogPosts } from "@/lib/data/siteData";
+import { Loader2, ArrowLeft, CalendarDays } from "lucide-react";
+import Link from "next/link";
 
 export default function BlogDetailPage() {
-  const tips = [
-    {
-      num: "1.",
-      title: "Brush Twice a Day—Properly",
-      desc: "Brushing your teeth in the morning and before bed is essential. Use a soft-bristled toothbrush and fluoride toothpaste. Take at least two minutes, making sure to clean all surfaces of your teeth gently but thoroughly."
-    },
-    {
-      num: "2.",
-      title: "Don’t Forget to Floss",
-      desc: "Flossing removes plaque and food particles between teeth that brushing alone can’t reach. Daily flossing helps prevent gum disease and cavities, especially in those hard-to-reach spots."
-    },
-    {
-      num: "3.",
-      title: "Use Mouthwash for Extra Protection",
-      desc: "An antimicrobial or fluoride mouthwash can help reduce plaque, fight bad breath, and strengthen enamel. Use it as a finishing touch to your brushing and flossing routine."
-    },
-    {
-      num: "4.",
-      title: "Stay Hydrated",
-      desc: "Drinking plenty of water helps wash away food debris and bacteria. It also promotes saliva production, which naturally protects your teeth and gums."
-    },
-    {
-      num: "5.",
-      title: "Protect Your Teeth",
-      desc: "If you grind your teeth at night or play contact sports, use a mouthguard. This protects against unnecessary wear or injury that can affect the look and health of your smile."
-    }
-  ];
+  const params = useParams();
+  const slug = params?.slug as string;
+
+  const [post, setPost] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!slug) return;
+    fetch("/api/seo")
+      .then((res) => res.json())
+      .then((data) => {
+        const dbBlogs = data.blogs || [];
+        let matched = dbBlogs.find((b: any) => b.slug === slug);
+        if (!matched) {
+          matched = blogPosts.find((b: any) => b.slug === slug);
+        }
+        setPost(matched);
+        setLoading(false);
+      })
+      .catch(() => {
+        const matched = blogPosts.find((b: any) => b.slug === slug);
+        setPost(matched);
+        setLoading(false);
+      });
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#FFF8EE]/20">
+        <div className="flex flex-col items-center space-y-4">
+          <Loader2 className="w-10 h-10 text-primary animate-spin" />
+          <p className="font-instrument text-sm text-text-muted">Loading article...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!post) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[#FFF8EE]/20 px-6 text-center">
+        <h1 className="font-caudex font-bold text-3xl text-primary mb-4">Article Not Found</h1>
+        <p className="font-instrument text-text-dark/80 max-w-md mb-8">
+          The blog post you are looking for does not exist or has been unpublished by the administrator.
+        </p>
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-2 border border-primary text-primary hover:bg-primary hover:text-white px-6 py-2.5 rounded-xl transition-all font-instrument text-sm font-semibold"
+        >
+          <ArrowLeft className="w-4 h-4" /> Back to Blogs
+        </Link>
+      </div>
+    );
+  }
+
+  const renderContent = () => {
+    if (!post.content) return null;
+    const paragraphs = Array.isArray(post.content)
+      ? post.content
+      : post.content.split("\n").filter(Boolean);
+
+    return paragraphs.map((para: string, idx: number) => (
+      <p key={idx} className="font-instrument text-base md:text-lg text-text-dark/95 leading-relaxed">
+        {para}
+      </p>
+    ));
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
       
       {/* ── 1. Header Banner Section ── */}
-      <section className="relative w-full h-[85vh] md:h-[90vh] lg:h-[95vh] min-h-[600px] md:min-h-[750px] overflow-hidden flex items-center bg-[#FFF8EE]">
+      <section className="relative w-full h-[70vh] md:h-[80vh] min-h-[450px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/invisalign_banner_2605.jpg"
-            alt="How to Protect Your Child's Teeth"
+            src={post.image || "/images/blog_banner_73696.jpg"}
+            alt={post.title}
             fill
             className="object-cover object-center"
             priority
           />
           {/* Dark overlay for white text readability */}
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/45" />
         </div>
 
         {/* Content Container */}
@@ -60,18 +103,34 @@ export default function BlogDetailPage() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center md:items-start justify-center space-y-4 max-w-4xl"
           >
-            <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-white/80">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-xs font-semibold uppercase tracking-wider mb-2 font-instrument"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" /> Back to Blogs
+            </Link>
+            <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-white/90">
               BLOG ARTICLE
             </span>
             <h1 className="font-caudex font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
-              How to Protect Your Child’s Teeth and Prevent Cavities Early On
+              {post.title}
             </h1>
+            <div className="flex items-center space-x-2 text-white/80 font-instrument text-sm pt-2">
+              <CalendarDays className="w-4 h-4 text-cream" />
+              <span>Published on: {post.date}</span>
+              {post.author && (
+                <>
+                  <span className="text-white/40">•</span>
+                  <span>By {post.author}</span>
+                </>
+              )}
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* ── 2. Article Content Section ── */}
-      <section className="py-20 bg-[#FFF8EE]/20">
+      <section className="py-16 md:py-24 bg-[#FFF8EE]/20">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -80,35 +139,16 @@ export default function BlogDetailPage() {
             transition={{ duration: 0.6 }}
             className="bg-white border border-border-neutral/30 rounded-3xl p-8 md:p-12 shadow-sm space-y-8"
           >
-            
-            {/* Intro Paragraph */}
-            <p className="font-instrument text-base md:text-lg text-text-dark/90 leading-relaxed font-medium border-l-4 border-[#62826B] pl-4">
-              A bright, confident smile isn’t just about looks—it’s a sign of good oral health and self-care. Whether you’re trying to maintain pearly whites or improve your dental routine, small daily habits can make a big difference. Here are 10 easy tips to help you keep your smile healthy and radiant.
-            </p>
+            {/* Excerpt Summary */}
+            {post.excerpt && (
+              <p className="font-instrument text-base md:text-lg text-text-dark/95 leading-relaxed font-semibold border-l-4 border-[#62826B] pl-4 italic">
+                {post.excerpt}
+              </p>
+            )}
 
-            {/* Featured Image */}
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-sm border border-border-neutral">
-              <Image
-                src="/images/gemini_generated_smile.png"
-                alt="Healthy smile and preventative dental care"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 80vw"
-              />
-            </div>
-
-            {/* Structured Tips List */}
-            <div className="space-y-8 pt-6">
-              {tips.map((tip, idx) => (
-                <div key={idx} className="space-y-2 border-b border-border-neutral/10 pb-6 last:border-b-0 last:pb-0">
-                  <h3 className="font-caudex font-bold text-lg md:text-xl text-primary flex items-center gap-2">
-                    <span className="text-[#62826B] font-instrument">{tip.num}</span> {tip.title}
-                  </h3>
-                  <p className="font-instrument text-sm md:text-base text-text-dark/85 leading-relaxed pl-6">
-                    {tip.desc}
-                  </p>
-                </div>
-              ))}
+            {/* Dynamic content paragraphs */}
+            <div className="space-y-6 pt-2">
+              {renderContent()}
             </div>
 
           </motion.div>

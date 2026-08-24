@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getSeoMetadata, getSeoSchemaJson } from "@/lib/seo";
+import fs from "fs";
+import path from "path";
 
 const alexBrush = Alex_Brush({
   weight: "400",
@@ -44,12 +46,95 @@ export default function RootLayout({
 }>) {
   const schemaJson = getSeoSchemaJson("home");
 
+  // Read SEO settings dynamically from JSON database
+  const dbPath = path.join(process.cwd(), "data", "seo-db.json");
+  let seoSettings = {
+    googleAnalyticsId: "",
+    googleTagManagerId: "",
+    facebookPixelId: ""
+  };
+  try {
+    if (fs.existsSync(dbPath)) {
+      const db = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
+      if (db.seo_settings) {
+        seoSettings = db.seo_settings;
+      }
+    }
+  } catch (e) {}
+
+  const gaId = seoSettings.googleAnalyticsId && !seoSettings.googleAnalyticsId.includes("XXX") ? seoSettings.googleAnalyticsId.trim() : null;
+  const gtmId = seoSettings.googleTagManagerId && !seoSettings.googleTagManagerId.includes("XXX") ? seoSettings.googleTagManagerId.trim() : null;
+  const pixelId = seoSettings.facebookPixelId && !seoSettings.facebookPixelId.includes("XXX") ? seoSettings.facebookPixelId.trim() : null;
+
   return (
     <html
       lang="en"
       className={`${alexBrush.variable} ${caudex.variable} ${instrumentSans.variable} ${montserrat.variable} h-full scroll-smooth`}
     >
       <head>
+        {/* Google Tag Manager - Header Script */}
+        {gtmId && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','${gtmId}');
+              `
+            }}
+          />
+        )}
+
+        {/* Google Analytics 4 (GA4) */}
+        {gaId && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}');
+                `
+              }}
+            />
+          </>
+        )}
+
+        {/* Facebook Pixel */}
+        {pixelId && (
+          <>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  !function(f,b,e,v,n,t,s)
+                  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                  n.queue=[];t=b.createElement(e);t.async=!0;
+                  t.src=v;s=b.getElementsByTagName(e)[0];
+                  s.parentNode.insertBefore(t,s)}(window, document,'script',
+                  'https://connect.facebook.net/en_US/fbevents.js');
+                  fbq('init', '${pixelId}');
+                  fbq('track', 'PageView');
+                `
+              }}
+            />
+            <noscript>
+              <img
+                height="1"
+                width="1"
+                style={{ display: "none" }}
+                src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
+                alt=""
+              />
+            </noscript>
+          </>
+        )}
+
         {schemaJson && (
           <script
             type="application/ld+json"
@@ -58,6 +143,18 @@ export default function RootLayout({
         )}
       </head>
       <body className="min-h-full flex flex-col font-instrument bg-white text-text-dark antialiased">
+        {/* Google Tag Manager - Noscript (Body) */}
+        {gtmId && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        )}
+
         <Navbar />
         {/* Padding top to offset the fixed navbar */}
         <main className="flex-grow pt-[80px]">

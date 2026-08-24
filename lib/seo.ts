@@ -11,7 +11,28 @@ export function getSeoMetadata(pageKey: string): Metadata {
 
     const fileContent = fs.readFileSync(dbPath, "utf8");
     const db = JSON.parse(fileContent);
-    const page = db.pages[pageKey];
+    let page = db.pages[pageKey];
+
+    // Check if it's a dynamic blog post if not found in static pages
+    if (!page && pageKey.startsWith("blog_")) {
+      const blogSlug = pageKey.replace("blog_", "");
+      const matchedBlog = (db.blogs || []).find((b: any) => b.slug === blogSlug);
+      if (matchedBlog) {
+        page = {
+          title: matchedBlog.seoTitle || matchedBlog.title,
+          description: matchedBlog.seoDescription || matchedBlog.excerpt,
+          keywords: matchedBlog.seoKeywords || "",
+          url: `/blog/${matchedBlog.slug}`,
+          indexing: { noindex: false, nofollow: false, noarchive: false },
+          canonical: { mode: "self", customUrl: "" },
+          social: {
+            ogTitle: matchedBlog.seoTitle || matchedBlog.title,
+            ogDescription: matchedBlog.seoDescription || matchedBlog.excerpt,
+            ogImage: matchedBlog.image || "/images/dds_final_logo_white.png"
+          }
+        };
+      }
+    }
 
     if (!page) {
       return {};
@@ -34,12 +55,24 @@ export function getSeoMetadata(pageKey: string): Metadata {
       canonicalUrl = page.canonical.customUrl;
     }
 
+    // Site Verification meta tokens
+    const verification: any = {};
+    if (db.seo_settings?.googleSiteVerification) {
+      verification.google = db.seo_settings.googleSiteVerification;
+    }
+    if (db.seo_settings?.bingSiteVerification) {
+      verification.other = {
+        "msvalidate.01": [db.seo_settings.bingSiteVerification]
+      };
+    }
+
     return {
       title: page.title || "DDS Dental Clinic",
       description: page.description || "Diagnose. Design. Smile.",
       keywords: page.keywords || "",
       robots: robotsObj,
       alternates: canonicalUrl ? { canonical: canonicalUrl } : undefined,
+      verification: Object.keys(verification).length > 0 ? verification : undefined,
       openGraph: {
         title: page.social?.ogTitle || page.title,
         description: page.social?.ogDescription || page.description,
@@ -67,7 +100,30 @@ export function getSeoSchemaJson(pageKey: string): string | null {
 
     const fileContent = fs.readFileSync(dbPath, "utf8");
     const db = JSON.parse(fileContent);
-    const page = db.pages[pageKey];
+    let page = db.pages[pageKey];
+
+    // Support schema for blogs dynamically if needed
+    if (!page && pageKey.startsWith("blog_")) {
+      const blogSlug = pageKey.replace("blog_", "");
+      const matchedBlog = (db.blogs || []).find((b: any) => b.slug === blogSlug);
+      if (matchedBlog) {
+        page = {
+          schema: [
+            {
+              type: "BlogPosting",
+              active: true,
+              fields: {
+                headline: matchedBlog.title,
+                description: matchedBlog.excerpt,
+                datePublished: matchedBlog.date,
+                image: matchedBlog.image,
+                author: matchedBlog.author || "Dr. Priti Munde"
+              }
+            }
+          ]
+        };
+      }
+    }
 
     if (!page || !page.schema || page.schema.length === 0) {
       return null;
@@ -96,5 +152,44 @@ export function getSeoSchemaJson(pageKey: string): string | null {
     return JSON.stringify(jsonLdList.length === 1 ? jsonLdList[0] : jsonLdList, null, 2);
   } catch (error) {
     return null;
+  }
+}
+
+// Image Alt SEO dynamic mapping helpers (Browser-safe using dynamic require)
+export function getImageAlt(src: string, defaultAlt: string = ""): string {
+  if (typeof window !== "undefined") {
+    return defaultAlt;
+  }
+  try {
+    const fs = require("fs");
+    const path = require("path");
+    const dbPath = path.join(process.cwd(), "data", "seo-db.json");
+    if (!fs.existsSync(dbPath)) return defaultAlt;
+    const db = JSON.parse(fs.readFileSync(dbPath, "utf8"));
+    if (db.image_alts && db.image_alts[src]) {
+      return db.image_alts[src].alt || defaultAlt;
+    }
+    return defaultAlt;
+  } catch (e) {
+    return defaultAlt;
+  }
+}
+
+export function getImageTitle(src: string, defaultTitle: string = ""): string {
+  if (typeof window !== "undefined") {
+    return defaultTitle;
+  }
+  try {
+    const fs = require("fs");
+    const path = require("path");
+    const dbPath = path.join(process.cwd(), "data", "seo-db.json");
+    if (!fs.existsSync(dbPath)) return defaultTitle;
+    const db = JSON.parse(fs.readFileSync(dbPath, "utf8"));
+    if (db.image_alts && db.image_alts[src]) {
+      return db.image_alts[src].title || defaultTitle;
+    }
+    return defaultTitle;
+  } catch (e) {
+    return defaultTitle;
   }
 }

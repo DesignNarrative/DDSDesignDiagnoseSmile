@@ -121,6 +121,61 @@ export async function POST(request: Request) {
     // Save back to JSON Database
     fs.writeFileSync(dbPath, JSON.stringify(newDbState, null, 2), "utf8");
 
+    // Commit to GitHub (for production persistence & automated rebuild deployments)
+    const githubToken = process.env.GITHUB_TOKEN;
+    const repoName = process.env.GITHUB_REPO || "DDSDesignDiagnoseSmile";
+    const repoOwner = process.env.GITHUB_OWNER || "DesignNarrative";
+    const repoBranch = process.env.GITHUB_BRANCH || "main";
+    const dbGitPath = "data/seo-db.json";
+
+    if (githubToken) {
+      try {
+        // 1. Get file SHA from GitHub Contents API
+        const fileUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${dbGitPath}?ref=${repoBranch}`;
+        const getRes = await fetch(fileUrl, {
+          headers: {
+            "Authorization": `Bearer ${githubToken}`,
+            "Accept": "application/vnd.github.v3+json"
+          }
+        });
+
+        let fileSha = "";
+        if (getRes.ok) {
+          const fileData = await getRes.json();
+          fileSha = fileData.sha;
+        }
+
+        // 2. Commit payload
+        const contentBase64 = Buffer.from(JSON.stringify(newDbState, null, 2)).toString("base64");
+        const putUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${dbGitPath}`;
+        await fetch(putUrl, {
+          method: "PUT",
+          headers: {
+            "Authorization": `Bearer ${githubToken}`,
+            "Accept": "application/vnd.github.v3+json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: "Update SEO configuration via Admin Dashboard Panel",
+            content: contentBase64,
+            sha: fileSha || undefined,
+            branch: repoBranch
+          })
+        });
+      } catch (err) {
+        // Log error silently
+      }
+    }
+
+    // Ping search engine indexers to crawl sitemap
+    if (newDbState.seo_settings?.websiteUrl) {
+      try {
+        const sitemapUrl = `${newDbState.seo_settings.websiteUrl.trim()}/sitemap.xml`;
+        await fetch(`https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`, { mode: "no-cors" });
+        await fetch(`https://www.bing.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`, { mode: "no-cors" });
+      } catch (e) {}
+    }
+
     return NextResponse.json({ success: true, message: "SEO configuration updated successfully." });
   } catch (error) {
     return NextResponse.json({ error: "Failed to update configuration." }, { status: 500 });
