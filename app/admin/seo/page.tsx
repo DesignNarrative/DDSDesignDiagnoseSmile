@@ -87,6 +87,7 @@ export default function SeoAdminDashboard() {
     websiteName: "", websiteUrl: "", googleAnalyticsId: "", googleTagManagerId: "", facebookPixelId: "", defaultOgImage: "", googleSiteVerification: "", bingSiteVerification: ""
   });
   const [imageAlts, setImageAlts] = useState<{ [key: string]: { alt: string; title: string; src?: string } }>({});
+  const [uploadingImages, setUploadingImages] = useState<{ [key: string]: boolean }>({});
   const [seoIssues, setSeoIssues] = useState<any[]>([]);
   const [seoAudits, setSeoAudits] = useState<any[]>([]);
   const [seoVersions, setSeoVersions] = useState<any[]>([]);
@@ -448,6 +449,53 @@ export default function SeoAdminDashboard() {
       }
     };
     setImageAlts(updated);
+  };
+
+  const handleImageUpload = async (originalSrc: string, e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingImages((prev) => ({ ...prev, [originalSrc]: true }));
+    setSaveError("");
+
+    try {
+      // 1. Read file as Base64 string
+      const reader = new FileReader();
+      const base64Promise = new Promise<string>((resolve, reject) => {
+        reader.onload = () => {
+          const result = reader.result as string;
+          const base64Content = result.split(",")[1];
+          resolve(base64Content);
+        };
+        reader.onerror = (err) => reject(err);
+      });
+
+      reader.readAsDataURL(file);
+      const fileBase64 = await base64Promise;
+
+      // 2. POST to upload API endpoint
+      const res = await fetch("/api/seo/upload", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fileName: file.name,
+          fileBase64
+        })
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to upload image file.");
+      }
+
+      // 3. Update imageAlts map with the newly uploaded file path
+      handleImageAltChange(originalSrc, "src", data.path);
+    } catch (err: any) {
+      console.error(err);
+      setSaveError(err.message || "Failed to upload image file.");
+    } finally {
+      setUploadingImages((prev) => ({ ...prev, [originalSrc]: false }));
+    }
   };
 
   // Yoast Content Analysis Helper
@@ -1664,13 +1712,25 @@ export default function SeoAdminDashboard() {
                           <span className="text-[10px] font-mono text-text-light truncate block max-w-[200px]" title={img.src}>{img.src}</span>
                           <div className="flex flex-col space-y-1">
                             <label className="text-[9px] uppercase font-bold text-text-muted">Image Source URL Override</label>
-                            <input
-                              type="text"
-                              value={imageAlts[img.src]?.src || ""}
-                              onChange={(e) => handleImageAltChange(img.src, "src", e.target.value)}
-                              placeholder="Default path: e.g. /images/... or enter external url"
-                              className="font-instrument text-xs border border-border-neutral rounded-lg px-2.5 py-1.5 bg-white outline-none w-full text-text-dark"
-                            />
+                            <div className="flex gap-2">
+                              <input
+                                type="text"
+                                value={imageAlts[img.src]?.src || ""}
+                                onChange={(e) => handleImageAltChange(img.src, "src", e.target.value)}
+                                placeholder="Default path: e.g. /images/... or enter external url"
+                                className="font-instrument text-xs border border-border-neutral rounded-lg px-2.5 py-1.5 bg-white outline-none flex-grow text-text-dark"
+                              />
+                              <label className="cursor-pointer px-3 py-1.5 bg-cream-light/60 border border-border-neutral/30 rounded-lg text-[10px] font-bold hover:bg-cream-light/95 transition-all shadow-sm flex items-center justify-center shrink-0">
+                                {uploadingImages[img.src] ? "Uploading..." : "Upload from PC"}
+                                <input
+                                  type="file"
+                                  accept="image/*"
+                                  disabled={!!uploadingImages[img.src]}
+                                  onChange={(e) => handleImageUpload(img.src, e)}
+                                  className="hidden"
+                                />
+                              </label>
+                            </div>
                           </div>
                           <div className="flex flex-col space-y-1">
                             <label className="text-[9px] uppercase font-bold text-text-muted">Alt Text (Crawl Description)</label>
