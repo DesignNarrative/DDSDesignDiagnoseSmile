@@ -105,6 +105,7 @@ export default function SeoAdminDashboard() {
   // Blog Editor states
   const [editingBlog, setEditingBlog] = useState<BlogPost | null>(null);
   const [isCreatingBlog, setIsCreatingBlog] = useState(false);
+  const [isUploadingBlogImage, setIsUploadingBlogImage] = useState(false);
   const [blogTitle, setBlogTitle] = useState("");
   const [blogSlug, setBlogSlug] = useState("");
   const [blogDate, setBlogDate] = useState("");
@@ -495,6 +496,53 @@ export default function SeoAdminDashboard() {
       setSaveError(err.message || "Failed to upload image file.");
     } finally {
       setUploadingImages((prev) => ({ ...prev, [originalSrc]: false }));
+    }
+  };
+
+  const handleBlogImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setIsUploadingBlogImage(true);
+    setSaveError("");
+
+    try {
+      // 1. Read file as Base64 string
+      const reader = new FileReader();
+      const base64Promise = new Promise<string>((resolve, reject) => {
+        reader.onload = () => {
+          const result = reader.result as string;
+          const base64Content = result.split(",")[1];
+          resolve(base64Content);
+        };
+        reader.onerror = (err) => reject(err);
+      });
+
+      reader.readAsDataURL(file);
+      const fileBase64 = await base64Promise;
+
+      // 2. POST to upload API endpoint
+      const res = await fetch("/api/seo/upload", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fileName: file.name,
+          fileBase64
+        })
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to upload image file.");
+      }
+
+      // 3. Set the blogImage state to the newly uploaded path
+      setBlogImage(data.path);
+    } catch (err: any) {
+      console.error(err);
+      setSaveError(err.message || "Failed to upload image file.");
+    } finally {
+      setIsUploadingBlogImage(false);
     }
   };
 
@@ -1388,12 +1436,25 @@ export default function SeoAdminDashboard() {
                       <div className="grid grid-cols-1 sm:grid-cols-1 gap-4">
                         <div className="flex flex-col space-y-1.5">
                           <label className="text-xs font-bold text-text-dark uppercase tracking-wider">Featured Image Path</label>
-                          <input
-                            type="text"
-                            value={blogImage}
-                            onChange={(e) => setBlogImage(e.target.value)}
-                            className="w-full font-instrument text-xs border border-border-neutral rounded-xl px-4 py-3 outline-none focus:border-[#62826B] bg-white text-text-dark"
-                          />
+                          <div className="flex gap-2">
+                            <input
+                              type="text"
+                              value={blogImage}
+                              onChange={(e) => setBlogImage(e.target.value)}
+                              placeholder="e.g. /images/uploads/my-pic.jpg or enter external url"
+                              className="font-instrument text-xs border border-border-neutral rounded-xl px-4 py-3 outline-none focus:border-[#62826B] bg-white flex-grow text-text-dark"
+                            />
+                            <label className="cursor-pointer px-4 py-3 bg-cream-light/60 border border-border-neutral/30 rounded-xl text-xs font-bold hover:bg-cream-light/95 transition-all shadow-sm flex items-center justify-center shrink-0">
+                              {isUploadingBlogImage ? "Uploading..." : "Upload from PC"}
+                              <input
+                                type="file"
+                                accept="image/*"
+                                disabled={isUploadingBlogImage}
+                                onChange={handleBlogImageUpload}
+                                className="hidden"
+                              />
+                            </label>
+                          </div>
                         </div>
                       </div>
 
