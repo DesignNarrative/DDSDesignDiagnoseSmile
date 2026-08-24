@@ -485,6 +485,58 @@ export default function SeoAdminDashboard() {
     setImageAlts(updated);
   };
 
+  const compressAndGetBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      // If it's not a standard image file or it's an SVG/GIF, do raw read
+      if (!file.type.startsWith("image/") || file.type.includes("gif") || file.type.includes("svg")) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const result = reader.result as string;
+          resolve(result.split(",")[1]);
+        };
+        reader.onerror = (err) => reject(err);
+        reader.readAsDataURL(file);
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const img = new Image();
+        img.src = event.target?.result as string;
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          let width = img.width;
+          let height = img.height;
+
+          // Downsize large photos to standard high-res web size (e.g. 1600x1200 max)
+          const MAX_WIDTH = 1600;
+          const MAX_HEIGHT = 1200;
+          if (width > MAX_WIDTH) {
+            height = Math.round((height * MAX_WIDTH) / width);
+            width = MAX_WIDTH;
+          }
+          if (height > MAX_HEIGHT) {
+            width = Math.round((width * MAX_HEIGHT) / height);
+            height = MAX_HEIGHT;
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          ctx?.drawImage(img, 0, 0, width, height);
+
+          // Compress to JPEG format with 0.85 quality
+          const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
+          const base64Content = dataUrl.split(",")[1];
+          resolve(base64Content);
+        };
+        img.onerror = (err) => reject(err);
+      };
+      reader.onerror = (err) => reject(err);
+      reader.readAsDataURL(file);
+    });
+  };
+
   const handleImageUpload = async (originalSrc: string, e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -493,19 +545,8 @@ export default function SeoAdminDashboard() {
     setSaveError("");
 
     try {
-      // 1. Read file as Base64 string
-      const reader = new FileReader();
-      const base64Promise = new Promise<string>((resolve, reject) => {
-        reader.onload = () => {
-          const result = reader.result as string;
-          const base64Content = result.split(",")[1];
-          resolve(base64Content);
-        };
-        reader.onerror = (err) => reject(err);
-      });
-
-      reader.readAsDataURL(file);
-      const fileBase64 = await base64Promise;
+      // 1. Compress and read file as Base64 string in browser
+      const fileBase64 = await compressAndGetBase64(file);
 
       // 2. POST to upload API endpoint
       const res = await fetch("/api/seo/upload", {
@@ -540,19 +581,8 @@ export default function SeoAdminDashboard() {
     setSaveError("");
 
     try {
-      // 1. Read file as Base64 string
-      const reader = new FileReader();
-      const base64Promise = new Promise<string>((resolve, reject) => {
-        reader.onload = () => {
-          const result = reader.result as string;
-          const base64Content = result.split(",")[1];
-          resolve(base64Content);
-        };
-        reader.onerror = (err) => reject(err);
-      });
-
-      reader.readAsDataURL(file);
-      const fileBase64 = await base64Promise;
+      // 1. Compress and read file as Base64 string in browser
+      const fileBase64 = await compressAndGetBase64(file);
 
       // 2. POST to upload API endpoint
       const res = await fetch("/api/seo/upload", {

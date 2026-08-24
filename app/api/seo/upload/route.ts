@@ -28,18 +28,19 @@ export async function POST(request: Request) {
     const localUploadDir = path.join(process.cwd(), "public", "images", "uploads");
     const relativePath = `/images/uploads/${uniqueName}`;
 
-    // Ensure uploads directory exists locally
-    if (!fs.existsSync(localUploadDir)) {
-      fs.mkdirSync(localUploadDir, { recursive: true });
-    }
+    const isDev = process.env.NODE_ENV === "development" || !process.env.VERCEL;
 
-    // Save locally for development envs
-    const buffer = Buffer.from(fileBase64, "base64");
-    const localPath = path.join(localUploadDir, uniqueName);
-    try {
-      fs.writeFileSync(localPath, buffer);
-    } catch (localErr: any) {
-      console.warn("Local filesystem write skipped/failed:", localErr.message);
+    if (isDev) {
+      try {
+        if (!fs.existsSync(localUploadDir)) {
+          fs.mkdirSync(localUploadDir, { recursive: true });
+        }
+        const buffer = Buffer.from(fileBase64, "base64");
+        const localPath = path.join(localUploadDir, uniqueName);
+        fs.writeFileSync(localPath, buffer);
+      } catch (localErr: any) {
+        console.warn("Local filesystem write skipped/failed:", localErr.message);
+      }
     }
 
     // Push to GitHub in production if GITHUB_TOKEN is present
