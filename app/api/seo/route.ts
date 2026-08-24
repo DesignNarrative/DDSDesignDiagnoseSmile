@@ -135,7 +135,8 @@ export async function POST(request: Request) {
         const getRes = await fetch(fileUrl, {
           headers: {
             "Authorization": `Bearer ${githubToken}`,
-            "Accept": "application/vnd.github.v3+json"
+            "Accept": "application/vnd.github.v3+json",
+            "User-Agent": "DDS-SEO-Client"
           }
         });
 
@@ -153,7 +154,8 @@ export async function POST(request: Request) {
           headers: {
             "Authorization": `Bearer ${githubToken}`,
             "Accept": "application/vnd.github.v3+json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "User-Agent": "DDS-SEO-Client"
           },
           body: JSON.stringify({
             message: "Update SEO configuration via Admin Dashboard Panel",
@@ -163,7 +165,7 @@ export async function POST(request: Request) {
           })
         });
       } catch (err) {
-        // Log error silently
+        console.error("Error committing to GitHub:", err);
       }
     }
 
