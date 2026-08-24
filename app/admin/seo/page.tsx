@@ -90,6 +90,8 @@ export default function SeoAdminDashboard() {
   });
   const [imageAlts, setImageAlts] = useState<{ [key: string]: { alt: string; title: string; src?: string } }>({});
   const [uploadingImages, setUploadingImages] = useState<{ [key: string]: boolean }>({});
+  const [localPreviews, setLocalPreviews] = useState<{ [key: string]: string }>({});
+  const [blogLocalPreview, setBlogLocalPreview] = useState("");
   const [seoIssues, setSeoIssues] = useState<any[]>([]);
   const [seoAudits, setSeoAudits] = useState<any[]>([]);
   const [seoVersions, setSeoVersions] = useState<any[]>([]);
@@ -555,6 +557,9 @@ export default function SeoAdminDashboard() {
     const file = e.target.files?.[0];
     if (!file) return;
 
+    // Generate local Object URL for instant browser rendering
+    const localUrl = URL.createObjectURL(file);
+    setLocalPreviews((prev) => ({ ...prev, [originalSrc]: localUrl }));
     setUploadingImages((prev) => ({ ...prev, [originalSrc]: true }));
     setSaveError("");
 
@@ -591,6 +596,9 @@ export default function SeoAdminDashboard() {
     const file = e.target.files?.[0];
     if (!file) return;
 
+    // Generate local Object URL for instant browser rendering
+    const localUrl = URL.createObjectURL(file);
+    setBlogLocalPreview(localUrl);
     setIsUploadingBlogImage(true);
     setSaveError("");
 
@@ -1688,8 +1696,8 @@ export default function SeoAdminDashboard() {
                         <h3 className="text-xs font-bold text-text-dark uppercase tracking-wider">Social share card preview</h3>
                         <div className="border border-border-neutral/20 rounded-xl overflow-hidden shadow-sm bg-white">
                           <div className="aspect-[1.91/1] bg-card-bg relative overflow-hidden flex items-center justify-center">
-                            {blogImage ? (
-                              <img src={resolveImagePreview(blogImage)} className="object-cover w-full h-full" alt="Feature preview" />
+                            {(blogLocalPreview || blogImage) ? (
+                              <img src={blogLocalPreview || resolveImagePreview(blogImage)} className="object-cover w-full h-full" alt="Feature preview" />
                             ) : (
                               <span className="text-[10px] text-text-light">No image path selected</span>
                             )}
@@ -1880,7 +1888,7 @@ export default function SeoAdminDashboard() {
                     {publicImages.map((img) => (
                       <div key={img.src} className="p-4 rounded-xl border border-border-neutral/30 flex items-start gap-4 bg-white shadow-sm hover:shadow-md transition-shadow">
                         <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100 border border-border-neutral/20">
-                          <img src={resolveImagePreview(imageAlts[img.src]?.src || img.src)} alt="Source thumbnail" className="object-cover w-full h-full" />
+                          <img src={localPreviews[img.src] || resolveImagePreview(imageAlts[img.src]?.src || img.src)} alt="Source thumbnail" className="object-cover w-full h-full" />
                         </div>
                         <div className="flex-grow flex flex-col space-y-2">
                           <span className="text-xs font-bold text-primary">{img.label}</span>
