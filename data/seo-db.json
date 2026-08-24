@@ -136,8 +136,8 @@
     "gallery": {
       "key": "gallery",
       "url": "/gallery",
-      "title": "Smile Gallery & Clinical Portfolio | DDS Dental",
-      "description": "Browse happy celebrity patients and view our state-of-the-art clinic interior facilities.",
+      "title": "Smile Transformation Gallery | DDS Dental Pune",
+      "description": "Explore our smile transformation gallery featuring real patient results, cosmetic dentistry treatments, and the DDS Dental clinic experience in Pune.",
       "keywords": "smile transformation gallery, dental before after, clinic interior pictures",
       "focusKeyword": "smile transformation gallery",
       "searchIntent": "Commercial",
@@ -159,7 +159,15 @@
         "twitterTitle": "Smile Gallery",
         "twitterDescription": "Portfolios and clinical transformation."
       },
-      "schema": []
+      "schema": [
+        {
+          "type": "LocalBusiness",
+          "active": true,
+          "fields": {
+            "name": "DDS Dental Clinic"
+          }
+        }
+      ]
     },
     "achievements": {
       "key": "achievements",
@@ -521,6 +529,24 @@
   "seo_issues": [],
   "seo_audits": [],
   "seo_versions": [
+    {
+      "id": "v_1787570793240_ceem",
+      "pageKey": "gallery",
+      "user": "seo_admin",
+      "timestamp": "2026-08-24T11:26:33.239Z",
+      "field": "SEO Title",
+      "before": "Smile Gallery & Clinical Portfolio | DDS Dental",
+      "after": "Smile Transformation Gallery | DDS Dental Pune"
+    },
+    {
+      "id": "v_1787570793240_s3v4",
+      "pageKey": "gallery",
+      "user": "seo_admin",
+      "timestamp": "2026-08-24T11:26:33.239Z",
+      "field": "Meta Description",
+      "before": "Browse happy celebrity patients and view our state-of-the-art clinic interior facilities.",
+      "after": "Explore our smile transformation gallery featuring real patient results, cosmetic dentistry treatments, and the DDS Dental clinic experience in Pune."
+    },
     {
       "id": "v_1787568304419_bczy",
       "pageKey": "about",
