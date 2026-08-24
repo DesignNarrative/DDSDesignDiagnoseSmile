@@ -485,6 +485,20 @@ export default function SeoAdminDashboard() {
     setImageAlts(updated);
   };
 
+  const resolveImagePreview = (src: string) => {
+    if (!src) return "";
+    if (src.startsWith("data:") || src.startsWith("http://") || src.startsWith("https://") || src.startsWith("blob:")) {
+      return src;
+    }
+    if (src.startsWith("/images/uploads/")) {
+      const repoOwner = "DesignNarrative";
+      const repoName = "DDSDesignDiagnoseSmile";
+      const repoBranch = "main";
+      return `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${repoBranch}/public${src}`;
+    }
+    return src;
+  };
+
   const compressAndGetBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
       // If it's not a standard image file or it's an SVG/GIF, do raw read
@@ -1314,7 +1328,7 @@ export default function SeoAdminDashboard() {
                         <div className="border border-border-neutral/20 rounded-xl overflow-hidden shadow-sm bg-white">
                           <div className="aspect-[1.91/1] bg-card-bg relative overflow-hidden flex items-center justify-center border-b border-border-neutral/15">
                             {editingPage.social?.ogImage ? (
-                              <img src={editingPage.social.ogImage} className="object-cover w-full h-full" alt="OG Tag preview" />
+                              <img src={resolveImagePreview(editingPage.social.ogImage)} className="object-cover w-full h-full" alt="OG Tag preview" />
                             ) : (
                               <span className="text-[10px] text-text-light">No share card image defined</span>
                             )}
@@ -1375,7 +1389,7 @@ export default function SeoAdminDashboard() {
                         <div key={b.id} className="p-5 rounded-2xl border border-border-neutral/30 bg-cream-light/5 hover:bg-cream-light/10 transition-colors flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                           <div className="flex items-start gap-4 flex-grow">
                             <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-gray-150 flex-shrink-0">
-                              <img src={b.image} className="object-cover w-full h-full" alt={b.title} />
+                              <img src={resolveImagePreview(b.image)} className="object-cover w-full h-full" alt={b.title} />
                             </div>
                             <div className="space-y-1 text-left">
                               <h3 className="font-bold text-text-dark text-sm leading-snug">{b.title}</h3>
@@ -1675,7 +1689,7 @@ export default function SeoAdminDashboard() {
                         <div className="border border-border-neutral/20 rounded-xl overflow-hidden shadow-sm bg-white">
                           <div className="aspect-[1.91/1] bg-card-bg relative overflow-hidden flex items-center justify-center">
                             {blogImage ? (
-                              <img src={blogImage} className="object-cover w-full h-full" alt="Feature preview" />
+                              <img src={resolveImagePreview(blogImage)} className="object-cover w-full h-full" alt="Feature preview" />
                             ) : (
                               <span className="text-[10px] text-text-light">No image path selected</span>
                             )}
@@ -1866,7 +1880,7 @@ export default function SeoAdminDashboard() {
                     {publicImages.map((img) => (
                       <div key={img.src} className="p-4 rounded-xl border border-border-neutral/30 flex items-start gap-4 bg-white shadow-sm hover:shadow-md transition-shadow">
                         <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100 border border-border-neutral/20">
-                          <img src={imageAlts[img.src]?.src || img.src} alt="Source thumbnail" className="object-cover w-full h-full" />
+                          <img src={resolveImagePreview(imageAlts[img.src]?.src || img.src)} alt="Source thumbnail" className="object-cover w-full h-full" />
                         </div>
                         <div className="flex-grow flex flex-col space-y-2">
                           <span className="text-xs font-bold text-primary">{img.label}</span>
