@@ -4,7 +4,7 @@ import path from "path";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const dbPath = path.join(process.cwd(), "data", "seo-db.json");
-  const defaultBaseUrl = "https://dentsspaclinic.com";
+  const defaultBaseUrl = "https://ddspune.com";
 
   let baseUrl = defaultBaseUrl;
   let dbPages: { [key: string]: any } = {};

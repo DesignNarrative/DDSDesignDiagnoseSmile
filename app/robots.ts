@@ -4,7 +4,7 @@ import path from "path";
 
 export default function robots(): MetadataRoute.Robots {
   const dbPath = path.join(process.cwd(), "data", "seo-db.json");
-  const defaultSitemap = "https://dentsspaclinic.com/sitemap.xml";
+  const defaultSitemap = "https://ddspune.com/sitemap.xml";
 
   let sitemapUrl = defaultSitemap;
   let disallowRules: string[] = [];
@@ -13,7 +13,7 @@ export default function robots(): MetadataRoute.Robots {
     if (fs.existsSync(dbPath)) {
       const fileContent = fs.readFileSync(dbPath, "utf8");
       const db = JSON.parse(fileContent);
-      sitemapUrl = `${db.seo_settings?.websiteUrl || "https://dentsspaclinic.com"}/sitemap.xml`;
+      sitemapUrl = `${db.seo_settings?.websiteUrl || "https://ddspune.com"}/sitemap.xml`;
       
       // Load disallows from noindexed pages
       Object.keys(db.pages || {}).forEach((pKey) => {

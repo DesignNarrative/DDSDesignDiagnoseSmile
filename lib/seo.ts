@@ -38,7 +38,7 @@ export function getSeoMetadata(pageKey: string): Metadata {
       return {};
     }
 
-    const baseUrl = db.seo_settings?.websiteUrl || "https://dentsspaclinic.com";
+    const baseUrl = db.seo_settings?.websiteUrl || "https://ddspune.com";
 
     // Dynamic Robots directive check
     const robotsObj = {

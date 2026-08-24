@@ -1114,7 +1114,7 @@ export default function SeoAdminDashboard() {
                         
                         <div className="bg-white rounded-xl p-4 shadow-sm border border-border-neutral/20 flex flex-col space-y-1 font-sans">
                           <div className="text-[11px] text-[#202124] flex items-center gap-1">
-                            <span>https://dentsspaclinic.com</span>
+                            <span>{seoSettings.websiteUrl || "https://ddspune.com"}</span>
                             <span className="text-[#5f6368]">• {editingPage.key}</span>
                           </div>
                           <h2 className="text-[#1a0dab] text-lg hover:underline cursor-pointer font-medium leading-tight line-clamp-2">
@@ -1157,7 +1157,9 @@ export default function SeoAdminDashboard() {
                             )}
                           </div>
                           <div className="p-4 flex flex-col space-y-1 text-left">
-                            <span className="text-[10px] uppercase font-bold text-[#62826B]">DENTSSPACLINIC.COM</span>
+                            <span className="text-[10px] uppercase font-bold text-[#62826B]">
+                              {(seoSettings.websiteUrl || "https://ddspune.com").replace(/^https?:\/\//i, "").toUpperCase()}
+                            </span>
                             <h4 className="text-sm font-bold text-text-dark line-clamp-1">{editingPage.title}</h4>
                             <p className="text-xs text-text-muted line-clamp-2 leading-relaxed">{editingPage.description}</p>
                           </div>
@@ -1443,7 +1445,7 @@ export default function SeoAdminDashboard() {
                         </div>
                         <div className="bg-white rounded-xl p-4 shadow-sm border border-border-neutral/20 flex flex-col space-y-1.5 font-sans">
                           <div className="text-[11px] text-[#202124]">
-                            <span>https://dentsspaclinic.com/blog/</span>
+                            <span>{(seoSettings.websiteUrl || "https://ddspune.com").replace(/\/$/, "")}/blog/</span>
                             <span className="font-mono text-gray-500">{blogSlug || "slug-url"}</span>
                           </div>
                           <h2 className="text-[#1a0dab] text-lg font-medium leading-tight hover:underline cursor-pointer">
@@ -1466,7 +1468,9 @@ export default function SeoAdminDashboard() {
                             )}
                           </div>
                           <div className="p-4 flex flex-col space-y-1 text-left">
-                            <span className="text-[10px] uppercase font-bold text-[#62826B]">DENTSSPACLINIC.COM</span>
+                            <span className="text-[10px] uppercase font-bold text-[#62826B]">
+                              {(seoSettings.websiteUrl || "https://ddspune.com").replace(/^https?:\/\//i, "").toUpperCase()}
+                            </span>
                             <h4 className="text-sm font-bold text-text-dark line-clamp-1">{blogSeoTitle || blogTitle || "Article Title"}</h4>
                             <p className="text-xs text-text-muted line-clamp-2 leading-relaxed">{blogSeoDesc || blogExcerpt || "Teaser text summary"}</p>
                           </div>
@@ -1696,8 +1700,32 @@ export default function SeoAdminDashboard() {
                   {/* Google Tag Manager, GA, Facebook Pixels integrations */}
                   <div className="flex flex-col space-y-4">
                     <div className="pb-2 border-b border-border-neutral/30">
-                      <h2 className="font-caudex font-bold text-xl text-primary font-bold">Analytics & Tracking Scripts</h2>
-                      <p className="text-xs text-text-muted">Inject global marketing trackers and event triggers dynamically.</p>
+                      <h2 className="font-caudex font-bold text-xl text-primary font-bold">Analytics & Global Site Settings</h2>
+                      <p className="text-xs text-text-muted">Configure display domain settings and inject global tracking scripts.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-2">
+                      <div className="flex flex-col space-y-1.5">
+                        <label className="text-xs font-bold text-text-dark uppercase tracking-wider">Website Display Name</label>
+                        <input
+                          type="text"
+                          value={seoSettings.websiteName || ""}
+                          onChange={(e) => setSeoSettings((prev: any) => ({ ...prev, websiteName: e.target.value }))}
+                          placeholder="e.g. DDS Dental Clinic"
+                          className="w-full font-instrument text-sm border border-border-neutral rounded-xl px-4 py-3 outline-none bg-white text-text-dark"
+                        />
+                      </div>
+
+                      <div className="flex flex-col space-y-1.5">
+                        <label className="text-xs font-bold text-text-dark uppercase tracking-wider">Website Root URL (Address)</label>
+                        <input
+                          type="text"
+                          value={seoSettings.websiteUrl || ""}
+                          onChange={(e) => setSeoSettings((prev: any) => ({ ...prev, websiteUrl: e.target.value }))}
+                          placeholder="e.g. https://ddspune.com"
+                          className="w-full font-instrument text-sm border border-border-neutral rounded-xl px-4 py-3 outline-none bg-white text-text-dark"
+                        />
+                      </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
