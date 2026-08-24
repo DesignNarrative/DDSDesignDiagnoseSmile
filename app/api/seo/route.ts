@@ -135,8 +135,7 @@ export async function POST(request: Request) {
         const getRes = await fetch(fileUrl, {
           headers: {
             "Authorization": `Bearer ${githubToken}`,
-            "Accept": "application/vnd.github.v3+json",
-            "User-Agent": "DDS-SEO-Client"
+            "Accept": "application/vnd.github.v3+json"
           }
         });
 
@@ -149,13 +148,12 @@ export async function POST(request: Request) {
         // 2. Commit payload
         const contentBase64 = Buffer.from(JSON.stringify(newDbState, null, 2)).toString("base64");
         const putUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${dbGitPath}`;
-        await fetch(putUrl, {
+        const putRes = await fetch(putUrl, {
           method: "PUT",
           headers: {
             "Authorization": `Bearer ${githubToken}`,
             "Accept": "application/vnd.github.v3+json",
-            "Content-Type": "application/json",
-            "User-Agent": "DDS-SEO-Client"
+            "Content-Type": "application/json"
           },
           body: JSON.stringify({
             message: "Update SEO configuration via Admin Dashboard Panel",
@@ -164,8 +162,16 @@ export async function POST(request: Request) {
             branch: repoBranch
           })
         });
-      } catch (err) {
+
+        if (!putRes.ok) {
+          const errMsg = await putRes.text();
+          throw new Error(`GitHub API commit failed (Status ${putRes.status}): ${errMsg}`);
+        }
+      } catch (err: any) {
         console.error("Error committing to GitHub:", err);
+        return NextResponse.json({ 
+          error: err.message || "Failed to commit changes to GitHub repository." 
+        }, { status: 500 });
       }
     }
 

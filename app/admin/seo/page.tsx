@@ -251,7 +251,10 @@ export default function SeoAdminDashboard() {
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) throw new Error("Could not sync configurations to server.");
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.error || "Could not sync configurations to server.");
+      }
       setSaveSuccess(true);
       loadDatabase();
       setTimeout(() => setSaveSuccess(false), 3000);
