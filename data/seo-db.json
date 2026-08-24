@@ -39,7 +39,9 @@
             "telephone": "+91 96730 04407"
           }
         }
-      ]
+      ],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "about": {
       "key": "about",
@@ -75,7 +77,9 @@
             "name": "DDS Dental Clinic"
           }
         }
-      ]
+      ],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "contact": {
       "key": "contact",
@@ -103,7 +107,9 @@
         "twitterTitle": "Contact DDS Dental Clinic",
         "twitterDescription": "Clinic coordinates, maps, and messaging details."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "technology": {
       "key": "technology",
@@ -131,7 +137,9 @@
         "twitterTitle": "Dental Technology",
         "twitterDescription": "State of the art technology in clinic."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 85,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "gallery": {
       "key": "gallery",
@@ -167,7 +175,9 @@
             "name": "DDS Dental Clinic"
           }
         }
-      ]
+      ],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "achievements": {
       "key": "achievements",
@@ -195,7 +205,9 @@
         "twitterTitle": "Awards & Recognitions",
         "twitterDescription": "Clinical and social impact awards."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 90,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "services": {
       "key": "services",
@@ -223,7 +235,9 @@
         "twitterTitle": "Treatments",
         "twitterDescription": "Services details index page."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "general-dentistry": {
       "key": "general-dentistry",
@@ -251,7 +265,9 @@
         "twitterTitle": "General Dentistry",
         "twitterDescription": "General oral hygiene checkups."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 90,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "cosmetic-dentistry": {
       "key": "cosmetic-dentistry",
@@ -279,7 +295,9 @@
         "twitterTitle": "Cosmetic Dentistry",
         "twitterDescription": "Cosmetics, laminates, and teeth bleaching."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "dental-implants": {
       "key": "dental-implants",
@@ -307,7 +325,9 @@
         "twitterTitle": "Dental Implants",
         "twitterDescription": "Implants surgery and abutment prosthetics."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 90,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "pediatric-dentistry": {
       "key": "pediatric-dentistry",
@@ -335,7 +355,9 @@
         "twitterTitle": "Pediatric Dentistry",
         "twitterDescription": "Child tooth care, sealants and fluoride."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "orthodontics": {
       "key": "orthodontics",
@@ -363,7 +385,9 @@
         "twitterTitle": "Orthodontics",
         "twitterDescription": "Braces and bite corrections."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 90,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "invisalign": {
       "key": "invisalign",
@@ -391,7 +415,9 @@
         "twitterTitle": "Invisalign Aligners",
         "twitterDescription": "Removable clear trays alignment."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "micro-endodontics": {
       "key": "micro-endodontics",
@@ -419,7 +445,9 @@
         "twitterTitle": "Micro-Endodontics",
         "twitterDescription": "Zeiss microscope root canal treatments."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "gum-aesthetic-gum-care": {
       "key": "gum-aesthetic-gum-care",
@@ -447,7 +475,9 @@
         "twitterTitle": "Gum Care",
         "twitterDescription": "Aesthetic gum corrections."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 90,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "additional-specialized-care": {
       "key": "additional-specialized-care",
@@ -475,7 +505,9 @@
         "twitterTitle": "Specialized Care",
         "twitterDescription": "Advanced clinical diagnostics."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
     "blog": {
       "key": "blog",
@@ -503,7 +535,9 @@
         "twitterTitle": "DDS Blog",
         "twitterDescription": "Articles and oral hygiene wellness guide."
       },
-      "schema": []
+      "schema": [],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-24T11:57:45.217Z"
     }
   },
   "blogs": [],
@@ -526,8 +560,82 @@
     "addressCountry": "IN"
   },
   "image_alts": {},
-  "seo_issues": [],
-  "seo_audits": [],
+  "seo_issues": [
+    {
+      "id": "issue_1787572666327_toeg",
+      "severity": "CRITICAL",
+      "pageKey": "technology",
+      "url": "/technology",
+      "description": "Missing H1 heading tag.",
+      "whyItMatters": "H1 tags structure the page hierarchy and inform crawlers of the primary topic.",
+      "recommendedAction": "Include exactly one primary H1 heading at the top of the page.",
+      "status": "Open",
+      "dateDetected": "2026-08-24T11:57:45.217Z"
+    },
+    {
+      "id": "issue_1787572666328_ny7p",
+      "severity": "WARNING",
+      "pageKey": "achievements",
+      "url": "/achievements",
+      "description": "Meta description length (101 chars) is outside optimal range (110-160 chars).",
+      "whyItMatters": "Descriptions outside this range are truncated or ignored by search engine crawlers.",
+      "recommendedAction": "Ensure the meta description is between 110 and 160 characters.",
+      "status": "Open",
+      "dateDetected": "2026-08-24T11:57:45.217Z"
+    },
+    {
+      "id": "issue_1787572666328_hfr1",
+      "severity": "WARNING",
+      "pageKey": "general-dentistry",
+      "url": "/services/general-dentistry",
+      "description": "Meta description length (109 chars) is outside optimal range (110-160 chars).",
+      "whyItMatters": "Descriptions outside this range are truncated or ignored by search engine crawlers.",
+      "recommendedAction": "Ensure the meta description is between 110 and 160 characters.",
+      "status": "Open",
+      "dateDetected": "2026-08-24T11:57:45.217Z"
+    },
+    {
+      "id": "issue_1787572666328_iedl",
+      "severity": "WARNING",
+      "pageKey": "dental-implants",
+      "url": "/services/dental-implants",
+      "description": "Meta description length (109 chars) is outside optimal range (110-160 chars).",
+      "whyItMatters": "Descriptions outside this range are truncated or ignored by search engine crawlers.",
+      "recommendedAction": "Ensure the meta description is between 110 and 160 characters.",
+      "status": "Open",
+      "dateDetected": "2026-08-24T11:57:45.217Z"
+    },
+    {
+      "id": "issue_1787572666328_z8ty",
+      "severity": "WARNING",
+      "pageKey": "orthodontics",
+      "url": "/services/orthodontics",
+      "description": "Meta description length (108 chars) is outside optimal range (110-160 chars).",
+      "whyItMatters": "Descriptions outside this range are truncated or ignored by search engine crawlers.",
+      "recommendedAction": "Ensure the meta description is between 110 and 160 characters.",
+      "status": "Open",
+      "dateDetected": "2026-08-24T11:57:45.217Z"
+    },
+    {
+      "id": "issue_1787572666329_vkjj",
+      "severity": "WARNING",
+      "pageKey": "gum-aesthetic-gum-care",
+      "url": "/services/gum-aesthetic-gum-care",
+      "description": "Meta description length (107 chars) is outside optimal range (110-160 chars).",
+      "whyItMatters": "Descriptions outside this range are truncated or ignored by search engine crawlers.",
+      "recommendedAction": "Ensure the meta description is between 110 and 160 characters.",
+      "status": "Open",
+      "dateDetected": "2026-08-24T11:57:45.217Z"
+    }
+  ],
+  "seo_audits": [
+    {
+      "id": "audit_1787572666329",
+      "runTime": "2026-08-24T11:57:45.217Z",
+      "healthScore": 96,
+      "issuesCount": 6
+    }
+  ],
   "seo_versions": [
     {
       "id": "v_1787570793240_ceem",
