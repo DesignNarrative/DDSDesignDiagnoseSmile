@@ -80,11 +80,20 @@ export default function PediatricDentistry() {
       <section className="relative w-full h-[55vh] sm:h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[350px] sm:min-h-[500px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
+          {/* Mobile view banner */}
+          <Image
+            src="/images/M6.jpg"
+            alt="Pediatric Dentistry Treatment Banner"
+            fill
+            className="object-cover object-center md:hidden"
+            priority
+          />
+          {/* Desktop/Tablet view banner */}
           <Image
             src="/images/2151686836.jpg"
             alt="Pediatric Dentistry Treatment Banner"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center hidden md:block"
             priority
           />
           <div className="absolute inset-0 bg-[#411928]/45" />
@@ -96,7 +105,7 @@ export default function PediatricDentistry() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center md:items-start justify-center space-y-4 max-w-3xl mx-auto md:mx-0"
+            className="hidden md:flex flex-col items-center md:items-start justify-center space-y-4 max-w-3xl mx-auto md:mx-0"
           >
             <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#FFF8EE]/80">
               OUR TREATMENTS

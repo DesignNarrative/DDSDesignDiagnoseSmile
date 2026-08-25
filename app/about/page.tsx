@@ -113,11 +113,20 @@ export default function AboutPage() {
       <section className="relative w-full h-[45vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh] min-h-[300px] sm:min-h-[450px] lg:min-h-[700px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
+          {/* Mobile view banner */}
+          <Image
+            src="/images/M2.jpg"
+            alt="Dentsspa Dental Studio Experience"
+            fill
+            className="object-cover object-center md:hidden"
+            priority
+          />
+          {/* Desktop/Tablet view banner */}
           <Image
             src="/images/about_banner.jpg"
             alt="Dentsspa Dental Studio Experience"
             fill
-            className="object-cover object-[70%_center] lg:object-center"
+            className="object-cover object-[70%_center] lg:object-center hidden md:block"
             priority
           />
           {/* Subtle dark overlay for text readability while maintaining banner image clarity */}
@@ -130,7 +139,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl flex flex-col space-y-8 text-left"
+            className="max-w-2xl hidden md:flex flex-col space-y-8 text-left"
           >
             <h1 className="font-caudex font-bold text-2xl sm:text-3xl md:text-4xl text-white leading-relaxed drop-shadow-md">
               The dentistry is not just a procedure.<br />

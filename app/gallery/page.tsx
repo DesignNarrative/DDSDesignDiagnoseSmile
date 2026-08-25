@@ -59,11 +59,20 @@ export default function GalleryPage() {
       <section className="relative w-full h-[55vh] sm:h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[350px] sm:min-h-[500px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
+          {/* Mobile view banner */}
+          <Image
+            src="/images/M12.jpg"
+            alt="DDS Gallery Banner"
+            fill
+            className="object-cover object-center md:hidden"
+            priority
+          />
+          {/* Desktop/Tablet view banner */}
           <Image
             src="/images/gallery_banner_new.png"
             alt="DDS Gallery Banner"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center hidden md:block"
             priority
           />
           {/* Dark overlay for white text readability */}
@@ -76,7 +85,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center md:items-start justify-center space-y-4 max-w-3xl"
+            className="hidden md:flex flex-col items-center md:items-start justify-center space-y-4 max-w-3xl"
           >
             <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-white/80">
               CLINICAL PORTFOLIO

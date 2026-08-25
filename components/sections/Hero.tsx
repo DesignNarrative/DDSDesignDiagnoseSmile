@@ -14,11 +14,20 @@ export default function Hero() {
       <section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[85vh] lg:h-[90vh] min-h-[420px] sm:min-h-[550px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
+          {/* Mobile view banner */}
+          <Image
+            src="/images/M1.jpg"
+            alt="Smiling patient at DDS Dental Clinic"
+            fill
+            className="object-cover object-center md:hidden"
+            priority
+          />
+          {/* Desktop/Tablet view banner */}
           <Image
             src="/images/hero_banner_image.jpg"
             alt="Smiling patient at DDS Dental Clinic"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center hidden md:block"
             priority
           />
         </div>
@@ -29,7 +38,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-xl flex flex-col space-y-6 text-left"
+            className="max-w-xl hidden md:flex flex-col space-y-6 text-left"
           >
             {/* Heading in three lines */}
             <h1 className="font-caudex text-primary text-4xl xs:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
