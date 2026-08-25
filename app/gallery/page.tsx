@@ -72,7 +72,7 @@ export default function GalleryPage() {
             src="/images/gallery_banner_new.png"
             alt="DDS Gallery Banner"
             fill
-            className="object-cover object-center hidden md:block"
+            className="object-cover object-[center_30%] hidden md:block"
             priority
           />
           {/* Dark overlay for white text readability */}
