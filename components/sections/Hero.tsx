@@ -12,48 +12,50 @@ export default function Hero() {
     <div className="w-full flex flex-col">
       {/* ── PART 1: Main Banner section with 683.jpg background ── */}
       <section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[85vh] lg:h-[90vh] min-h-[420px] sm:min-h-[550px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          {/* Mobile view banner */}
-          <Image
-            src="/images/M1.jpg"
-            alt="Smiling patient at DDS Dental Clinic"
-            fill
-            className="object-cover object-center md:hidden"
-            priority
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0 bg-[#FFF8EE]">
+          {/* Mobile view banner video */}
+          <video
+            src="/images/home_page_banner_video_mobile.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="object-cover w-full h-full md:hidden"
           />
-          {/* Desktop/Tablet view banner */}
-          <Image
-            src="/images/hero_banner_image.jpg"
-            alt="Smiling patient at DDS Dental Clinic"
-            fill
-            className="object-cover object-center hidden md:block"
-            priority
+          {/* Desktop/Tablet view banner video */}
+          <video
+            src="/images/home_page_banner_video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="object-cover w-full h-full hidden md:block"
           />
         </div>
 
         {/* Content Overlay - Aligned to the left over light background */}
-        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24 w-full flex items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 md:px-16 lg:px-24 w-full flex items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-xl hidden md:flex flex-col space-y-6 text-left"
+            className="max-w-xl flex flex-col space-y-4 md:space-y-6 text-left"
           >
             {/* Heading in three lines */}
-            <h1 className="font-caudex text-primary text-4xl xs:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+            <h1 className="font-caudex text-primary text-3xl xs:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
               Diagnose.<br />
               Design.<br />
               Smile.
             </h1>
 
             {/* Subheading */}
-            <p className="font-instrument text-text-dark text-base md:text-lg lg:text-xl font-medium max-w-md leading-relaxed">
+            <p className="font-instrument text-text-dark text-sm xs:text-base md:text-lg lg:text-xl font-medium max-w-md leading-relaxed">
               That&apos;s not just my process — it&apos;s my promise to every patient who trusts me with their smile.
             </p>
 
-            {/* Google Rating Block (Group 70.png) */}
-            <div className="relative w-[300px] h-[65px] mt-2">
+            {/* Google Rating Block (Group 70.png) - Hidden on mobile for cleaner text layout */}
+            <div className="relative w-[300px] h-[65px] mt-2 hidden md:block">
               <Image
                 src="/images/Group 70.png"
                 alt="Google Rating 5.0"
