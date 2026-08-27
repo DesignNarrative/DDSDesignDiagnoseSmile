@@ -106,7 +106,7 @@ export default function MicroEndodonticsPage() {
               OUR TREATMENTS
             </span>
             <h1 className="font-caudex font-bold text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-              Micro-Endodontics
+              Root Canal Treatment
             </h1>
             <p className="font-instrument text-base sm:text-lg md:text-xl text-white/90 font-semibold">
               Save Your Natural Tooth with Precision Endodontic Care.

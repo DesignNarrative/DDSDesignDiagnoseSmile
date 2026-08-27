@@ -21,10 +21,11 @@ export default function Footer() {
     { name: "Orthodontics", href: "/services/orthodontics" },
     { name: "Invisalign", href: "/services/invisalign" },
     { name: "Dental Implants", href: "/services/dental-implants" },
-    { name: "Micro-Endodontics", href: "/services/micro-endodontics" },
+    { name: "Root Canal Treatment", href: "/services/micro-endodontics" },
+    { name: "Oral Surgery", href: "/services/oral-surgery" },
     { name: "General & Family Dentistry", href: "/services/general-dentistry" },
     { name: "Pediatric Dentistry", href: "/services/pediatric-dentistry" },
-    { name: "Gum & Aesthetic Gum Care", href: "/services/gum-aesthetic-gum-care" },
+    { name: "Periodontics", href: "/services/gum-aesthetic-gum-care" },
     { name: "Additional Specialized Care", href: "/services/additional-specialized-care" },
   ];
 
@@ -96,7 +97,7 @@ export default function Footer() {
           <ul className="flex flex-col space-y-4 font-instrument text-sm text-text-light">
             <li className="flex items-start space-x-3">
               <MapPin className="w-5 h-5 text-cream flex-shrink-0 mt-0.5" />
-              <span>101, 102 Eden Hall, Opp. Om Super Market, Model Colony, Shivajinagar, Pune – 411016</span>
+              <span>First Floor, Eden Hall, Model Colony, Shivajinagar, Pune – 411016</span>
             </li>
             <li className="flex items-center space-x-3">
               <Phone className="w-4 h-4 text-cream flex-shrink-0" />

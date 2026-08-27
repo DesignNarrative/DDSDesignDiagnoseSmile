@@ -575,7 +575,7 @@ export default function ServicesGrid() {
                       <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
-                          Micro-Endodontics<br />(Root Canal Treatment)
+                          Root Canal Treatment
                         </h3>
                         
                         {/* Description */}
@@ -896,7 +896,7 @@ export default function ServicesGrid() {
                       <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
-                          Gum & Aesthetic Gum Care
+                          Periodontics
                         </h3>
                         
                         {/* Description */}

@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import { getSeoMetadata, getSeoSchemaJson } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return getSeoMetadata("achievements");
+  return getSeoMetadata("oral-surgery");
 }
 
-export default function AchievementsLayout({ children }: { children: React.ReactNode }) {
-  const schemaJson = getSeoSchemaJson("achievements");
+export default function OralSurgeryLayout({ children }: { children: React.ReactNode }) {
+  const schemaJson = getSeoSchemaJson("oral-surgery");
   return (
     <>
       {schemaJson && (

@@ -28,10 +28,17 @@ export default function ServicesPage() {
 
     {
       id: "micro-endodontics",
-      title: "Micro-Endodontics",
+      title: "Root Canal Treatment",
       desc: "ZEISS microscope-guided root canal treatments and failed endodontic retreatments to save compromised natural teeth.",
       image: "/images/endo_banner_67119.jpg",
       slug: "/services/micro-endodontics",
+    },
+    {
+      id: "oral-surgery",
+      title: "Oral Surgery",
+      desc: "Specialized surgical diagnostics, wisdom tooth extractions, gummy smile correction, apicoectomies, and pre-implant preparation.",
+      image: "/images/65669.jpg",
+      slug: "/services/oral-surgery",
     },
     {
       id: "implants-dentistry",
@@ -63,7 +70,7 @@ export default function ServicesPage() {
     },
     {
       id: "gum-aesthetic-gum-care",
-      title: "Gum & Aesthetic Gum Care",
+      title: "Periodontics",
       desc: "Prevention and treatment of gum disease, depigmentation, and gummy smile correction for a balanced look.",
       image: "/images/gum_banner_25334.jpg",
       slug: "/services/gum-aesthetic-gum-care",

@@ -36,13 +36,14 @@ export default function Navbar() {
 
   const servicesDropdown = [
     { name: "General Dentistry", href: "/services/general-dentistry" },
-    { name: "Micro-Endodontics", href: "/services/micro-endodontics" },
+    { name: "Root Canal Treatment", href: "/services/micro-endodontics" },
+    { name: "Oral Surgery", href: "/services/oral-surgery" },
     { name: "Cosmetic Dentistry", href: "/services/cosmetic-dentistry" },
     { name: "Orthodontics", href: "/services/orthodontics" },
     { name: "Invisalign", href: "/services/invisalign" },
     { name: "Dental Implants Treatment", href: "/services/dental-implants" },
     { name: "Pediatric Dentistry", href: "/services/pediatric-dentistry" },
-    { name: "Gum & Aesthetic Gum Care", href: "/services/gum-aesthetic-gum-care" },
+    { name: "Periodontics", href: "/services/gum-aesthetic-gum-care" },
     { name: "Additional Specialized Care", href: "/services/additional-specialized-care" },
   ];
 
@@ -51,7 +52,6 @@ export default function Navbar() {
     { name: "TREATMENTS", href: "/services", dropdown: servicesDropdown },
     { name: "TECHNOLOGY", href: "/technology" },
     { name: "GALLERY", href: "/gallery" },
-    { name: "ACHIEVEMENTS", href: "/achievements" },
     { name: "CONTACT", href: "/contact" },
   ];
 

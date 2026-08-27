@@ -107,50 +107,6 @@ export default function GalleryPage() {
       {/* ── 3. Filters & Main Gallery Grid Section ── */}
       <section className="py-20 bg-[#FFF8EE]/30">
         <div className="max-w-7xl mx-auto px-6">
-          
-          {/* Filters buttons */}
-          <div className="flex justify-center gap-4 mb-12 flex-wrap">
-            <button
-              onClick={() => {
-                setFilter("all");
-                setVisibleGalleryCount(8);
-              }}
-              className={`font-instrument text-sm font-semibold px-6 py-2 rounded-full border transition-all duration-300 ${
-                filter === "all"
-                  ? "bg-[#380920] text-white border-[#380920]"
-                  : "bg-white text-text-dark border-border-neutral/30 hover:bg-[#380920]/5"
-              }`}
-            >
-              View all
-            </button>
-            <button
-              onClick={() => {
-                setFilter("facilities");
-                setVisibleGalleryCount(8);
-              }}
-              className={`font-instrument text-sm font-semibold px-6 py-2 rounded-full border transition-all duration-300 ${
-                filter === "facilities"
-                  ? "bg-[#380920] text-white border-[#380920]"
-                  : "bg-white text-text-dark border-border-neutral/30 hover:bg-[#380920]/5"
-              }`}
-            >
-              Facilities
-            </button>
-            <button
-              onClick={() => {
-                setFilter("services");
-                setVisibleGalleryCount(8);
-              }}
-              className={`font-instrument text-sm font-semibold px-6 py-2 rounded-full border transition-all duration-300 ${
-                filter === "services"
-                  ? "bg-[#380920] text-white border-[#380920]"
-                  : "bg-white text-text-dark border-border-neutral/30 hover:bg-[#380920]/5"
-              }`}
-            >
-              Services
-            </button>
-          </div>
-
           {/* Photo Grid */}
           <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <AnimatePresence mode="popLayout">

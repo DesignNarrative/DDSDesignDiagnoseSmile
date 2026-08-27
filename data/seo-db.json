@@ -329,6 +329,36 @@
       "seoScore": 90,
       "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
+    "oral-surgery": {
+      "key": "oral-surgery",
+      "url": "/services/oral-surgery",
+      "title": "Oral Surgery & Impacted Tooth Extraction | DDS",
+      "description": "Expert oral surgery solutions including wisdom tooth extractions, gummy smile correction, apicoectomies, and pre-implant surgery.",
+      "keywords": "oral surgery, wisdom tooth removal, surgical extraction, gummy smile correction, apicoectomy",
+      "focusKeyword": "oral surgery",
+      "searchIntent": "Transactional",
+      "notes": "Oral surgery details page",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Oral Surgery & Impacted Tooth Extraction",
+        "ogDescription": "Specialized surgical extractions and advanced oral treatments.",
+        "ogImage": "/images/dds_final_logo_white.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Oral Surgery",
+        "twitterDescription": "Specialized surgical extractions and advanced oral treatments."
+      },
+      "schema": [],
+      "seoScore": 100,
+      "lastUpdated": "2026-08-27T18:00:00.000Z"
+    },
     "pediatric-dentistry": {
       "key": "pediatric-dentistry",
       "url": "/services/pediatric-dentistry",
@@ -602,7 +632,15 @@
     }
   ],
   "redirects": [],
-  "logs_404": [],
+  "logs_404": [
+    {
+      "url": "/achievements",
+      "hits": 2,
+      "firstDetected": "2026-08-27T12:12:03.633Z",
+      "lastDetected": "2026-08-27T12:12:57.731Z",
+      "referrer": "http://localhost:3000/achievements"
+    }
+  ],
   "seo_settings": {
     "websiteName": "DDS Dental Clinic",
     "websiteUrl": "https://ddspune.com",

@@ -62,7 +62,7 @@ export const services: Service[] = [
   },
   {
     id: "micro-endodontics",
-    title: "Micro-Endodontics (Root Canal Treatment)",
+    title: "Root Canal Treatment",
     description: "Advanced retreatment techniques to preserve previously treated teeth and restore long-term oral health.",
     slug: "micro-endodontics",
     image: "/images/3124.jpg"
@@ -83,7 +83,7 @@ export const services: Service[] = [
   },
   {
     id: "gum-aesthetic-gum-care",
-    title: "Gum & Aesthetic Gum Care",
+    title: "Periodontics",
     description: "Protect your oral health with expert gum care while enhancing the harmony of your smile.",
     slug: "gum-aesthetic-gum-care",
     image: "/images/74182.jpg"

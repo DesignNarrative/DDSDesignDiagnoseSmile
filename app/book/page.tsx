@@ -27,12 +27,12 @@ export default function BookPage() {
   const serviceOptions = [
     "General Dentistry",
     "Cosmetic Dentistry",
-    "Micro-Endodontics",
+    "Root Canal Treatment",
     "Dental Implants Treatment",
     "Orthodontics",
     "Invisalign",
     "Pediatric Dentistry",
-    "Gum & Aesthetic Gum Care",
+    "Periodontics",
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

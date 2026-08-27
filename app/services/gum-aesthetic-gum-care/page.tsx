@@ -78,7 +78,7 @@ export default function GumAestheticCarePage() {
           {/* Mobile view banner */}
           <Image
             src="/images/M9.jpg"
-            alt="Gum & Aesthetic Gum Care"
+            alt="Periodontics"
             fill
             className="object-cover object-center md:hidden"
             priority
@@ -86,7 +86,7 @@ export default function GumAestheticCarePage() {
           {/* Desktop/Tablet view banner */}
           <Image
             src="/images/gum_banner_25334.jpg"
-            alt="Gum & Aesthetic Gum Care"
+            alt="Periodontics"
             fill
             className="object-cover object-center scale-x-[-1] hidden md:block"
             priority
@@ -107,7 +107,7 @@ export default function GumAestheticCarePage() {
               OUR TREATMENTS
             </span>
             <h1 className="font-caudex font-bold text-4xl sm:text-5xl md:text-6xl text-[#380920] leading-tight">
-              Gum &amp; <br />Aesthetic Gum Care
+              Periodontics
             </h1>
             <p className="font-instrument text-base sm:text-lg md:text-xl text-white font-semibold">
               Enhance Your Gum Health. Elevate Your Smile.
