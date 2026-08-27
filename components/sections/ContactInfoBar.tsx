@@ -9,20 +9,9 @@ export default function ContactInfoBar() {
     <section className="bg-[#380920] text-white py-6 md:py-8 border-t border-white/5 z-10 relative shadow-md">
       
       {/* A. DESKTOP & TABLET VIEW (Grid layout) */}
-      <div className="hidden md:grid max-w-7xl mx-auto px-8 md:px-16 lg:px-24 grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 items-center">
+      <div className="hidden md:grid max-w-7xl mx-auto px-8 md:px-16 lg:px-24 grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-center">
         
-        {/* Column 1: Google Rating */}
-        <div className="flex items-center justify-center lg:border-r border-white/10 lg:pr-6 h-full">
-          <Image
-            src="/images/Group 70.png"
-            alt="Google Rating 5.0"
-            width={220}
-            height={49}
-            className="object-contain"
-          />
-        </div>
-
-        {/* Column 2: 18+ Years Experience */}
+        {/* Column 1: 18+ Years Experience */}
         <div className="flex items-center space-x-3 justify-center lg:border-r border-white/10 lg:pr-6 h-full">
           <Image
             src="/images/Tooth.svg"
@@ -36,7 +25,7 @@ export default function ContactInfoBar() {
           </span>
         </div>
 
-        {/* Column 3: WhatsApp Specialist */}
+        {/* Column 2: WhatsApp Specialist */}
         <div className="flex items-center space-x-3 justify-center lg:border-r border-white/10 lg:pr-6 h-full">
           <Image src="/images/whatsapp_icon.svg" alt="WhatsApp" width={28} height={28} className="filter brightness-0 invert w-7 h-7 flex-shrink-0" />
           <div className="flex flex-col text-left">
@@ -52,7 +41,7 @@ export default function ContactInfoBar() {
           </div>
         </div>
 
-        {/* Column 4: Opening Hours */}
+        {/* Column 3: Opening Hours */}
         <div className="flex items-center space-x-3 justify-center h-full">
           <Clock className="w-7 h-7 text-white flex-shrink-0" />
           <div className="flex flex-col text-left">
@@ -67,18 +56,8 @@ export default function ContactInfoBar() {
 
       {/* B. MOBILE VIEW (Aligned exactly like About page contact bar) */}
       <div className="flex md:hidden flex-col space-y-8 px-6 max-w-7xl mx-auto">
-        {/* Column 1: Google Rating */}
-        <div className="flex items-center pl-1">
-          <Image
-            src="/images/Group 70.png"
-            alt="Google Rating 5.0"
-            width={200}
-            height={44}
-            className="object-contain object-left"
-          />
-        </div>
-
-        {/* Column 2: 18+ Years Experience */}
+        
+        {/* Column 1: 18+ Years Experience */}
         <div className="flex items-center space-x-4">
           <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
             <Image
@@ -97,7 +76,7 @@ export default function ContactInfoBar() {
           </div>
         </div>
 
-        {/* Column 3: WhatsApp Specialist */}
+        {/* Column 2: WhatsApp Specialist */}
         <div className="flex items-center space-x-4">
           <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
             <Image src="/images/whatsapp_icon.svg" alt="WhatsApp" width={20} height={20} className="filter brightness-0 invert w-5 h-5" />
@@ -115,7 +94,7 @@ export default function ContactInfoBar() {
           </div>
         </div>
 
-        {/* Column 4: Opening Hours */}
+        {/* Column 3: Opening Hours */}
         <div className="flex items-center space-x-4">
           <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
             <Clock className="w-5 h-5 text-cream" />

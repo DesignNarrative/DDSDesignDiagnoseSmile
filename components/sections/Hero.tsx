@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="absolute inset-0 z-0">
           {/* Mobile view banner */}
           <Image
-            src="/images/home_page_banner_mobile.jpg"
+            src="/images/Home Page banner_mobile (1).jpg"
             alt="DDS Dental Clinic Mobile Banner"
             fill
             className="object-cover object-top md:hidden"
@@ -25,7 +25,7 @@ export default function Hero() {
           />
           {/* Desktop/Tablet view banner */}
           <Image
-            src="/images/home_page_banner.jpg"
+            src="/images/Home Page banner (1).jpg"
             alt="DDS Dental Clinic Desktop Banner"
             fill
             className="object-cover object-top hidden md:block"
