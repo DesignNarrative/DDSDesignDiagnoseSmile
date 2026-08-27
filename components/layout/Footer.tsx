@@ -96,7 +96,7 @@ export default function Footer() {
           <ul className="flex flex-col space-y-4 font-instrument text-sm text-text-light">
             <li className="flex items-start space-x-3">
               <MapPin className="w-5 h-5 text-cream flex-shrink-0 mt-0.5" />
-              <span>401, Eden Hall, Opposite Om Super Market, Model Colony, Shivajinagar, Pune - 411016</span>
+              <span>101, 102 Eden Hall, Opp. Om Super Market, Model Colony, Shivajinagar, Pune – 411016</span>
             </li>
             <li className="flex items-center space-x-3">
               <Phone className="w-4 h-4 text-cream flex-shrink-0" />

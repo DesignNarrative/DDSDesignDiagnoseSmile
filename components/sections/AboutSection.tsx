@@ -50,7 +50,7 @@ export default function AboutSection() {
 
           {/* Floater Experience Badge */}
           <div className="absolute bottom-0 right-0 md:right-4 bg-primary text-white p-6 rounded-[24px] shadow-2xl flex flex-col items-center justify-center text-center w-40 h-40 border-4 border-white">
-            <span className="font-caudex font-bold text-4xl text-cream">15+</span>
+            <span className="font-caudex font-bold text-4xl text-cream">18+</span>
             <span className="font-instrument text-xs font-semibold uppercase tracking-wider mt-1">
               Years of Glory
             </span>

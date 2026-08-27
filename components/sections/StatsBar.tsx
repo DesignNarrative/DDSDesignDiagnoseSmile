@@ -39,7 +39,7 @@ export default function StatsBar() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { value: "15+", label: "Years of Experience" },
+    { value: "18+", label: "Years of Experience" },
     { value: "250+", label: "Cosmetic Surgery Cases" },
     { value: "25+", label: "Smile Improvement" },
     { value: "100+", label: "Dental Implant Cases" },

@@ -32,10 +32,10 @@ export default function AdvancedClinic() {
             className="relative w-full aspect-[4/3] sm:aspect-[1.5/1] lg:aspect-[4/3] rounded-[24px] overflow-hidden shadow-lg"
           >
             <Image
-              src="/images/screenshot_141824.png"
-              alt="Pune's Most Advanced Dental Clinic"
+              src="/images/PM_4477.jpg.jpeg"
+              alt="Pune’s Benchmark in Digital Dentistry"
               fill
-              className="object-cover"
+              className="object-cover object-[center_25%]"
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
             />
@@ -50,13 +50,13 @@ export default function AdvancedClinic() {
           >
             {/* Title */}
             <h2 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
-              Pune&apos;s Most <br />
-              Advanced Dental Clinic!
+              Pune’s Benchmark <br />
+              in Digital Dentistry!
             </h2>
 
             {/* Subtitle */}
             <h3 className="font-caudex font-bold text-base md:text-lg text-primary/80 mt-4 mb-2">
-              Where Precision Meets Compassion — Since 2011
+              Trusted for precision, proven over 18 years — and counting.
             </h3>
 
             {/* Description */}
