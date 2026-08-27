@@ -7,6 +7,7 @@ import { motion, useInView } from "framer-motion";
 import { Phone, Clock, Mail, CheckCircle2 } from "lucide-react";
 import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 import CTABanner from "@/components/sections/CTABanner";
+import ContactInfoBar from "@/components/sections/ContactInfoBar";
 
 export default function CosmeticDentistryPage() {
   const ref = useRef(null);
@@ -132,58 +133,7 @@ export default function CosmeticDentistryPage() {
       </section>
 
       {/* ── 2. Contact Info Bar ── */}
-      <section className="bg-[#380920] text-white py-6 md:py-8 border-t border-white/5 z-10 relative shadow-md">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-center">
-          
-          {/* Column 1: WhatsApp Specialist */}
-          <div className="flex items-center space-x-4 md:border-r border-white/10 pr-4 last:border-none">
-            <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
-              <Image src="/images/whatsapp_icon.svg" alt="WhatsApp" width={20} height={20} className="filter brightness-0 invert" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-instrument text-xs md:text-sm font-semibold text-cream">Talk to our specialist?</span>
-              <a
-                href="https://wa.me/919673004407"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-instrument text-xs text-white/80 hover:text-cream transition-colors mt-0.5 underline decoration-dotted"
-              >
-                WhatsApp No.: 96730 04407
-              </a>
-            </div>
-          </div>
-
-          {/* Column 2: Opening Hours */}
-          <div className="flex items-center space-x-4 md:border-r border-white/10 pr-4 last:border-none">
-            <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
-              <Clock className="w-5 h-5" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-instrument text-xs md:text-sm font-semibold text-cream">Opening Hours</span>
-              <span className="font-instrument text-xs text-white/80 mt-0.5">
-                Mon to Sat - 10am to 7pm
-              </span>
-            </div>
-          </div>
-
-          {/* Column 3: Email Us */}
-          <div className="flex items-center space-x-4 pr-4 last:border-none">
-            <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
-              <Mail className="w-5 h-5" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-instrument text-xs md:text-sm font-semibold text-cream">Email Us</span>
-              <a
-                href="mailto:contact@dentiaclinic.com"
-                className="font-instrument text-xs text-white/80 hover:text-cream transition-colors mt-0.5"
-              >
-                contact@dentiaclinic.com
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      <ContactInfoBar />
 
       {/* ── 3. Intro Section (Image Left, Text Right) ── */}
       <section className="py-20 bg-white">
