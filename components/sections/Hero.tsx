@@ -93,73 +93,67 @@ export default function Hero() {
 
         </div>
 
-        {/* B. MOBILE VIEW (Custom stacked layout) */}
-        <div className="flex md:hidden flex-col items-center justify-center space-y-5 px-6 w-full text-center">
-          {/* 1. Google Rating Badge */}
-          <div className="w-full flex justify-center">
+        {/* B. MOBILE VIEW (Aligned exactly like About page contact bar) */}
+        <div className="flex md:hidden flex-col space-y-8 px-6 max-w-7xl mx-auto">
+          {/* Column 1: Google Rating */}
+          <div className="flex items-center pl-1">
             <Image
               src="/images/Group 70.png"
               alt="Google Rating 5.0"
               width={200}
               height={44}
-              className="object-contain"
+              className="object-contain object-left"
             />
           </div>
 
-          {/* Divider */}
-          <div className="w-16 h-px bg-white/10" />
-
-          {/* 2. Icons in one line */}
-          <div className="flex items-center justify-center space-x-8">
-            <Image
-              src="/images/Tooth.svg"
-              alt="Tooth Icon"
-              width={28}
-              height={28}
-              className="w-7 h-7 flex-shrink-0"
-            />
-            <Image 
-              src="/images/whatsapp_icon.svg" 
-              alt="WhatsApp" 
-              width={28} 
-              height={28} 
-              className="filter brightness-0 invert w-7 h-7 flex-shrink-0" 
-            />
-            <Clock className="w-7 h-7 text-white flex-shrink-0" />
+          {/* Column 2: 18+ Years Experience */}
+          <div className="flex items-center space-x-4">
+            <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
+              <Image
+                src="/images/Tooth.svg"
+                alt="Tooth Icon"
+                width={20}
+                height={20}
+                className="w-5 h-5 text-cream"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-instrument text-xs font-semibold text-cream">Experience</span>
+              <span className="font-instrument text-xs text-white/80 mt-0.5">
+                18+ Years Experience
+              </span>
+            </div>
           </div>
 
-          {/* Divider */}
-          <div className="w-16 h-px bg-white/10" />
-
-          {/* 3. Centered Stack of Texts */}
-          <div className="flex flex-col space-y-4 text-xs font-semibold text-white tracking-wide">
-            
-            {/* Experience */}
-            <p className="font-instrument">
-              18+ Years Experience
-            </p>
-
-            {/* WhatsApp */}
-            <div className="flex flex-col items-center">
-              <span className="text-[10px] text-cream">Talk to our specialist?</span>
+          {/* Column 3: WhatsApp Specialist */}
+          <div className="flex items-center space-x-4">
+            <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
+              <Image src="/images/whatsapp_icon.svg" alt="WhatsApp" width={20} height={20} className="filter brightness-0 invert w-5 h-5" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-instrument text-xs font-semibold text-cream">Talk to our specialist?</span>
               <a
                 href="https://wa.me/919673004407"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-cream mt-0.5 underline decoration-dotted"
+                className="font-instrument text-xs text-white/80 hover:text-cream transition-colors mt-0.5 underline decoration-dotted"
               >
                 WhatsApp No.: 96730 04407
               </a>
             </div>
+          </div>
 
-            {/* Timings */}
-            <div className="flex flex-col items-center">
-              <span className="text-[10px] text-cream">Opening Hours</span>
-              <span className="text-white mt-0.5">
+          {/* Column 4: Opening Hours */}
+          <div className="flex items-center space-x-4">
+            <div className="bg-white/5 p-3 rounded-full text-cream flex-shrink-0">
+              <Clock className="w-5 h-5 text-cream" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-instrument text-xs font-semibold text-cream">Opening Hours</span>
+              <span className="font-instrument text-xs text-white/80 mt-0.5">
                 Mon to Sat - 10am to 7pm
               </span>
             </div>
-
           </div>
         </div>
       </section>
