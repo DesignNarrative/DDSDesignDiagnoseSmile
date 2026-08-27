@@ -53,9 +53,9 @@ export default function Hero() {
             <Image
               src="/images/Tooth.svg"
               alt="Tooth Icon"
-              width={36}
-              height={36}
-              className="w-9 h-9"
+              width={28}
+              height={28}
+              className="w-7 h-7 flex-shrink-0"
             />
             <span className="font-instrument text-xs md:text-sm font-semibold text-white tracking-wide">
               18+ Years Experience
@@ -64,9 +64,7 @@ export default function Hero() {
 
           {/* Column 3: WhatsApp Specialist */}
           <div className="flex items-center space-x-3 justify-center lg:border-r border-white/10 lg:pr-6 h-full">
-            <div className="bg-white/5 p-2 rounded-full text-cream flex-shrink-0">
-              <Image src="/images/whatsapp_icon.svg" alt="WhatsApp" width={22} height={22} className="filter brightness-0 invert" />
-            </div>
+            <Image src="/images/whatsapp_icon.svg" alt="WhatsApp" width={28} height={28} className="filter brightness-0 invert w-7 h-7 flex-shrink-0" />
             <div className="flex flex-col text-left">
               <span className="font-instrument text-[10px] md:text-xs font-semibold text-cream leading-tight">Talk to our specialist?</span>
               <a
@@ -82,9 +80,7 @@ export default function Hero() {
 
           {/* Column 4: Opening Hours */}
           <div className="flex items-center space-x-3 justify-center h-full">
-            <div className="bg-white/5 p-2.5 rounded-full text-cream flex-shrink-0">
-              <Clock className="w-5 h-5 text-cream" />
-            </div>
+            <Clock className="w-7 h-7 text-white flex-shrink-0" />
             <div className="flex flex-col text-left">
               <span className="font-instrument text-[10px] md:text-xs font-semibold text-cream leading-tight">Opening Hours</span>
               <span className="font-instrument text-xs md:text-sm text-white mt-0.5 font-semibold">
