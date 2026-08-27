@@ -660,6 +660,107 @@ export default function ServicesGrid() {
                 );
               }
 
+              if (service.id === "oral-surgery") {
+                return (
+                  <motion.div
+                    key={service.id}
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                    className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                  >
+                    <div className="flex flex-col h-[750px] lg:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
+                      {/* Top Image */}
+                      <div className="relative w-full h-[220px] flex-shrink-0">
+                        <Image
+                          src="/images/Oral Surgery.jpg"
+                          alt="Oral Surgery"
+                          fill
+                          className="object-cover"
+                          priority={i < 2}
+                        />
+                      </div>
+                      
+                      {/* Card Body */}
+                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
+                        {/* Title */}
+                        <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
+                          Oral Surgery
+                        </h3>
+                        
+                        {/* Description */}
+                        <p className="font-instrument text-text-dark text-sm leading-relaxed mb-4 max-w-sm">
+                          A range of procedures designed to treat conditions that cannot always be addressed through routine dental treatment.
+                        </p>
+                        
+                        {/* Icons Grid */}
+                        <div className="grid grid-cols-2 w-full border-t border-b border-gray-100 my-2 mt-auto">
+                          {/* Cell 1: Dental Surgical Extraction */}
+                          <div className="flex flex-col items-center justify-center p-4 border-r border-b border-gray-100 min-h-[110px]">
+                            <div className="relative w-10 h-10 mb-2">
+                              <Image
+                                src="/images/Dental Surgical Extraction.svg"
+                                alt="Dental Surgical Extraction"
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                            <span className="font-instrument text-[11px] font-semibold text-text-dark leading-tight">
+                              Dental Surgical Extraction
+                            </span>
+                          </div>
+
+                          {/* Cell 2: Oral Cyst & Lesion Removal */}
+                          <div className="flex flex-col items-center justify-center p-4 border-b border-gray-100 min-h-[110px]">
+                            <div className="relative w-10 h-10 mb-2">
+                              <Image
+                                src="/images/Oral Cyst & Lesion Removal.svg"
+                                alt="Oral Cyst & Lesion Removal"
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                            <span className="font-instrument text-[11px] font-semibold text-text-dark leading-tight">
+                              Oral Cyst & Lesion Removal
+                            </span>
+                          </div>
+
+                          {/* Cell 3: Complex Tooth Extraction */}
+                          <div className="flex flex-col items-center justify-center p-4 border-r border-gray-100 min-h-[110px]">
+                            <div className="relative w-10 h-10 mb-2">
+                              <Image
+                                src="/images/Complex Tooth Extraction.svg"
+                                alt="Complex Tooth Extraction"
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                            <span className="font-instrument text-[11px] font-semibold text-text-dark leading-tight">
+                              Complex Tooth Extraction
+                            </span>
+                          </div>
+
+                          {/* Cell 4: Empty */}
+                          <div className="flex flex-col items-center justify-center p-4 min-h-[110px]">
+                            {/* Empty container */}
+                          </div>
+                        </div>
+
+                        {/* Know More Button */}
+                        <div className="mt-4 w-full flex justify-center">
+                          <Link
+                            href="/services/oral-surgery"
+                            className="border border-[#62826B] hover:bg-[#62826B] text-[#62826B] hover:text-white font-instrument text-xs font-semibold px-8 py-2.5 rounded-[12px] transition-all duration-200"
+                          >
+                            Know More
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              }
+
               if (service.id === "pediatric-dentistry") {
                 return (
                   <motion.div

@@ -68,6 +68,13 @@ export const services: Service[] = [
     image: "/images/3124.jpg"
   },
   {
+    id: "oral-surgery",
+    title: "Oral Surgery",
+    description: "A range of procedures designed to treat conditions that cannot always be addressed through routine dental treatment.",
+    slug: "oral-surgery",
+    image: "/images/Oral Surgery.jpg"
+  },
+  {
     id: "pediatric-dentistry",
     title: "Pediatric Dentistry",
     description: "Our goal is to ensure healthy teeth while building lifelong positive dental habits of Infants and teenagers.",
