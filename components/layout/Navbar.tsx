@@ -48,10 +48,11 @@ export default function Navbar() {
   ];
 
   const navLinks = [
-    { name: "ABOUT", href: "/about" },
+    { name: "ABOUT US", href: "/about" },
     { name: "TREATMENTS", href: "/services", dropdown: servicesDropdown },
     { name: "TECHNOLOGY", href: "/technology" },
     { name: "GALLERY", href: "/gallery" },
+    { name: "AWARDS", href: "/awards" },
     { name: "CONTACT", href: "/contact" },
   ];
 

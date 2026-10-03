@@ -49,6 +49,24 @@ export default function ContactPage() {
       return;
     }
 
+    // 1. Dispatch form submission to drpritimunde@gmail.com
+    try {
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "contact",
+          name: formState.name,
+          email: formState.email,
+          phone: formState.phone,
+          message: formState.message,
+        }),
+      }).catch((err) => console.error("Error dispatching email:", err));
+    } catch (err) {
+      console.error("Error dispatching email:", err);
+    }
+
+    // 2. Open WhatsApp chat
     const messageText = `Hello DDS Dental Clinic, I would like to get in touch. Here are my details:
 Name: ${formState.name}
 Email: ${formState.email}
@@ -184,10 +202,10 @@ Message: ${formState.message}`;
                 <div className="space-y-1">
                   <h4 className="font-caudex font-bold text-base text-primary">Send a Message</h4>
                   <a
-                    href="mailto:consult@dentsspa.com"
+                    href="mailto:drpritimunde@gmail.com"
                     className="block font-instrument text-xs text-text-dark/85 hover:text-[#62826B] transition-colors"
                   >
-                    consult@dentsspa.com
+                    drpritimunde@gmail.com
                   </a>
                 </div>
               </div>
@@ -300,6 +318,47 @@ Message: ${formState.message}`;
             )}
           </motion.div>
 
+        </div>
+      </section>
+
+      {/* ── 4. Google Maps Location Section ── */}
+      <section className="py-16 md:py-20 bg-[#FFF8EE] border-t border-primary/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+            <div>
+              <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#62826B]">
+                LOCATION & DIRECTIONS
+              </span>
+              <h2 className="font-caudex font-bold text-3xl md:text-4xl text-primary mt-1">
+                Find Us on Google Maps
+              </h2>
+            </div>
+            <a
+              href="https://www.google.com/maps/place/DDS-+Digital+Dentistry+Specialist/@18.5223136,73.8211891,3303m/data=!3m1!1e3!4m6!3m5!1s0x3bc2c086c27e26eb:0xeaaa4f94877dfb99!8m2!3d18.5325215!4d73.8340809!16s%2Fg%2F1v_s4bxq?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#380920] hover:bg-[#380920]/90 text-white font-instrument text-sm font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:scale-[1.02] flex-shrink-0 w-fit"
+            >
+              <MapPin className="w-4 h-4 text-cream" />
+              <span>Open in Google Maps</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          {/* Interactive Map Frame */}
+          <div className="relative w-full h-[360px] sm:h-[450px] md:h-[500px] rounded-3xl overflow-hidden shadow-md border border-border-neutral bg-white">
+            <iframe
+              title="DDS Digital Dentistry Specialist Google Maps Location"
+              src="https://maps.google.com/maps?q=DDS-+Digital+Dentistry+Specialist+Model+Colony+Pune&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            />
+          </div>
         </div>
       </section>
 

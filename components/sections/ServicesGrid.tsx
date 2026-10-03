@@ -65,22 +65,11 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[530px] lg:h-[480px]"
                   >
-                    <div className="flex flex-col h-[750px] lg:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
-                      {/* Top Image */}
-                      <div className="relative w-full h-[220px] flex-shrink-0">
-                        <Image
-                          src="/images/74143.jpg"
-                          alt="General & Family Dentistry"
-                          fill
-                          className="object-cover"
-                          priority={i < 2}
-                        />
-                      </div>
-                      
+                    <div className="flex flex-col h-[530px] lg:h-[480px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Card Body */}
-                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
+                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center justify-between">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
                           General & Family Dentistry
@@ -188,22 +177,11 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[530px] lg:h-[480px]"
                   >
-                    <div className="flex flex-col h-[750px] lg:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
-                      {/* Top Image */}
-                      <div className="relative w-full h-[220px] flex-shrink-0">
-                        <Image
-                          src="/images/15279.jpg"
-                          alt="Cosmetic Dentistry"
-                          fill
-                          className="object-cover"
-                          priority={i < 2}
-                        />
-                      </div>
-                      
+                    <div className="flex flex-col h-[530px] lg:h-[480px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Card Body */}
-                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
+                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center justify-between">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
                           Cosmetic Dentistry
@@ -311,22 +289,11 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[530px] lg:h-[480px]"
                   >
-                    <div className="flex flex-col h-[750px] lg:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
-                      {/* Top Image */}
-                      <div className="relative w-full h-[220px] flex-shrink-0">
-                        <Image
-                          src="/images/54356.jpg"
-                          alt="Orthodontics"
-                          fill
-                          className="object-cover"
-                          priority={i < 2}
-                        />
-                      </div>
-                      
+                    <div className="flex flex-col h-[530px] lg:h-[480px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Card Body */}
-                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
+                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center justify-between">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
                           Orthodontics
@@ -434,22 +401,11 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[530px] lg:h-[480px]"
                   >
-                    <div className="flex flex-col h-[750px] lg:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
-                      {/* Top Image */}
-                      <div className="relative w-full h-[220px] flex-shrink-0">
-                        <Image
-                          src="/images/9350.jpg"
-                          alt="Dental Implants"
-                          fill
-                          className="object-cover"
-                          priority={i < 2}
-                        />
-                      </div>
-                      
+                    <div className="flex flex-col h-[530px] lg:h-[480px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Card Body */}
-                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
+                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center justify-between">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
                           Dental Implants
@@ -557,22 +513,11 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[530px] lg:h-[480px]"
                   >
-                    <div className="flex flex-col h-[750px] lg:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
-                      {/* Top Image */}
-                      <div className="relative w-full h-[220px] flex-shrink-0">
-                        <Image
-                          src="/images/3124.jpg"
-                          alt="Micro-Endodontics (Root Canal Treatment)"
-                          fill
-                          className="object-cover"
-                          priority={i < 2}
-                        />
-                      </div>
-                      
+                    <div className="flex flex-col h-[530px] lg:h-[480px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Card Body */}
-                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
+                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center justify-between">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
                           Root Canal Treatment
@@ -667,22 +612,11 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[530px] lg:h-[480px]"
                   >
-                    <div className="flex flex-col h-[750px] lg:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
-                      {/* Top Image */}
-                      <div className="relative w-full h-[220px] flex-shrink-0">
-                        <Image
-                          src="/images/Oral Surgery.jpg"
-                          alt="Oral Surgery"
-                          fill
-                          className="object-cover"
-                          priority={i < 2}
-                        />
-                      </div>
-                      
+                    <div className="flex flex-col h-[530px] lg:h-[480px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Card Body */}
-                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
+                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center justify-between">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
                           Oral Surgery
@@ -768,22 +702,11 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[530px] lg:h-[480px]"
                   >
-                    <div className="flex flex-col h-[750px] lg:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
-                      {/* Top Image */}
-                      <div className="relative w-full h-[220px] flex-shrink-0">
-                        <Image
-                          src="/images/2151686836.jpg"
-                          alt="Pediatric Dentistry"
-                          fill
-                          className="object-cover"
-                          priority={i < 2}
-                        />
-                      </div>
-                      
+                    <div className="flex flex-col h-[530px] lg:h-[480px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Card Body */}
-                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
+                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center justify-between">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
                           Pediatric Dentistry
@@ -791,7 +714,7 @@ export default function ServicesGrid() {
                         
                         {/* Description */}
                         <p className="font-instrument text-text-dark text-sm leading-relaxed mb-4 max-w-sm">
-                          our goal is to ensure healthy teeth while building lifelong positive dental habits of Infants and teenagers.
+                          Our goal is to ensure healthy teeth while building lifelong positive dental habits of Infants and teenagers.
                         </p>
                         
                         {/* Icons Grid */}
@@ -878,22 +801,11 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[530px] lg:h-[480px]"
                   >
-                    <div className="flex flex-col h-[750px] lg:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
-                      {/* Top Image */}
-                      <div className="relative w-full h-[220px] flex-shrink-0">
-                        <Image
-                          src="/images/74182.jpg"
-                          alt="Gum & Aesthetic Gum Care"
-                          fill
-                          className="object-cover"
-                          priority={i < 2}
-                        />
-                      </div>
-                      
+                    <div className="flex flex-col h-[530px] lg:h-[480px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Card Body */}
-                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
+                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center justify-between">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
                           Periodontics
@@ -988,22 +900,11 @@ export default function ServicesGrid() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                    className="snap-center flex-shrink-0 flex flex-col h-[530px] lg:h-[480px]"
                   >
-                    <div className="flex flex-col h-[750px] lg:h-[680px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
-                      {/* Top Image */}
-                      <div className="relative w-full h-[220px] flex-shrink-0">
-                        <Image
-                          src="/images/182891.jpg"
-                          alt="Additional Specialized Care"
-                          fill
-                          className="object-cover"
-                          priority={i < 2}
-                        />
-                      </div>
-                      
+                    <div className="flex flex-col h-[530px] lg:h-[480px] w-[290px] xs:w-[320px] md:w-[360px] bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-lg transition-all duration-300">
                       {/* Card Body */}
-                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center">
+                      <div className="flex flex-col flex-1 px-6 py-6 text-center items-center justify-between">
                         {/* Title */}
                         <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary mb-3">
                           Additional Specialized Care
@@ -1111,7 +1012,7 @@ export default function ServicesGrid() {
                   initial={{ opacity: 0, y: 25 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="snap-center flex-shrink-0 flex flex-col h-[750px] lg:h-[680px]"
+                  className="snap-center flex-shrink-0 flex flex-col h-[530px] lg:h-[480px]"
                 >
                   <Link
                     href={`/services/${service.slug}`}

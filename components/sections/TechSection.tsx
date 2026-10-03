@@ -21,8 +21,8 @@ export default function TechSection() {
       image: "/images/aqucare-4000x4000-11th-march-5-e1765274428125.jpg",
     },
     {
-      title: "Zoom Whitening: Oral Care gel",
-      image: "/images/69b88da312b948e7a0d2ae6800b2c6e1.webp",
+      title: "Zoom Whitening",
+      image: "/images/ZOOM WHITENING.png",
     },
     {
       title: "CEREC system",
@@ -34,7 +34,7 @@ export default function TechSection() {
     },
     {
       title: "MELAG Class B Autoclave",
-      image: "/images/Melag-vacuclave-41b-side.jpg",
+      image: "/images/MELAG Class B.png",
     },
     {
       title: "3 Shape Scanner",
@@ -42,7 +42,7 @@ export default function TechSection() {
     },
     {
       title: "Primescan Scanner",
-      image: "/images/corp-press-image-primemill.png",
+      image: "/images/Primescan.png",
     },
     {
       title: "Orthophos S CBCT",
@@ -107,12 +107,12 @@ export default function TechSection() {
                 className="snap-start flex-shrink-0 flex flex-col w-[280px] sm:w-[300px] bg-white rounded-[20px] overflow-hidden border border-border-neutral shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 h-[380px]"
               >
                 {/* Card image */}
-                <div className="relative h-[200px] w-full overflow-hidden bg-card-bg">
+                <div className="relative h-[200px] w-full overflow-hidden bg-card-bg flex items-center justify-center">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover hover:scale-[1.04] transition-transform duration-500"
+                    className="object-contain p-3 hover:scale-[1.04] transition-transform duration-500"
                   />
                 </div>
 

@@ -7,7 +7,7 @@
     },
     "about": {
       "title": "About Dr. Priti Munde & DDS Dental Clinic",
-      "description": "Learn about our clinical director Dr. Priti Munde (BDS) and our 15+ years of delivering world-class dental care in Pune.",
+      "description": "Learn about our clinical director Dr. Priti Munde (BDS) and our 18+ years of delivering world-class dental care in Pune.",
       "keywords": "Dr Priti Munde, dental team Pune, dentist profile, clinic history"
     },
     "contact": {
@@ -29,6 +29,11 @@
       "title": "Oral Surgery & Impacted Tooth Extraction | DDS",
       "description": "Expert oral surgery solutions including wisdom tooth extractions, gummy smile correction, apicoectomies, and pre-implant surgery.",
       "keywords": "oral surgery, wisdom tooth removal, surgical extraction, gummy smile correction, apicoectomy"
+    },
+    "awards": {
+      "title": "Awards & Recognitions | DDS Dental Clinic",
+      "description": "Discover our awards, honors, and recognitions for excellence in dentistry and patient care.",
+      "keywords": "dentist awards, dental recognition Pune, clinic excellence"
     }
   },
   "analytics": {

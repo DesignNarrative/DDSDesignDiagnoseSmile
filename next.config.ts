@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
       img-src 'self' blob: data: https:;
       font-src 'self' https://fonts.gstatic.com;
+      frame-src 'self' https://www.google.com https://maps.google.com;
       object-src 'none';
       base-uri 'self';
       form-action 'self';

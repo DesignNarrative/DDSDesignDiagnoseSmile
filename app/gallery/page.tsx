@@ -3,12 +3,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Clock, Mail } from "lucide-react";
 import CTABanner from "@/components/sections/CTABanner";
 import ContactInfoBar from "@/components/sections/ContactInfoBar";
 
 export default function GalleryPage() {
-  const [filter, setFilter] = useState<"all" | "facilities" | "services">("all");
+  const [mediaType, setMediaType] = useState<"photos" | "videos">("photos");
   const [visibleGalleryCount, setVisibleGalleryCount] = useState(8);
   const [visibleCelebrityCount, setVisibleCelebrityCount] = useState(6);
 
@@ -31,6 +30,29 @@ export default function GalleryPage() {
     { src: "/images/carousel_4.png", alt: "Premium Lounge & Reception", type: "facilities" }
   ];
 
+  const galleryVideos = [
+    {
+      src: "/images/home_page_banner_video.mp4",
+      title: "Clinic Experience & Precision Care",
+      poster: "/images/carousel_1.png"
+    },
+    {
+      src: "/images/snapinsta_patient.mp4",
+      title: "Patient Smile Consultation",
+      poster: "/images/gallery_service_12.jpeg"
+    },
+    {
+      src: "/images/advanced_solutions_video.mp4",
+      title: "Advanced Dental Solutions",
+      poster: "/images/gallery_service_1.jpg"
+    },
+    {
+      src: "/images/dental_implant_video.mp4",
+      title: "Digital Smile Designing & Implants",
+      poster: "/images/gallery_service_8.jpg"
+    }
+  ];
+
   const celebrityImages = [
     { src: "/images/celebrity_patient_141101.png", alt: "Happy Patient 1" },
     { src: "/images/celebrity_patient_141413.png", alt: "Happy Patient 2" },
@@ -39,11 +61,6 @@ export default function GalleryPage() {
     { src: "/images/celebrity_patient_142717.png", alt: "Happy Patient 5" },
     { src: "/images/celebrity_patient_new.jpeg", alt: "Happy Patient 6" }
   ];
-
-  const filteredImages = localGalleryImages.filter((img) => {
-    if (filter === "all") return true;
-    return img.type === filter;
-  });
 
   const loadMoreGallery = () => {
     setVisibleGalleryCount((prev) => prev + 4);
@@ -104,49 +121,113 @@ export default function GalleryPage() {
       {/* ── 2. Contact Info Bar ── */}
       <ContactInfoBar />
 
-      {/* ── 3. Filters & Main Gallery Grid Section ── */}
+      {/* ── 3. Main Gallery Grid Section (Photos & Videos Toggle) ── */}
       <section className="py-20 bg-[#FFF8EE]/30">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Photo Grid */}
-          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <AnimatePresence mode="popLayout">
-              {filteredImages.slice(0, visibleGalleryCount).map((img, i) => (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
-                  key={i}
-                  className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm border border-border-neutral bg-white group hover:shadow-md transition-shadow duration-300"
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-[#380920]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 text-center">
-                    <span className="font-caudex font-bold text-white text-sm md:text-base">
-                      {img.alt}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-
-          {/* Load More Button */}
-          {visibleGalleryCount < filteredImages.length && (
-            <div className="text-center pt-12">
+          
+          {/* Photos & Videos Toggle Button */}
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex bg-white p-1.5 rounded-full border border-border-neutral/60 shadow-sm">
               <button
-                onClick={loadMoreGallery}
-                className="font-instrument text-xs font-bold border border-[#380920] text-[#380920] hover:bg-[#380920] hover:text-white px-8 py-2.5 rounded-[12px] transition-all duration-300"
+                onClick={() => setMediaType("photos")}
+                className={`px-8 py-2.5 rounded-full text-sm font-instrument font-bold transition-all duration-300 ${
+                  mediaType === "photos"
+                    ? "bg-[#380920] text-white shadow-sm"
+                    : "text-text-dark hover:text-primary hover:bg-[#FFF8EE]"
+                }`}
               >
-                Load More...
+                Photos
+              </button>
+              <button
+                onClick={() => setMediaType("videos")}
+                className={`px-8 py-2.5 rounded-full text-sm font-instrument font-bold transition-all duration-300 ${
+                  mediaType === "videos"
+                    ? "bg-[#380920] text-white shadow-sm"
+                    : "text-text-dark hover:text-primary hover:bg-[#FFF8EE]"
+                }`}
+              >
+                Videos
               </button>
             </div>
+          </div>
+
+          {/* Photos View */}
+          {mediaType === "photos" && (
+            <>
+              <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <AnimatePresence mode="popLayout">
+                  {localGalleryImages.slice(0, visibleGalleryCount).map((img, i) => (
+                    <motion.div
+                      layout
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.4 }}
+                      key={i}
+                      className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm border border-border-neutral bg-white group hover:shadow-md transition-shadow duration-300"
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-[#380920]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 text-center">
+                        <span className="font-caudex font-bold text-white text-sm md:text-base">
+                          {img.alt}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </motion.div>
+
+              {/* Load More Photos Button */}
+              {visibleGalleryCount < localGalleryImages.length && (
+                <div className="text-center pt-12">
+                  <button
+                    onClick={loadMoreGallery}
+                    className="font-instrument text-xs font-bold border border-[#380920] text-[#380920] hover:bg-[#380920] hover:text-white px-8 py-2.5 rounded-[12px] transition-all duration-300"
+                  >
+                    Load More...
+                  </button>
+                </div>
+              )}
+            </>
+          )}
+
+          {/* Videos View */}
+          {mediaType === "videos" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"
+            >
+              {galleryVideos.map((video, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border-neutral group hover:shadow-md transition-shadow duration-300 flex flex-col"
+                >
+                  <div className="relative aspect-video w-full bg-black">
+                    <video
+                      src={video.src}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      poster={video.poster}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4 bg-white text-center">
+                    <span className="font-caudex font-bold text-base text-primary">
+                      {video.title}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
           )}
 
         </div>
@@ -167,7 +248,7 @@ export default function GalleryPage() {
             <div className="w-16 h-1 bg-primary rounded-full"></div>
           </div>
 
-          {/* Celebrity Grid (6 cards total: 5 celebrity photos, 6th is light grey placeholder to match layout) */}
+          {/* Celebrity Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {celebrityImages.slice(0, visibleCelebrityCount).map((img, i) => (
               <motion.div
@@ -188,7 +269,7 @@ export default function GalleryPage() {
               </motion.div>
             ))}
 
-            {/* 6th Slot Placeholder (Matches layout exactly) */}
+            {/* 6th Slot Placeholder */}
             {visibleCelebrityCount >= 6 && celebrityImages.length < 6 && (
               <motion.div
                 initial={{ opacity: 0, y: 25 }}

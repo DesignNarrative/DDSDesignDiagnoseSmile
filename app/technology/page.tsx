@@ -12,7 +12,7 @@ export default function TechnologyPage() {
     {
       name: "Zoom Whitening",
       desc: "Professional in clinic teeth whitening system that delivers a noticeably brighter smile in just one appointment.",
-      image: "/images/69b88da312b948e7a0d2ae6800b2c6e1.webp",
+      image: "/images/ZOOM WHITENING.png",
     },
     {
       name: "Aquacare Air Abrasion Unit",
@@ -37,7 +37,7 @@ export default function TechnologyPage() {
     {
       name: "MELAG Class B Autoclave",
       desc: "International-standard sterilization system ensuring the highest level of infection control and patient safety.",
-      image: "/images/69b88da312b948e7a0d2ae6800b2c6e1.webp", // Note: user specified this image in query
+      image: "/images/MELAG Class B.png",
     },
     {
       name: "3 Shape Scanner",
@@ -47,7 +47,7 @@ export default function TechnologyPage() {
     {
       name: "Primescan Scanner",
       desc: "Next-generation intraoral scanner delivering exceptional accuracy for restorative, implant, and orthodontic treatments.",
-      image: "/images/corp-press-image-primemill.png",
+      image: "/images/Primescan.png",
     },
     {
       name: "Dentsply Sirona Sinius Chair",

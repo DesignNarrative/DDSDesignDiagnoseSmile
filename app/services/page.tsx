@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import SmallBookingCTA from "@/components/sections/SmallBookingCTA";
@@ -110,32 +109,19 @@ export default function ServicesPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-white rounded-[24px] overflow-hidden border border-border-neutral shadow-sm hover:shadow-lg hover:border-[#62826B]/30 hover:bg-[#62826B]/5 transition-all duration-300 flex flex-col justify-between group"
               >
-                <Link href={service.slug} className="flex flex-col h-full flex-grow justify-between">
+                <Link href={service.slug} className="flex flex-col h-full flex-grow justify-between p-6 sm:p-8">
                   <div className="flex flex-col flex-grow">
-                    {/* Visual frame with zoom animation */}
-                    <div className="relative h-[220px] w-full overflow-hidden bg-card-bg flex-shrink-0">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    {/* Description info */}
-                    <div className="p-6 space-y-3 flex-grow">
-                      <h3 className="font-caudex font-bold text-xl text-primary group-hover:text-[#62826B] transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="font-instrument text-sm text-text-dark leading-relaxed">
-                        {service.desc}
-                      </p>
-                    </div>
+                    {/* Title and Description */}
+                    <h3 className="font-caudex font-bold text-xl md:text-2xl text-primary group-hover:text-[#62826B] transition-colors mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="font-instrument text-sm text-text-dark leading-relaxed mb-6">
+                      {service.desc}
+                    </p>
                   </div>
-                  <div className="p-6 pt-0 flex flex-wrap gap-4">
-                    <div className="inline-flex items-center gap-1.5 font-instrument font-bold text-sm text-[#62826B] group-hover:text-primary transition-colors">
-                      View Details
-                      <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-                    </div>
+                  <div className="inline-flex items-center gap-1.5 font-instrument font-bold text-sm text-[#62826B] group-hover:text-primary transition-colors mt-auto">
+                    View Details
+                    <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
                   </div>
                 </Link>
               </motion.div>

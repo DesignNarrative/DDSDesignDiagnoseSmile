@@ -60,6 +60,26 @@ export default function BookPage() {
       return;
     }
 
+    // 1. Dispatch booking details to drpritimunde@gmail.com
+    try {
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "appointment",
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          date: formData.date,
+          service: selectedService,
+          timeSlot: selectedTimeSlot,
+        }),
+      }).catch((err) => console.error("Error dispatching booking email:", err));
+    } catch (err) {
+      console.error("Error dispatching booking email:", err);
+    }
+
+    // 2. Open WhatsApp chat
     const messageText = `Hello DDS Dental Clinic, I would like to book an appointment. Here are my details:
 Service: ${selectedService}
 Name: ${formData.name}

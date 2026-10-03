@@ -10,7 +10,7 @@ export default function Footer() {
     { name: "About Us", href: "/about" },
     { name: "Technology", href: "/#technology" },
     { name: "Happy Clients", href: "/#clients" },
-    { name: "Awards", href: "/about#achievements" },
+    { name: "Awards", href: "/awards" },
     { name: "Dental Gallery", href: "/gallery" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
@@ -31,7 +31,7 @@ export default function Footer() {
 
   const socials = [
     { icon: "/images/call_icon.svg", href: "tel:+919673004407", label: "Phone" },
-    { icon: "/images/email_icon.svg", href: "mailto:consult@dentsspa.com", label: "Email" },
+    { icon: "/images/email_icon.svg", href: "mailto:drpritimunde@gmail.com", label: "Email" },
     { icon: "/images/facebook.svg", href: "#", label: "Facebook" },
     { icon: "/images/linkedin.svg", href: "#", label: "LinkedIn" },
   ];
@@ -53,7 +53,7 @@ export default function Footer() {
             />
           </Link>
           <p className="font-alex text-4xl text-cream-light mt-2 tracking-wide leading-none">
-            Diagnose. Design. Smile
+            Digital. Dentistry. Specialist.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center space-x-3">
               <Mail className="w-4 h-4 text-cream flex-shrink-0" />
-              <a href="mailto:consult@dentsspa.com" className="hover:text-cream transition-colors">consult@dentsspa.com</a>
+              <a href="mailto:drpritimunde@gmail.com" className="hover:text-cream transition-colors">drpritimunde@gmail.com</a>
             </li>
             <li className="flex items-start space-x-3">
               <Clock className="w-4 h-4 text-cream flex-shrink-0 mt-0.5" />
