@@ -70,13 +70,8 @@ export default function AwardsPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* ── 1. Contact Info Bar ── */}
-      <div className="pt-20">
-        <ContactInfoBar />
-      </div>
-
-      {/* ── 2. Awards & Recognitions Banner ── */}
-      <section className="relative w-full aspect-[6836/3535] overflow-hidden flex items-center bg-[#380920]">
+      {/* ── 1. Awards & Recognitions Banner ── */}
+      <section className="relative w-full aspect-[6836/3535] min-h-[280px] sm:min-h-[360px] pt-16 sm:pt-20 overflow-hidden flex items-center bg-[#380920]">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/image_45.jpg"
@@ -102,6 +97,9 @@ export default function AwardsPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* ── 2. Contact Info Bar (18+ Years Experience, WhatsApp, Timings) ── */}
+      <ContactInfoBar />
 
       {/* ── 3. Timeline Awards Section ── */}
       <section ref={ref} className="py-20 bg-[#FFF8EE]/30">
