@@ -519,7 +519,7 @@ export default function AboutPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/cta_banner.jpg"
+            src="/images/3037082222.jpg"
             alt="Book dental care session"
             fill
             className="object-cover"

@@ -41,23 +41,19 @@ export default function StatsBar() {
   const stats = [
     {
       value: "18+",
-      label: "Years of Experience",
-      sublabel: "",
+      label: "YEARS OF EXPERIENCE",
     },
     {
       value: "2,500+",
-      label: "Teeth Saved",
-      sublabel: "MICROSCOPE-ASSISTED ROOT CANALS",
+      label: "MICROSCOPE-ASSISTED ROOT CANALS",
     },
     {
       value: "1,000+",
-      label: "Smiles Transformed",
-      sublabel: "COSMETIC SMILE DESIGNING CASES",
+      label: "COSMETIC SMILE DESIGNING CASES",
     },
     {
       value: "750+",
-      label: "Implants Placed",
-      sublabel: "DENTAL IMPLANTS",
+      label: "DENTAL IMPLANTS",
     },
   ];
 
@@ -74,14 +70,9 @@ export default function StatsBar() {
               className="flex flex-col items-center text-center px-2 sm:px-4 py-4 md:py-0 justify-start"
             >
               <AnimatedNumber value={stat.value} />
-              <span className="font-instrument text-sm sm:text-base text-cream-light font-semibold leading-snug mt-1">
+              <span className="font-instrument text-sm sm:text-base text-cream-light font-semibold leading-snug mt-1 max-w-[220px]">
                 {stat.label}
               </span>
-              {stat.sublabel && (
-                <span className="font-montserrat text-[10px] sm:text-[11px] md:text-xs text-cream-light/75 font-medium uppercase tracking-wider mt-1 max-w-[210px] leading-tight">
-                  {stat.sublabel}
-                </span>
-              )}
             </motion.div>
           ))}
         </div>

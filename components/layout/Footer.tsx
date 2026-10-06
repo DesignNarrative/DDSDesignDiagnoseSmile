@@ -40,21 +40,18 @@ export default function Footer() {
     <footer className="bg-[#380920] text-white border-t border-primary/20">
       {/* Top Footer Section */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        {/* Brand & Tagline */}
+        {/* Brand */}
         <div className="flex flex-col space-y-6">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/dds_final_logo_white.png"
+              src="/images/DDS_logo_whiteeeee.png"
               alt="DDS Dental Clinic Logo"
-              width={140}
-              height={45}
+              width={160}
+              height={50}
               className="object-contain"
               priority
             />
           </Link>
-          <p className="font-alex text-4xl text-cream-light mt-2 tracking-wide leading-none">
-            Digital. Dentistry. Specialist.
-          </p>
         </div>
 
         {/* Quick Links */}

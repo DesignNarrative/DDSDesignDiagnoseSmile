@@ -203,7 +203,7 @@ export default function AwardsPage() {
       <section className="relative w-full h-[220px] md:h-[260px] overflow-hidden flex items-center bg-primary">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/cta_banner.jpg"
+            src="/images/3037082222.jpg"
             alt="Book dental care session"
             fill
             className="object-cover"

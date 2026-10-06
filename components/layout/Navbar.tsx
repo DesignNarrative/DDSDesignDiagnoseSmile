@@ -64,7 +64,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="/images/dds_final_logo_white.png"
+            src="/images/DDS_logo_whiteeeee.png"
             alt="DDS Dental Clinic Logo"
             width={160}
             height={50}
