@@ -35,7 +35,7 @@ export default function Hero() {
       </section>
 
       {/* ── PART 2: Dark Brown Contact & Info Bar ── */}
-      <ContactInfoBar />
+      <ContactInfoBar showGoogleRating={false} />
     </div>
   );
 }

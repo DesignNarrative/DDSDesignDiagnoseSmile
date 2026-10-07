@@ -61,7 +61,7 @@ export default function BookPage() {
       return;
     }
 
-    // 1. Dispatch booking details to drpritimunde@gmail.com
+    // 1. Dispatch booking details to dr.pritimunde@gmail.com
     try {
       fetch("/api/contact", {
         method: "POST",

@@ -49,7 +49,7 @@ export default function ContactPage() {
       return;
     }
 
-    // 1. Dispatch form submission to drpritimunde@gmail.com
+    // 1. Dispatch form submission to dr.pritimunde@gmail.com
     try {
       fetch("/api/contact", {
         method: "POST",
@@ -171,10 +171,10 @@ Message: ${formState.message}`;
                 <div className="space-y-1">
                   <h4 className="font-caudex font-bold text-base text-primary">Send a Message</h4>
                   <a
-                    href="mailto:drpritimunde@gmail.com"
+                    href="mailto:dr.pritimunde@gmail.com"
                     className="block font-instrument text-xs text-text-dark/85 hover:text-[#62826B] transition-colors"
                   >
-                    drpritimunde@gmail.com
+                    dr.pritimunde@gmail.com
                   </a>
                 </div>
               </div>

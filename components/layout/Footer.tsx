@@ -30,7 +30,7 @@ export default function Footer() {
 
   const socials = [
     { icon: "/images/call_icon.svg", href: "tel:+919673004407", label: "Phone" },
-    { icon: "/images/email_icon.svg", href: "mailto:drpritimunde@gmail.com", label: "Email" },
+    { icon: "/images/email_icon.svg", href: "mailto:dr.pritimunde@gmail.com", label: "Email" },
     {
       icon: "/images/instagram.svg",
       href: "https://www.instagram.com/digitaldentistryspecialist?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw%3D%3D",
@@ -117,7 +117,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center space-x-3">
               <Mail className="w-4 h-4 text-cream flex-shrink-0" />
-              <a href="mailto:drpritimunde@gmail.com" className="hover:text-cream transition-colors">drpritimunde@gmail.com</a>
+              <a href="mailto:dr.pritimunde@gmail.com" className="hover:text-cream transition-colors">dr.pritimunde@gmail.com</a>
             </li>
             <li className="flex items-start space-x-3">
               <Clock className="w-4 h-4 text-cream flex-shrink-0 mt-0.5" />

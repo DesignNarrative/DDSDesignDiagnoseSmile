@@ -44,7 +44,7 @@ export async function POST(req: Request) {
       console.error("Error saving lead to data/leads.json:", saveError);
     }
 
-    // 2. Dispatch email directly to drpritimunde@gmail.com via FormSubmit AJAX service
+    // 2. Dispatch email directly to dr.pritimunde@gmail.com via FormSubmit AJAX service
     try {
       const payload: Record<string, string> = {
         _subject: subject,
@@ -66,7 +66,7 @@ export async function POST(req: Request) {
         payload["Message / Note"] = message;
       }
 
-      await fetch("https://formsubmit.co/ajax/drpritimunde@gmail.com", {
+      await fetch("https://formsubmit.co/ajax/dr.pritimunde@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
         body: JSON.stringify(payload),
       });
     } catch (emailError) {
-      console.error("Error dispatching email to drpritimunde@gmail.com:", emailError);
+      console.error("Error dispatching email to dr.pritimunde@gmail.com:", emailError);
     }
 
     return NextResponse.json({ success: true, message: "Submission received and dispatched" });

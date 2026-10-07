@@ -4,15 +4,19 @@ import React from "react";
 import Image from "next/image";
 import { Clock } from "lucide-react";
 
-export default function ContactInfoBar() {
+interface ContactInfoBarProps {
+  showGoogleRating?: boolean;
+}
+
+export default function ContactInfoBar({ showGoogleRating = true }: ContactInfoBarProps) {
   return (
     <section className="bg-[#380920] text-white py-6 md:py-8 border-t border-white/5 z-10 relative shadow-md">
       
       {/* A. DESKTOP & TABLET VIEW (Grid layout) */}
-      <div className="hidden md:grid max-w-7xl mx-auto px-8 md:px-16 lg:px-24 grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-center">
+      <div className={`hidden md:grid max-w-7xl mx-auto px-6 md:px-10 lg:px-12 ${showGoogleRating ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6' : 'grid-cols-1 md:grid-cols-3 gap-8 md:gap-4'} items-center`}>
         
         {/* Column 1: 18+ Years Experience */}
-        <div className="flex items-center space-x-3 justify-center lg:border-r border-white/10 lg:pr-6 h-full">
+        <div className="flex items-center space-x-3 justify-center lg:border-r border-white/10 lg:pr-4 h-full">
           <Image
             src="/images/Tooth.svg"
             alt="Tooth Icon"
@@ -26,7 +30,7 @@ export default function ContactInfoBar() {
         </div>
 
         {/* Column 2: WhatsApp Specialist */}
-        <div className="flex items-center space-x-3 justify-center lg:border-r border-white/10 lg:pr-6 h-full">
+        <div className="flex items-center space-x-3 justify-center lg:border-r border-white/10 lg:pr-4 h-full">
           <Image src="/images/whatsapp_icon.svg" alt="WhatsApp" width={28} height={28} className="filter brightness-0 invert w-7 h-7 flex-shrink-0" />
           <div className="flex flex-col text-left">
             <span className="font-instrument text-xs md:text-sm font-semibold text-cream leading-tight">Talk to our specialist?</span>
@@ -42,7 +46,7 @@ export default function ContactInfoBar() {
         </div>
 
         {/* Column 3: Opening Hours */}
-        <div className="flex items-center space-x-3 justify-center h-full">
+        <div className={`flex items-center space-x-3 justify-center h-full ${showGoogleRating ? 'lg:border-r border-white/10 lg:pr-4' : ''}`}>
           <Clock className="w-7 h-7 text-white flex-shrink-0" />
           <div className="flex flex-col text-left">
             <span className="font-instrument text-xs md:text-sm font-semibold text-cream leading-tight">Opening Hours</span>
@@ -52,10 +56,24 @@ export default function ContactInfoBar() {
           </div>
         </div>
 
+        {/* Column 4: Google Rating Badge (Group 70.png) */}
+        {showGoogleRating && (
+          <div className="flex items-center justify-center h-full">
+            <div className="relative w-[180px] lg:w-[210px] h-[42px]">
+              <Image
+                src="/images/Group 70.png"
+                alt="Google Rating 5.0 Stars"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+        )}
+
       </div>
 
-      {/* B. MOBILE VIEW (Aligned exactly like About page contact bar) */}
-      <div className="flex md:hidden flex-col space-y-8 px-6 max-w-7xl mx-auto">
+      {/* B. MOBILE VIEW */}
+      <div className="flex md:hidden flex-col space-y-6 px-6 max-w-7xl mx-auto">
         
         {/* Column 1: 18+ Years Experience */}
         <div className="flex items-center space-x-4">
@@ -106,6 +124,21 @@ export default function ContactInfoBar() {
             </span>
           </div>
         </div>
+
+        {/* Column 4: Google Rating Badge for Mobile */}
+        {showGoogleRating && (
+          <div className="flex justify-center pt-3 border-t border-white/10">
+            <div className="relative w-[210px] h-[46px]">
+              <Image
+                src="/images/Group 70.png"
+                alt="Google Rating 5.0 Stars"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+        )}
+
       </div>
 
     </section>

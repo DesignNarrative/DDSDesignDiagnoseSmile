@@ -88,9 +88,6 @@ export default function ServicesPage() {
       {/* Text-only Header (no banner image, matches requested text) */}
       <section className="pt-32 pb-12 px-6 bg-[#62826B]/10 border-b border-border-neutral text-center">
         <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
-          <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#62826B] mb-2">
-            OUR CATALOG
-          </span>
           <h1 className="font-caudex font-bold text-4xl md:text-5xl text-primary leading-tight">
             Dental Solutions Tailored for You
           </h1>

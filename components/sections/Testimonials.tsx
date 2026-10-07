@@ -3,7 +3,7 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { Star, ThumbsUp, Share2, MoreVertical, Play } from "lucide-react";
+import { Star, ThumbsUp, Share2, MoreVertical } from "lucide-react";
 
 interface GoogleReview {
   id: string;
@@ -33,27 +33,6 @@ export default function Testimonials() {
       [id]: !prev[id],
     }));
   };
-
-  const instagramReels = [
-    {
-      url: "https://www.instagram.com/reel/DZG11iEKD1t/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      thumbnail: "/images/untitled_design_1_first_frame.jpg",
-      isGif: true,
-      alt: "Invisalign Treatment reel"
-    },
-    {
-      url: "https://www.instagram.com/reel/Cw7qKzXSUe0/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      thumbnail: "/images/untitled_design_2_first_frame.jpg",
-      isGif: true,
-      alt: "Dental Care Treatment reel"
-    },
-    {
-      url: "https://www.instagram.com/reel/DY6U-RJqb5v/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      videoSrc: "/images/snapinsta_patient.mp4",
-      isGif: false,
-      alt: "Our happy patient reel"
-    }
-  ];
 
   const googleReviews: GoogleReview[] = [
     {
@@ -200,49 +179,6 @@ export default function Testimonials() {
           <div className="w-16 h-1 bg-primary rounded-full"></div>
         </div>
 
-        {/* Video & GIF Cards - Clicking opens Instagram reels in a new tab */}
-        <div className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 justify-start lg:grid lg:grid-cols-3 lg:overflow-visible">
-          {instagramReels.map((reel, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="snap-center flex-shrink-0 w-[280px] sm:w-[320px] lg:w-auto aspect-[9/16] relative rounded-[24px] overflow-hidden shadow-lg border border-border-neutral bg-black group"
-            >
-              <a href={reel.url} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
-                {reel.isGif ? (
-                  <Image
-                    src={reel.thumbnail || ""}
-                    alt={reel.alt}
-                    fill
-                    className="object-cover"
-                  />
-                ) : (
-                  <video
-                    src={reel.videoSrc}
-                    preload="metadata"
-                    className="w-full h-full object-cover rounded-[24px]"
-                  />
-                )}
-                
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 bg-black/35 flex items-center justify-center transition-opacity duration-300 hover:bg-black/25">
-                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 shadow-lg">
-                    <Play className="w-7 h-7 fill-white ml-1" />
-                  </div>
-                  
-                  {/* Yellow Patient Text Overlay for Reel 3 */}
-                  {!reel.isGif && (
-                    <span className="absolute top-6 left-6 font-caudex font-bold text-lg text-[#f2a900] drop-shadow-md">
-                      Our happy patient
-                    </span>
-                  )}
-                </div>
-              </a>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Google Rating Image */}
         <div className="flex justify-center mt-16 mb-8">

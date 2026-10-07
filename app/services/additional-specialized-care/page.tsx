@@ -254,8 +254,8 @@ export default function AdditionalSpecializedCarePage() {
             className="lg:col-span-5 relative aspect-[4/3] w-full rounded-[24px] overflow-hidden shadow-lg border border-white/10 bg-[#FFF8EE]"
           >
             <Image
-              src="/images/specialized_why_choose.png"
-              alt="DDS specialized care diagnostic room"
+              src="/images/123011500_5120434404649582_7473506318789910937_n (1)1111.jpg"
+              alt="Why Choose DDS for Specialized Care"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"

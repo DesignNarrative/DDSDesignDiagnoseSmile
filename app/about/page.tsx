@@ -169,7 +169,10 @@ export default function AboutPage() {
             </div>
 
             <p className="font-instrument text-text-dark text-sm md:text-base leading-relaxed">
-              As a General Dentist with over 18 years of experience, I’ve trained across three countries — India, the UK, and Austria — to bring that belief to life: a PG Diploma in Aesthetic & Restorative Dentistry (City of London Dental School), a Fellowship in Advanced Micro-Endodontics (D. Y. Patil University), and an ongoing Mastership in Laser Dentistry (Medical University of Vienna).
+              As a General Dentist with over 18 years of experience, I’ve trained across three <br />
+              countries—India, the UK, and Austria to bring that belief to life: a PG Diploma in Aesthetic & Restorative Dentistry (City of London Dental School), a Fellowship in Advanced <br />
+              Micro-Endodontics (D. Y. Patil University), and an ongoing Mastership in Laser Dentistry <br />
+              (Medical University of Vienna).
             </p>
 
             {/* Highlights List */}
