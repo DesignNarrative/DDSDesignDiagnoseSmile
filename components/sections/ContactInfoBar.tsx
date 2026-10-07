@@ -125,15 +125,15 @@ export default function ContactInfoBar({ showGoogleRating = true }: ContactInfoB
           </div>
         </div>
 
-        {/* Column 4: Google Rating Badge for Mobile */}
+        {/* Column 4: Google Rating Badge for Mobile (Left-aligned & reduced size) */}
         {showGoogleRating && (
-          <div className="flex justify-center pt-3 border-t border-white/10">
-            <div className="relative w-[210px] h-[46px]">
+          <div className="flex justify-start items-center pt-2 border-t border-white/10">
+            <div className="relative w-[155px] h-[34px]">
               <Image
                 src="/images/Group 70.png"
                 alt="Google Rating 5.0 Stars"
                 fill
-                className="object-contain"
+                className="object-contain object-left"
               />
             </div>
           </div>
