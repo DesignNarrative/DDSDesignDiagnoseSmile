@@ -13,7 +13,7 @@ function AnimatedNumber({ value }: AnimatedNumberProps) {
   const suffix = value.replace(/[\d,]/g, ""); // Get '+' or other non-numeric chars
 
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest).toLocaleString("en-US"));
+  const rounded = useTransform(count, (latest) => Math.round(latest).toString());
   const isInView = useInView(numberRef, { once: true, margin: "-100px" });
 
   useEffect(() => {
@@ -44,11 +44,11 @@ export default function StatsBar() {
       label: "YEARS OF EXPERIENCE",
     },
     {
-      value: "2,500+",
+      value: "2500+",
       label: "MICROSCOPE-ASSISTED ROOT CANALS",
     },
     {
-      value: "1,000+",
+      value: "1000+",
       label: "COSMETIC SMILE DESIGNING CASES",
     },
     {
