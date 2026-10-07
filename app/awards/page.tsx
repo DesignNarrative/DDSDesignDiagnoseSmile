@@ -53,17 +53,17 @@ export default function AwardsPage() {
     {
       year: "2022",
       title: "Dr. D. Y. Patil Institute of Management & Research (DYPIMR) — Women's Day Appreciation Award",
-      image: "/images/award_patil_2022.png"
+      image: "/images/image (2)awards.png"
     },
     {
       year: "2023",
       title: "Narishakti Puraskar — Presented by the All India Women Rights Association on the occasion of International Women's Day",
-      image: "/images/award_narishakti_2023.png"
+      image: "/images/image (2)awards.png"
     },
     {
       year: "2024",
       title: "Dnyandeep Social Foundation — Sanman Chinha (सन्मानचिन्ह) for valuable contribution to the Palkhi Health Service Camp",
-      image: "/images/award_dnyandeep_2024.png"
+      image: "/images/image (2)awards.png"
     }
   ];
 
