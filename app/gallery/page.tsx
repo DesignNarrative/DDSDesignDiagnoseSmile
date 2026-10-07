@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { Play } from "lucide-react";
 import CTABanner from "@/components/sections/CTABanner";
 import ContactInfoBar from "@/components/sections/ContactInfoBar";
 
@@ -16,7 +17,7 @@ export default function GalleryPage() {
     { src: "/images/gallery_service_2.jpg", alt: "Teeth Shade Matching", type: "services" },
     { src: "/images/gallery_service_3.jpg", alt: "Porcelain Veneers Prep", type: "services" },
     { src: "/images/gallery_service_4.jpg", alt: "Laser Whitening Session", type: "services" },
-    { src: "/images/gallery_service_5.jpg", alt: "Aesthetic Restoration", type: "services" },
+    { src: "/images/gallery_service_5.jpg", alt: "Aesthetic Restoration", type: "services", objectPosition: "center top" },
     { src: "/images/gallery_service_6.jpg", alt: "Cosmetic Bonding Case", type: "services" },
     { src: "/images/gallery_service_7.jpg", alt: "Dental Veneers Design", type: "services" },
     { src: "/images/gallery_service_8.jpg", alt: "Confidence Redefined Case", type: "services" },
@@ -32,31 +33,47 @@ export default function GalleryPage() {
 
   const galleryVideos = [
     {
-      src: "/images/home_page_banner_video.mp4",
-      title: "Clinic Experience & Precision Care",
-      poster: "/images/carousel_1.png"
+      src: "https://www.instagram.com/reel/DZG11iEKD1t/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      title: "Invisalign Treatment Reel",
+      poster: "/images/untitled_design_1_first_frame.jpg",
+      isExternal: true
+    },
+    {
+      src: "https://www.instagram.com/reel/Cw7qKzXSUe0/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      title: "Dental Care Treatment Reel",
+      poster: "/images/untitled_design_2_first_frame.jpg",
+      isExternal: true
     },
     {
       src: "/images/snapinsta_patient.mp4",
       title: "Patient Smile Consultation",
-      poster: "/images/gallery_service_12.jpeg"
+      poster: "/images/gallery_service_12.jpeg",
+      isExternal: false
+    },
+    {
+      src: "/images/home_page_banner_video.mp4",
+      title: "Clinic Experience & Precision Care",
+      poster: "/images/carousel_1.png",
+      isExternal: false
     },
     {
       src: "/images/advanced_solutions_video.mp4",
       title: "Advanced Dental Solutions",
-      poster: "/images/gallery_service_1.jpg"
+      poster: "/images/gallery_service_1.jpg",
+      isExternal: false
     },
     {
       src: "/images/dental_implant_video.mp4",
       title: "Digital Smile Designing & Implants",
-      poster: "/images/gallery_service_8.jpg"
+      poster: "/images/gallery_service_8.jpg",
+      isExternal: false
     }
   ];
 
   const celebrityImages = [
-    { src: "/images/celebrity_patient_141101.png", alt: "Happy Patient 1" },
-    { src: "/images/celebrity_patient_141413.png", alt: "Happy Patient 2" },
-    { src: "/images/celebrity_patient_141525.png", alt: "Happy Patient 3" },
+    { src: "/images/celebrity_patient_141101.png", alt: "Happy Patient 1", objectPosition: "center top" },
+    { src: "/images/celebrity_patient_141413.png", alt: "Happy Patient 2", objectPosition: "center 22%" },
+    { src: "/images/celebrity_patient_141525.png", alt: "Happy Patient 3", objectPosition: "center 22%" },
     { src: "/images/celebrity_patient_141740.png", alt: "Happy Patient 4" },
     { src: "/images/celebrity_patient_142717.png", alt: "Happy Patient 5" },
     { src: "/images/celebrity_patient_new.jpeg", alt: "Happy Patient 6" }
@@ -74,47 +91,16 @@ export default function GalleryPage() {
     <div className="flex flex-col min-h-screen">
       
       {/* ── 1. Header Banner Section ── */}
-      <section className="relative w-full h-[55vh] sm:h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[350px] sm:min-h-[500px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
+      <section className="relative w-full h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[85vh] min-h-[250px] sm:min-h-[450px] md:min-h-[600px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          {/* Mobile view banner */}
           <Image
-            src="/images/M12.jpg"
+            src="/images/banner 13.jpg"
             alt="DDS Gallery Banner"
             fill
-            className="object-cover object-center md:hidden"
+            className="object-cover object-center"
             priority
           />
-          {/* Desktop/Tablet view banner */}
-          <Image
-            src="/images/gallery_banner_new.png"
-            alt="DDS Gallery Banner"
-            fill
-            className="object-cover object-[center_30%] hidden md:block"
-            priority
-          />
-          {/* Dark overlay for white text readability */}
-          <div className="absolute inset-0 bg-black/35" />
-        </div>
-
-        {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center md:text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="hidden md:flex flex-col items-center md:items-start justify-center space-y-4 max-w-3xl"
-          >
-            <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-white/80">
-              CLINICAL PORTFOLIO
-            </span>
-            <h1 className="font-caudex font-bold text-3xl sm:text-5xl md:text-6xl text-white leading-tight">
-              Gallery
-            </h1>
-            <p className="font-instrument text-base sm:text-lg md:text-xl text-white/95 font-semibold">
-              Your natural beauty begins with a confident smile.
-            </p>
-          </motion.div>
         </div>
       </section>
 
@@ -171,6 +157,7 @@ export default function GalleryPage() {
                         alt={img.alt}
                         fill
                         className="object-cover"
+                        style={img.objectPosition ? { objectPosition: img.objectPosition } : undefined}
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       />
                       <div className="absolute inset-0 bg-[#380920]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 text-center">
@@ -203,22 +190,43 @@ export default function GalleryPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {galleryVideos.map((video, idx) => (
                 <div
                   key={idx}
                   className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border-neutral group hover:shadow-md transition-shadow duration-300 flex flex-col"
                 >
-                  <div className="relative aspect-video w-full bg-black">
-                    <video
-                      src={video.src}
-                      controls
-                      playsInline
-                      preload="metadata"
-                      poster={video.poster}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="relative aspect-video w-full bg-black overflow-hidden">
+                    {video.isExternal ? (
+                      <a
+                        href={video.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full h-full relative group/link"
+                      >
+                        <Image
+                          src={video.poster}
+                          alt={video.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover/link:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/35 flex items-center justify-center transition-colors group-hover/link:bg-black/20">
+                          <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white transition-transform group-hover/link:scale-110 shadow-lg">
+                            <Play className="w-6 h-6 fill-white ml-0.5" />
+                          </div>
+                        </div>
+                      </a>
+                    ) : (
+                      <video
+                        src={video.src}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        poster={video.poster}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </div>
                   <div className="p-4 bg-white text-center">
                     <span className="font-caudex font-bold text-base text-primary">
@@ -264,6 +272,7 @@ export default function GalleryPage() {
                   alt={img.alt}
                   fill
                   className="object-cover"
+                  style={img.objectPosition ? { objectPosition: img.objectPosition } : undefined}
                   sizes="(max-width: 768px) 100vw, 30vw"
                 />
               </motion.div>

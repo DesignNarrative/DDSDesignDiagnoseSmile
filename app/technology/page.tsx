@@ -74,7 +74,7 @@ export default function TechnologyPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/technology_banner_new_v2.png"
+            src="/images/banner 16.jpg"
             alt="DDS Dental Clinic Treatment Rooms"
             fill
             className="object-cover object-center"

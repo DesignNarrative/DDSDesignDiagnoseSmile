@@ -9,7 +9,6 @@ export default function Footer() {
   const quickLinks = [
     { name: "About Us", href: "/about" },
     { name: "Technology", href: "/#technology" },
-    { name: "Happy Clients", href: "/#clients" },
     { name: "Awards", href: "/awards" },
     { name: "Dental Gallery", href: "/gallery" },
     { name: "Blog", href: "/blog" },
@@ -32,8 +31,24 @@ export default function Footer() {
   const socials = [
     { icon: "/images/call_icon.svg", href: "tel:+919673004407", label: "Phone" },
     { icon: "/images/email_icon.svg", href: "mailto:drpritimunde@gmail.com", label: "Email" },
-    { icon: "/images/facebook.svg", href: "#", label: "Facebook" },
-    { icon: "/images/linkedin.svg", href: "#", label: "LinkedIn" },
+    {
+      icon: "/images/instagram.svg",
+      href: "https://www.instagram.com/digitaldentistryspecialist?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw%3D%3D",
+      label: "Instagram",
+      isExternal: true
+    },
+    {
+      icon: "/images/facebook.svg",
+      href: "https://www.facebook.com/DentsspaFirstDentalSpa?rdid=241gIA66RAqPIDGA&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Dp7947ZLu%2F#",
+      label: "Facebook",
+      isExternal: true
+    },
+    {
+      icon: "/images/Practo.png",
+      href: "https://www.practo.com/pune/clinic/dentsspa-shivaji-nagar#reviews",
+      label: "Practo",
+      isExternal: true
+    },
   ];
 
   return (
@@ -119,17 +134,15 @@ export default function Footer() {
       <div className="border-t border-white/10"></div>
 
       {/* Bottom Footer Section */}
-      <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="font-instrument text-xs text-text-light order-2 md:order-1">
-          Copyright © 2026 DDS Dental Clinic | All Rights Reserved.
-        </p>
-
-        {/* Custom Social Media Icons (call_icon, email_icon, facebook, linkedin) */}
-        <div className="flex items-center space-x-4 order-1 md:order-2">
+      <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-center md:justify-end gap-6">
+        {/* Custom Social Media Icons */}
+        <div className="flex items-center space-x-4 flex-wrap gap-y-2">
           {socials.map((social, i) => (
             <a
               key={i}
               href={social.href}
+              target={social.href.startsWith("http") ? "_blank" : undefined}
+              rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all duration-200"
               aria-label={social.label}
             >

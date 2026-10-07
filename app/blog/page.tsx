@@ -39,20 +39,11 @@ export default function BlogPage() {
       <section className="relative w-full h-[55vh] sm:h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[350px] sm:min-h-[500px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          {/* Mobile view banner */}
           <Image
-            src="/images/M14.jpg"
+            src="/images/banner 15.jpg"
             alt="DDS Blog Banner"
             fill
-            className="object-cover object-center md:hidden"
-            priority
-          />
-          {/* Desktop/Tablet view banner */}
-          <Image
-            src="/images/blog_banner_73696.jpg"
-            alt="DDS Blog Banner"
-            fill
-            className="object-cover object-center hidden md:block"
+            className="object-cover object-center"
             priority
           />
           {/* Subtle light overlay to make text pop while keeping the banner image bright and clear */}

@@ -28,7 +28,7 @@ export default function AboutPage() {
   ];
 
   const highlights = [
-    "Founder & Clinical Director, DDS — 15 years strong (est. 2011)",
+    "Founder & Clinical Director, DDS — 18 years",
     "Certified Invisalign Provider, delivering precise, clear aligner solutions for every stage of alignment",
     "Built DDS into a fully digital, AI-driven, German technology-forward dental clinic"
   ];
@@ -111,54 +111,16 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       
       {/* ── 1. Header Banner Section ── */}
-      <section className="relative w-full h-[45vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh] min-h-[300px] sm:min-h-[450px] lg:min-h-[700px] overflow-hidden flex items-center bg-[#FFF8EE]">
+      <section className="relative w-full h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[85vh] min-h-[250px] sm:min-h-[450px] md:min-h-[600px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          {/* Mobile view banner */}
           <Image
-            src="/images/M2.jpg"
+            src="/images/About banner.jpg"
             alt="Dentsspa Dental Studio Experience"
             fill
-            className="object-cover object-center md:hidden"
+            className="object-cover object-center"
             priority
           />
-          {/* Desktop/Tablet view banner */}
-          <Image
-            src="/images/about_banner.jpg"
-            alt="Dentsspa Dental Studio Experience"
-            fill
-            className="object-cover object-[70%_center] lg:object-center hidden md:block"
-            priority
-          />
-          {/* Subtle dark overlay for text readability while maintaining banner image clarity */}
-          <div className="absolute inset-0 bg-black/25" />
-        </div>
-
-        {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl hidden md:flex flex-col space-y-8 text-left"
-          >
-            <h1 className="font-caudex font-bold text-2xl sm:text-3xl md:text-4xl text-white leading-relaxed drop-shadow-md">
-              The dentistry is not just a procedure.<br />
-              It is a carefully crafted experience<br />
-              transparent, comfortable, and tailored<br />
-              entirely to you.
-            </h1>
-            
-            <div className="pt-2">
-              <Link href="/book">
-                <button
-                  className="bg-white text-[#380920] hover:bg-cream-light font-instrument text-sm sm:text-base font-semibold px-8 py-3.5 rounded-[12px] transition-all duration-200 shadow-lg hover:scale-[1.02]"
-                >
-                  Book an Appointment
-                </button>
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -207,7 +169,7 @@ export default function AboutPage() {
             </div>
 
             <p className="font-instrument text-text-dark text-sm md:text-base leading-relaxed">
-              As a General Dentist with over 18 years of experience, and 15 years leading DDS, I’ve trained across three countries — India, the UK, and Austria — to bring that belief to life: a PG Diploma in Aesthetic & Restorative Dentistry (City of London Dental School), a Fellowship in Advanced Micro-Endodontics (D. Y. Patil University), and an ongoing Mastership in Laser Dentistry (Medical University of Vienna).
+              As a General Dentist with over 18 years of experience, I’ve trained across three countries — India, the UK, and Austria — to bring that belief to life: a PG Diploma in Aesthetic & Restorative Dentistry (City of London Dental School), a Fellowship in Advanced Micro-Endodontics (D. Y. Patil University), and an ongoing Mastership in Laser Dentistry (Medical University of Vienna).
             </p>
 
             {/* Highlights List */}
@@ -415,9 +377,9 @@ export default function AboutPage() {
                 className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-border-neutral"
               >
                 <Image
-                  src={getImageSrc("/images/gemini_generated_smile.png")}
-                  alt={getImageAlt("/images/gemini_generated_smile.png", "Transformation Smile results")}
-                  title={getImageTitle("/images/gemini_generated_smile.png", "Transformation Smile results")}
+                  src={getImageSrc("/images/480552893_25261353150131077_1368940002614314792_n (1).jpg")}
+                  alt={getImageAlt("/images/480552893_25261353150131077_1368940002614314792_n (1).jpg", "Specialist Doctor Care")}
+                  title={getImageTitle("/images/480552893_25261353150131077_1368940002614314792_n (1).jpg", "Specialist Doctor Care")}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 45vw"

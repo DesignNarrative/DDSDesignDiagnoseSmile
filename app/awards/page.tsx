@@ -6,7 +6,6 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { Trophy, Award, Star } from "lucide-react";
 import ContactInfoBar from "@/components/sections/ContactInfoBar";
-import SmallBookingCTA from "@/components/sections/SmallBookingCTA";
 
 export default function AwardsPage() {
   const ref = useRef(null);
@@ -196,8 +195,6 @@ export default function AwardsPage() {
         </div>
       </section>
 
-      {/* ── 5. Booking CTA ── */}
-      <SmallBookingCTA />
 
       {/* ── 6. CTA Banner ── */}
       <section className="relative w-full h-[220px] md:h-[260px] overflow-hidden flex items-center bg-primary">

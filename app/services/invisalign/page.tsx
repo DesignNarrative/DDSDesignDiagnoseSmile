@@ -113,47 +113,16 @@ export default function InvisalignPage() {
     <div className="flex flex-col min-h-screen">
       
       {/* ── 1. Header Banner Section ── */}
-      <section className="relative w-full h-[55vh] sm:h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[350px] sm:min-h-[500px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
+      <section className="relative w-full h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[85vh] min-h-[250px] sm:min-h-[450px] md:min-h-[600px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          {/* Mobile view banner */}
           <Image
-            src="/images/M8.jpg"
+            src="/images/banner 8.jpg"
             alt="Invisalign Provider"
             fill
-            className="object-cover object-center md:hidden"
+            className="object-cover object-center"
             priority
           />
-          {/* Desktop/Tablet view banner */}
-          <Image
-            src="/images/invisalign_banner_2605.jpg"
-            alt="Invisalign Provider"
-            fill
-            className="object-cover object-center hidden md:block"
-            priority
-          />
-          {/* Subtle light overlay for clean text rendering */}
-          <div className="absolute inset-0 bg-white/10" />
-        </div>
-
-        {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center md:text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="hidden md:flex flex-col items-center md:items-start justify-center space-y-4 max-w-3xl"
-          >
-            <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#380920]/80">
-              INVISALIGN PROVIDER
-            </span>
-            <h1 className="font-caudex font-bold text-4xl sm:text-5xl md:text-6xl text-[#380920] leading-tight">
-              Invisalign Provider
-            </h1>
-            <p className="font-instrument text-base sm:text-lg md:text-xl text-[#380920]/95 font-semibold">
-              The smile you expect is the smile you get!
-            </p>
-          </motion.div>
         </div>
       </section>
 
@@ -275,8 +244,8 @@ export default function InvisalignPage() {
             className="lg:col-span-5 relative aspect-[4/3] w-full rounded-[24px] overflow-hidden shadow-lg border border-white/10 bg-[#FFF8EE]"
           >
             <Image
-              src="/images/invisalign_care_guide.jpg"
-              alt="Woman wearing invisible orthodontic aligner"
+              src="/images/image (2)invisalign.png"
+              alt="Invisalign Care Guide"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"

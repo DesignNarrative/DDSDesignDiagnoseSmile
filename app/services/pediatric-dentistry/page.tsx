@@ -78,46 +78,16 @@ export default function PediatricDentistry() {
     <div className="flex flex-col min-h-screen">
       
       {/* 1. Hero / Top Banner */}
-      <section className="relative w-full h-[55vh] sm:h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[350px] sm:min-h-[500px] md:min-h-[650px] overflow-hidden flex items-center bg-[#FFF8EE]">
+      <section className="relative w-full h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[85vh] min-h-[250px] sm:min-h-[450px] md:min-h-[600px] overflow-hidden flex items-center bg-[#FFF8EE]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          {/* Mobile view banner */}
           <Image
-            src="/images/M6.jpg"
+            src="/images/banner 4.jpg"
             alt="Pediatric Dentistry Treatment Banner"
             fill
-            className="object-cover object-center md:hidden"
+            className="object-cover object-center"
             priority
           />
-          {/* Desktop/Tablet view banner */}
-          <Image
-            src="/images/2151686836.jpg"
-            alt="Pediatric Dentistry Treatment Banner"
-            fill
-            className="object-cover object-center hidden md:block"
-            priority
-          />
-          <div className="absolute inset-0 bg-[#411928]/45" />
-        </div>
-
-        {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center md:text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="hidden md:flex flex-col items-center md:items-start justify-center space-y-4 max-w-3xl mx-auto md:mx-0"
-          >
-            <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#FFF8EE]/80">
-              OUR TREATMENTS
-            </span>
-            <h1 className="font-caudex font-bold text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-              Pediatric Dentistry Treatment
-            </h1>
-            <p className="font-instrument text-base sm:text-lg md:text-xl text-cream/90 mt-4 max-w-xl italic">
-              Comprehensive oral care for every stage of life.
-            </p>
-          </motion.div>
         </div>
       </section>
 

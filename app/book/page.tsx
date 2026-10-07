@@ -33,6 +33,7 @@ export default function BookPage() {
     "Invisalign",
     "Pediatric Dentistry",
     "Periodontics",
+    "Oral Surgery",
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -82,45 +82,15 @@ export default function OralSurgeryPage() {
     <div className="flex flex-col min-h-screen">
       
       {/* ── 1. Header Banner Section ── */}
-      <section className="relative w-full h-[55vh] sm:h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[350px] sm:min-h-[500px] md:min-h-[650px] overflow-hidden flex items-center bg-[#380920]">
+      <section className="relative w-full h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[85vh] min-h-[250px] sm:min-h-[450px] md:min-h-[600px] overflow-hidden flex items-center bg-[#380920]">
         <div className="absolute inset-0 z-0">
-          {/* Mobile view banner */}
           <Image
-            src="/images/Oral Surgery mobile.jpg"
-            alt="Oral Surgery Treatment Mobile Banner"
+            src="/images/banner 12.jpg"
+            alt="Oral Surgery Treatment Banner"
             fill
-            className="object-cover object-center md:hidden"
+            className="object-cover object-center"
             priority
           />
-          {/* Desktop/Tablet view banner */}
-          <Image
-            src="/images/image (1).png"
-            alt="Oral Surgery Treatment Desktop Banner"
-            fill
-            className="object-cover object-center hidden md:block scale-x-[-1]"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/35" />
-        </div>
-
-        {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center md:text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="hidden md:flex flex-col items-center md:items-start justify-center space-y-4 max-w-3xl"
-          >
-            <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-white/80">
-              OUR TREATMENTS
-            </span>
-            <h1 className="font-caudex font-bold text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-              Precision Surgical Care.<br />Thoughtfully Delivered.
-            </h1>
-            <p className="font-instrument text-base sm:text-lg md:text-xl text-white/95">
-              Precision Before the Procedure
-            </p>
-          </motion.div>
         </div>
       </section>
 
@@ -252,8 +222,8 @@ export default function OralSurgeryPage() {
             className="lg:col-span-5 relative aspect-[4/3] w-full rounded-[24px] overflow-hidden shadow-lg border border-white/10 bg-[#FFF8EE]"
           >
             <Image
-              src="/images/44088.jpg"
-              alt="Person in need of oral surgery"
+              src="/images/21540123.jpg"
+              alt="Signs You May Need Oral Surgery"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
