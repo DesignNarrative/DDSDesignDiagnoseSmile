@@ -235,13 +235,13 @@ export default function InvisalignPage() {
             </div>
           </motion.div>
 
-          {/* Right Column: Image invisalign_care_guide.jpg */}
+          {/* Right Column: Image Invisalign Care Guide */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 relative aspect-[4/3] w-full rounded-[24px] overflow-hidden shadow-lg border border-white/10 bg-[#FFF8EE]"
+            className="lg:col-span-5 relative aspect-square w-full rounded-[24px] overflow-hidden shadow-lg border border-white/10 bg-[#FFF8EE]"
           >
             <Image
               src="/images/image (2)invisalign.png"
