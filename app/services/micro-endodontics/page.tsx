@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Phone, Clock, Mail, CheckCircle2, ChevronDown } from "lucide-react";
 import CTABanner from "@/components/sections/CTABanner";
 import ContactInfoBar from "@/components/sections/ContactInfoBar";
+import InsideTheTooth from "@/components/sections/InsideTheTooth";
 
 export default function MicroEndodonticsPage() {
   const offerings = [
@@ -185,46 +186,8 @@ export default function MicroEndodonticsPage() {
         </div>
       </section>
 
-      {/* ── 5. Side-by-Side Gemini Generated Images Section ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-            {/* Image 1: Diagnosis Steps */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative aspect-[4/3] w-full rounded-[24px] overflow-hidden shadow-md border border-border-neutral bg-[#FFF8EE]"
-            >
-              <Image
-                src="/images/rct_step_diagnosis.png"
-                alt="Root canal treatment diagnosis steps"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 45vw"
-              />
-            </motion.div>
-
-            {/* Image 2: Shade Comparison */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="relative aspect-[4/3] w-full rounded-[24px] overflow-hidden shadow-md border border-border-neutral bg-[#FFF8EE]"
-            >
-              <Image
-                src="/images/rct_teeth_shades.png"
-                alt="Natural shade comparisons for dental crowns"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 45vw"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* ── 5. Inside The Tooth Interactive Scroll Storytelling Section ── */}
+      <InsideTheTooth />
 
       {/* ── 6. Benefits of Root Canal Treatment (Text Left, Image Right) ── */}
       <section className="py-20 bg-[#380920] text-white">
