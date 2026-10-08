@@ -88,19 +88,19 @@ Message: ${formState.message}`;
         {/* Desktop / Laptop Banner (2048x768) */}
         <div className="hidden md:block relative w-full aspect-[2048/768] min-h-[360px]">
           <Image
-            src="/images/banners/contact-pc.webp"
-            alt="Contact DDS Dental Clinic"
+            src="/images/banners/contact-luxury-pc.webp"
+            alt="Luxury Dental Clinic Contact Reception"
             fill
             className="object-cover object-center"
             priority
             sizes="100vw"
           />
         </div>
-        {/* Mobile Banner (1163x1353) */}
+        {/* Mobile Banner (1162x1353) */}
         <div className="block md:hidden relative w-full aspect-[1163/1353] min-h-[300px]">
           <Image
-            src="/images/banners/contact-mob.webp"
-            alt="Contact DDS Dental Clinic"
+            src="/images/banners/contact-modern-mob.webp"
+            alt="Modern Dental Clinic Contact Reception"
             fill
             className="object-cover object-center"
             priority
