@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Phone, Clock, Mail, CheckCircle2, ChevronDown } from "lucide-react";
 import CTABanner from "@/components/sections/CTABanner";
 import ContactInfoBar from "@/components/sections/ContactInfoBar";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 
 export default function GumAestheticCarePage() {
   const offerings = [
@@ -198,7 +199,7 @@ export default function GumAestheticCarePage() {
         </div>
       </section>
 
-      {/* ── 5. Gum Depigmentation Before/After Image Section ── */}
+      {/* ── 5. Gum & Aesthetic Smile Before / After Slider Section ── */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 flex justify-center">
           <motion.div
@@ -206,14 +207,14 @@ export default function GumAestheticCarePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative aspect-[2/1] w-full rounded-[24px] overflow-hidden shadow-md border border-border-neutral bg-[#FFF8EE]"
+            className="w-full"
           >
-            <Image
-              src="/images/gum_depigmentation_before_after.png"
-              alt="Gum Depigmentation Before & After case comparison"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 80vw"
+            <BeforeAfterSlider
+              beforeSrc="/images/gum_before_slider.webp"
+              afterSrc="/images/gum_after_slider.webp"
+              altText="Gum & Aesthetic Gum Care Smile Transformation"
+              aspectRatio="aspect-[3/2]"
+              className="rounded-[24px] shadow-lg border border-border-neutral"
             />
           </motion.div>
         </div>

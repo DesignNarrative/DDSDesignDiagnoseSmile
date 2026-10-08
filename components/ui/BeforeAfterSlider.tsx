@@ -7,9 +7,17 @@ interface BeforeAfterSliderProps {
   beforeSrc: string;
   afterSrc: string;
   altText: string;
+  aspectRatio?: string;
+  className?: string;
 }
 
-export default function BeforeAfterSlider({ beforeSrc, afterSrc, altText }: BeforeAfterSliderProps) {
+export default function BeforeAfterSlider({
+  beforeSrc,
+  afterSrc,
+  altText,
+  aspectRatio = "aspect-[16/9]",
+  className = "",
+}: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -68,7 +76,7 @@ export default function BeforeAfterSlider({ beforeSrc, afterSrc, altText }: Befo
   return (
     <div
       ref={containerRef}
-      className="relative w-full aspect-[16/9] rounded-[20px] overflow-hidden select-none touch-none shadow-md border border-border-neutral bg-[#FFF8EE]"
+      className={`relative w-full ${aspectRatio} rounded-[20px] overflow-hidden select-none touch-none shadow-md border border-border-neutral bg-[#FFF8EE] ${className}`}
     >
       {/* Before Layer (Left side) */}
       <div className="absolute inset-0 w-full h-full">
