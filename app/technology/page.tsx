@@ -70,15 +70,27 @@ export default function TechnologyPage() {
     <div className="flex flex-col min-h-screen">
       
       {/* ── 1. Header Banner Section (Clean, no text overlay) ── */}
-      <section className="relative w-full h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[85vh] min-h-[250px] sm:min-h-[450px] md:min-h-[600px] overflow-hidden flex items-center bg-[#FFF8EE]">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative w-full overflow-hidden bg-[#FFF8EE]">
+        {/* Desktop / Laptop Banner (2046x768) */}
+        <div className="hidden md:block relative w-full aspect-[2048/768] min-h-[360px]">
           <Image
-            src="/images/banner 16.jpg"
-            alt="DDS Dental Clinic Treatment Rooms"
+            src="/images/banners/technology-pc.webp"
+            alt="Advanced Dental Technology at DDS"
             fill
             className="object-cover object-center"
             priority
+            sizes="100vw"
+          />
+        </div>
+        {/* Mobile Banner (1163x1353) */}
+        <div className="block md:hidden relative w-full aspect-[1163/1353] min-h-[300px]">
+          <Image
+            src="/images/banners/technology-mob.webp"
+            alt="Advanced Dental Technology at DDS"
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
           />
         </div>
       </section>
