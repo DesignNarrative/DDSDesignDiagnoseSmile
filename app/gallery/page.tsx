@@ -160,9 +160,10 @@ export default function GalleryPage() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.4 }}
+                      whileHover={{ y: -8, scale: 1.02 }}
+                      transition={{ duration: 0.25 }}
                       key={i}
-                      className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm border border-border-neutral bg-white group hover:shadow-md transition-shadow duration-300"
+                      className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-border-neutral bg-white transition-shadow duration-300 cursor-pointer"
                     >
                       <Image
                         src={img.src}
@@ -172,11 +173,6 @@ export default function GalleryPage() {
                         style={img.objectPosition ? { objectPosition: img.objectPosition } : undefined}
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       />
-                      <div className="absolute inset-0 bg-[#380920]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 text-center">
-                        <span className="font-caudex font-bold text-white text-sm md:text-base">
-                          {img.alt}
-                        </span>
-                      </div>
                     </motion.div>
                   ))}
                 </AnimatePresence>
@@ -275,9 +271,10 @@ export default function GalleryPage() {
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.25 }}
                 key={i}
-                className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm border border-border-neutral bg-white group hover:shadow-md transition-shadow duration-300"
+                className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-border-neutral bg-white transition-shadow duration-300 cursor-pointer"
               >
                 <Image
                   src={img.src}
