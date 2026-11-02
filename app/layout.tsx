@@ -40,6 +40,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL("https://ddspune.com"),
     ...meta,
+    verification: {
+      ...meta.verification,
+      google: "ovowz4azf3-1z19kSL2xl9iHh0u8WVvJaHdrrQCxKUo",
+    },
   };
 }
 
