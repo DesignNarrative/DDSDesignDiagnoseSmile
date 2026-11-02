@@ -123,6 +123,17 @@ export default function GalleryPage() {
       <section className="py-20 bg-[#FFF8EE]/30">
         <div className="max-w-7xl mx-auto px-6">
           
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center space-y-4">
+            <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-primary">
+              CLINICAL PORTFOLIO
+            </span>
+            <h1 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
+              Smile Transformation Gallery
+            </h1>
+            <div className="w-16 h-1 bg-primary rounded-full"></div>
+          </div>
+
           {/* Photos & Videos Toggle Button */}
           <div className="flex justify-center mb-12">
             <div className="inline-flex bg-white p-1.5 rounded-full border border-border-neutral/60 shadow-sm">

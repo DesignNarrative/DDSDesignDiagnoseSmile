@@ -115,9 +115,9 @@ export default function GeneralDentistryPage() {
               <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#62826B]">
                 GENERAL DENTISTRY
               </span>
-              <h2 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
+              <h1 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
                 Comprehensive Oral Care for Every Stage of Life
-              </h2>
+              </h1>
             </div>
 
             <p className="font-instrument text-text-dark text-sm md:text-base leading-relaxed">

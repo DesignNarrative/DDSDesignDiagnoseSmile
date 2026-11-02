@@ -101,6 +101,17 @@ export default function TechnologyPage() {
       {/* ── 3. Technology Grid Section ── */}
       <section className="py-20 bg-[#FFF8EE] border-t border-primary/5">
         <div className="max-w-7xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center space-y-4">
+            <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-primary">
+              HIGH-END EQUIPMENT
+            </span>
+            <h1 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
+              State-of-the-Art Dental Technology
+            </h1>
+            <div className="w-16 h-1 bg-primary rounded-full"></div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {techCards.map((card, i) => (
               <motion.div

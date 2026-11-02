@@ -133,9 +133,9 @@ export default function MicroEndodonticsPage() {
               <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#62826B]">
                 ENDODONTICS
               </span>
-              <h2 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
+              <h1 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
                 Root Canal Treatment
-              </h2>
+              </h1>
               <h3 className="font-caudex font-bold text-lg md:text-xl text-primary/80 leading-relaxed italic">
                 Relieve Pain. Preserve Your Natural Smile.
               </h3>

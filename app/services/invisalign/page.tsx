@@ -180,9 +180,9 @@ export default function InvisalignPage() {
             <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-primary">
               TREATMENT RANGE
             </span>
-            <h2 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
+            <h1 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
               Is Invisalign Right for You?
-            </h2>
+            </h1>
             <div className="w-16 h-1 bg-primary rounded-full"></div>
           </div>
 

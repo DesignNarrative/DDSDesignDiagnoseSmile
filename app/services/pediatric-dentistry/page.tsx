@@ -124,9 +124,9 @@ export default function PediatricDentistry() {
             <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#62826B]">
               PEDIATRIC DENTISTRY
             </span>
-            <h2 className="font-caudex font-bold text-2xl md:text-3xl lg:text-4xl text-primary leading-tight">
+            <h1 className="font-caudex font-bold text-2xl md:text-3xl lg:text-4xl text-primary leading-tight">
               Making Every Child&rsquo;s Dental Visit Comfortable &amp; Fun.
-            </h2>
+            </h1>
             <p className="font-instrument text-base md:text-lg text-text-dark leading-relaxed">
               At DDS Dental, we specialize in providing gentle, fear-free care that puts young patients at ease. Our team is dedicated to creating positive dental experiences, laying the foundation for a lifetime of healthy smiles in a warm, welcoming environment.
             </p>

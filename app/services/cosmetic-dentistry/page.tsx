@@ -149,9 +149,9 @@ export default function CosmeticDentistryPage() {
               <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#62826B]">
                 SMILE MAKEVOERS
               </span>
-              <h2 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
+              <h1 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
                 Enhancing Your Smile with Art and Precision
-              </h2>
+              </h1>
             </div>
 
             <p className="font-instrument text-text-dark text-sm md:text-base leading-relaxed">

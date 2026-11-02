@@ -116,9 +116,9 @@ export default function DentalImplantsPage() {
               <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#62826B]">
                 IMPLANTOLOGY
               </span>
-              <h2 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
+              <h1 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
                 Dental Implant Treatment
-              </h2>
+              </h1>
               <h3 className="font-caudex font-bold text-lg md:text-xl text-primary/80 leading-relaxed italic">
                 Designed to restore function, aesthetics, and confidence.
               </h3>

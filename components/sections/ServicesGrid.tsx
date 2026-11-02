@@ -30,14 +30,14 @@ export default function ServicesGrid() {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <motion.h2
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="font-caudex font-bold text-2xl md:text-3xl text-center text-primary mb-12 max-w-3xl mx-auto leading-snug"
         >
           Complete Dental Care for Your Family –
-        </motion.h2>
+        </motion.h1>
 
         {/* Carousel row */}
         <div className="flex items-center gap-3 md:gap-5 justify-center">

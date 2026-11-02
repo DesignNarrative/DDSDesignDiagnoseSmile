@@ -122,9 +122,9 @@ Message: ${formState.message}`;
             className="lg:col-span-6 space-y-8"
           >
             <div className="space-y-4">
-              <h2 className="font-caudex font-bold text-2xl md:text-3xl text-primary leading-tight">
+              <h1 className="font-caudex font-bold text-2xl md:text-3xl text-primary leading-tight">
                 We are always ready to help <br />you and answer your questions.
-              </h2>
+              </h1>
               <p className="font-instrument text-sm text-text-dark/85 leading-relaxed">
                 Whether you have a question, a suggestion, or just want to say hello, this is the place to do it. Please fill out the form below with your details and message, and we'll get back to you as soon as possible.
               </p>

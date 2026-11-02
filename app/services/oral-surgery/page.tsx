@@ -142,9 +142,9 @@ export default function OralSurgeryPage() {
             <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-[#62826B]">
               ORAL SURGERY
             </span>
-            <h2 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
+            <h1 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
               Expert Surgical Care,<br />When You Need It.
-            </h2>
+            </h1>
             <p className="font-instrument text-base md:text-lg text-text-dark/90 leading-relaxed">
               Oral surgery focuses on the diagnosis and surgical treatment of conditions affecting the teeth, gums, jaw, and surrounding oral structures. At DDS, we combine specialist expertise, advanced diagnostics, and modern surgical techniques to provide precise treatment with a strong focus on patient comfort and safety.
             </p>

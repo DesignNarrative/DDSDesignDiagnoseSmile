@@ -61,6 +61,17 @@ export default function BlogPage() {
             </div>
           ) : (
             <>
+              {/* Section Header */}
+              <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center space-y-4">
+                <span className="font-montserrat font-bold text-xs uppercase tracking-widest text-primary">
+                  ARTICLES & GUIDES
+                </span>
+                <h1 className="font-caudex font-bold text-3xl md:text-4xl text-primary leading-tight">
+                  DDS Dental Health & Wellness Blog
+                </h1>
+                <div className="w-16 h-1 bg-primary rounded-full"></div>
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {blogs.slice(0, visibleCount).map((post, i) => (
                   <motion.div

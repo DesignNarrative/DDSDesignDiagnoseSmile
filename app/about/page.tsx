@@ -169,9 +169,9 @@ export default function AboutPage() {
             className="lg:col-span-7 flex flex-col space-y-6"
           >
             <div className="flex flex-col space-y-2">
-              <h2 className="font-caudex font-bold text-3xl md:text-4xl text-primary">
+              <h1 className="font-caudex font-bold text-3xl md:text-4xl text-primary">
                 Dr. Priti Munde
-              </h2>
+              </h1>
               <h3 className="font-instrument text-xs md:text-sm font-bold text-primary/80 uppercase tracking-widest leading-relaxed">
                 BDS | Registration No.: A-17135 <br />
                 Cosmetic Dental Surgeon  |  Dental Implantologist <br />
