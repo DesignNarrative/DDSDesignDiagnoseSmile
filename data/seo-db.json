@@ -179,36 +179,6 @@
       "seoScore": 100,
       "lastUpdated": "2026-08-24T11:57:45.217Z"
     },
-    "achievements": {
-      "key": "achievements",
-      "url": "/achievements",
-      "title": "Awards & Recognitions | Dr. Priti Munde",
-      "description": "Review our clinical milestones, Famdent Awards, and Narishakti Puraskar highlights from 2015 to 2024.",
-      "keywords": "dentist awards, dental recognition Pune, Famdent awards",
-      "focusKeyword": "dentist awards",
-      "searchIntent": "Informational",
-      "notes": "Awards timeline and milestone list",
-      "indexing": {
-        "noindex": false,
-        "nofollow": false,
-        "noarchive": false
-      },
-      "canonical": {
-        "mode": "self",
-        "customUrl": ""
-      },
-      "social": {
-        "ogTitle": "Awards & Recognitions | Dr. Priti Munde",
-        "ogDescription": "Review our clinical milestones and awards.",
-        "ogImage": "/images/DDS_logo_whiteeeee.png",
-        "twitterCard": "summary_large_image",
-        "twitterTitle": "Awards & Recognitions",
-        "twitterDescription": "Clinical and social impact awards."
-      },
-      "schema": [],
-      "seoScore": 90,
-      "lastUpdated": "2026-08-24T11:57:45.217Z"
-    },
     "services": {
       "key": "services",
       "url": "/services",

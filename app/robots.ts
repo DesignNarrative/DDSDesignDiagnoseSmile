@@ -4,31 +4,15 @@ import path from "path";
 
 export default function robots(): MetadataRoute.Robots {
   const dbPath = path.join(process.cwd(), "data", "seo-db.json");
-  const defaultSitemap = "https://ddspune.com/sitemap.xml";
+  const defaultBaseUrl = "https://ddspune.com";
 
-  let sitemapUrl = defaultSitemap;
-  let disallowRules: string[] = [];
+  let baseUrl = defaultBaseUrl;
 
   try {
     if (fs.existsSync(dbPath)) {
       const fileContent = fs.readFileSync(dbPath, "utf8");
       const db = JSON.parse(fileContent);
-      sitemapUrl = `${db.seo_settings?.websiteUrl || "https://ddspune.com"}/sitemap.xml`;
-      
-      // Load disallows from noindexed pages
-      Object.keys(db.pages || {}).forEach((pKey) => {
-        const page = db.pages[pKey];
-        if (page.indexing?.noindex && page.url !== "/") {
-          disallowRules.push(page.url);
-        }
-      });
-
-      // Load disallows from noindexed blogs
-      (db.blogs || []).forEach((blog: any) => {
-        if (blog.indexing?.noindex) {
-          disallowRules.push(`/blog/${blog.slug}`);
-        }
-      });
+      baseUrl = db.seo_settings?.websiteUrl || defaultBaseUrl;
     }
   } catch (error) {
     // Fallback if read fails
@@ -38,8 +22,13 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/admin/", ...disallowRules],
+      disallow: [
+        "/admin",
+        "/admin/",
+        "/api",
+        "/api/",
+      ],
     },
-    sitemap: sitemapUrl,
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
