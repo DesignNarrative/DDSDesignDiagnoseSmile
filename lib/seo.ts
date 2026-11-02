@@ -66,7 +66,13 @@ export function getSeoMetadata(pageKey: string): Metadata {
       };
     }
 
+    const rawOgImage = page.social?.ogImage || db.seo_settings?.defaultOgImage || "/images/dds_final_logo_white.png";
+    const absoluteOgImage = rawOgImage.startsWith("http")
+      ? rawOgImage
+      : `${baseUrl}${rawOgImage.startsWith("/") ? "" : "/"}${rawOgImage}`;
+
     return {
+      metadataBase: new URL(baseUrl),
       title: page.title || "DDS Dental Clinic",
       description: page.description || "Diagnose. Design. Smile.",
       keywords: page.keywords || "",
@@ -76,7 +82,7 @@ export function getSeoMetadata(pageKey: string): Metadata {
       openGraph: {
         title: page.social?.ogTitle || page.title,
         description: page.social?.ogDescription || page.description,
-        images: [{ url: page.social?.ogImage || db.seo_settings?.defaultOgImage || "/images/dds_final_logo_white.png" }],
+        images: [{ url: absoluteOgImage }],
         url: `${baseUrl}${page.url === "/" ? "" : page.url}`,
         type: "website",
       },
@@ -84,7 +90,7 @@ export function getSeoMetadata(pageKey: string): Metadata {
         card: "summary_large_image",
         title: page.social?.twitterTitle || page.title,
         description: page.social?.twitterDescription || page.description,
-        images: [page.social?.ogImage || "/images/dds_final_logo_white.png"],
+        images: [absoluteOgImage],
       },
     };
   } catch (error) {

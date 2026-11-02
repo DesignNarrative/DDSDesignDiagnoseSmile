@@ -598,6 +598,36 @@
       "schema": [],
       "seoScore": 100,
       "lastUpdated": "2026-08-24T11:57:45.217Z"
+    },
+    "book": {
+      "key": "book",
+      "url": "/book",
+      "title": "Book Dental Appointment in Pune | DDS Dental Clinic",
+      "description": "Schedule your consultation with Dr. Priti Munde at DDS Dental Clinic Pune. Book your appointment online for implants, Invisalign, root canals, and cosmetic care.",
+      "keywords": "book dentist appointment pune, dental appointment booking, online dentist consultation, DDS dental clinic book",
+      "focusKeyword": "book dental appointment pune",
+      "searchIntent": "Transactional",
+      "notes": "Online appointment scheduling and consultation booking funnel",
+      "indexing": {
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false
+      },
+      "canonical": {
+        "mode": "self",
+        "customUrl": ""
+      },
+      "social": {
+        "ogTitle": "Book Dental Appointment in Pune | DDS Dental Clinic",
+        "ogDescription": "Schedule your consultation with Dr. Priti Munde at DDS Dental Clinic Pune. Book your appointment online for implants, Invisalign, root canals, and cosmetic care.",
+        "ogImage": "/images/DDS_logo_whiteeeee.png",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Book Dental Appointment in Pune | DDS Dental Clinic",
+        "twitterDescription": "Schedule your consultation with Dr. Priti Munde at DDS Dental Clinic Pune."
+      },
+      "schema": [],
+      "seoScore": 100,
+      "lastUpdated": "2026-11-02T11:35:22.483Z"
     }
   },
   "blogs": [

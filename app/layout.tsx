@@ -36,7 +36,11 @@ const montserrat = Montserrat({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  return getSeoMetadata("home");
+  const meta = getSeoMetadata("home");
+  return {
+    metadataBase: new URL("https://ddspune.com"),
+    ...meta,
+  };
 }
 
 export default function RootLayout({
