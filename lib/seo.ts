@@ -16,7 +16,8 @@ export function getSeoMetadata(pageKey: string): Metadata {
     // Check if it's a dynamic blog post if not found in static pages
     if (!page && pageKey.startsWith("blog_")) {
       const blogSlug = pageKey.replace("blog_", "");
-      const matchedBlog = (db.blogs || []).find((b: any) => b.slug === blogSlug);
+      if (blogSlug && blogSlug !== "[slug]") {
+        const matchedBlog = (db.blogs || []).find((b: any) => b.slug === blogSlug);
       if (matchedBlog) {
         page = {
           title: matchedBlog.seoTitle || matchedBlog.title,
@@ -33,12 +34,13 @@ export function getSeoMetadata(pageKey: string): Metadata {
         };
       }
     }
+  }
 
     if (!page) {
       return {};
     }
 
-    const baseUrl = db.seo_settings?.websiteUrl || "https://ddspune.com";
+    const baseUrl = db.seo_settings?.websiteUrl || "https://www.ddspune.com";
 
     // Dynamic Robots directive check
     const robotsObj = {
@@ -110,26 +112,46 @@ export function getSeoSchemaJson(pageKey: string): string | null {
     const db = JSON.parse(fileContent);
     let page = db.pages[pageKey];
 
+    const baseUrl = db.seo_settings?.websiteUrl || "https://www.ddspune.com";
+
     // Support schema for blogs dynamically if needed
     if (!page && pageKey.startsWith("blog_")) {
       const blogSlug = pageKey.replace("blog_", "");
-      const matchedBlog = (db.blogs || []).find((b: any) => b.slug === blogSlug);
-      if (matchedBlog) {
-        page = {
-          schema: [
-            {
-              type: "BlogPosting",
-              active: true,
-              fields: {
-                headline: matchedBlog.title,
-                description: matchedBlog.excerpt,
-                datePublished: matchedBlog.date,
-                image: matchedBlog.image,
-                author: matchedBlog.author || "Dr. Priti Munde"
+      if (blogSlug && blogSlug !== "[slug]") {
+        const matchedBlog = (db.blogs || []).find((b: any) => b.slug === blogSlug);
+        if (matchedBlog) {
+          const blogImg = matchedBlog.image ? (matchedBlog.image.startsWith("http") ? matchedBlog.image : `${baseUrl}${matchedBlog.image.startsWith("/") ? "" : "/"}${matchedBlog.image}`) : undefined;
+          page = {
+            schema: [
+              {
+                type: "BlogPosting",
+                active: true,
+                fields: {
+                  "@id": `${baseUrl}/blog/${matchedBlog.slug}#article`,
+                  headline: matchedBlog.title,
+                  description: matchedBlog.excerpt,
+                  datePublished: matchedBlog.date,
+                  image: blogImg,
+                  url: `${baseUrl}/blog/${matchedBlog.slug}`,
+                  mainEntityOfPage: `${baseUrl}/blog/${matchedBlog.slug}`,
+                  author: {
+                    "@type": "Person",
+                    name: matchedBlog.author || "Dr. Priti Munde"
+                  },
+                  publisher: {
+                    "@type": "DentalClinic",
+                    name: "DDS Dental Clinic",
+                    url: baseUrl,
+                    logo: {
+                      "@type": "ImageObject",
+                      url: `${baseUrl}/images/DDS_logo_whiteeeee.png`
+                    }
+                  }
+                }
               }
-            }
-          ]
-        };
+            ]
+          };
+        }
       }
     }
 
@@ -154,12 +176,20 @@ export function getSeoSchemaJson(pageKey: string): string | null {
         }
       });
 
-      // Inject dynamic global contact/location details for LocalBusiness/Organization
-      if ((s.type === "LocalBusiness" || s.type === "Organization") && db.seo_settings) {
+      // Inject dynamic global contact/location details for LocalBusiness/Organization/DentalClinic
+      if ((s.type === "LocalBusiness" || s.type === "Organization" || s.type === "DentalClinic") && db.seo_settings) {
         const settings = db.seo_settings;
         if (settings.organizationName) baseSchema["name"] = settings.organizationName;
+        if (settings.websiteUrl) {
+          baseSchema["url"] = settings.websiteUrl;
+          baseSchema["@id"] = `${settings.websiteUrl}/#${s.type.toLowerCase()}`;
+        }
         if (settings.organizationTelephone) baseSchema["telephone"] = settings.organizationTelephone;
-        if (settings.organizationLogo) baseSchema["logo"] = settings.organizationLogo;
+        if (settings.organizationLogo) {
+          const logo = settings.organizationLogo;
+          baseSchema["logo"] = logo.startsWith("http") ? logo : `${settings.websiteUrl}${logo.startsWith("/") ? "" : "/"}${logo}`;
+          baseSchema["image"] = baseSchema["logo"];
+        }
         if (settings.streetAddress || settings.addressLocality || settings.postalCode || settings.addressCountry) {
           baseSchema["address"] = {
             "@type": "PostalAddress",

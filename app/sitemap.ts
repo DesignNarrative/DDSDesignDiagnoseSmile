@@ -20,7 +20,7 @@ function parseValidDate(dateStr?: string): Date | undefined {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const dbPath = path.join(process.cwd(), "data", "seo-db.json");
-  const defaultBaseUrl = "https://ddspune.com";
+  const defaultBaseUrl = "https://www.ddspune.com";
 
   let baseUrl = defaultBaseUrl;
   let dbPages: { [key: string]: any } = {};

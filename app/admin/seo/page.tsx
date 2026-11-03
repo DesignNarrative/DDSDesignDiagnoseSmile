@@ -1299,7 +1299,7 @@ export default function SeoAdminDashboard() {
                         
                         <div className="bg-white rounded-xl p-4 shadow-sm border border-border-neutral/20 flex flex-col space-y-1 font-sans">
                           <div className="text-[11px] text-[#202124] flex items-center gap-1">
-                            <span>{seoSettings.websiteUrl || "https://ddspune.com"}</span>
+                            <span>{seoSettings.websiteUrl || "https://www.ddspune.com"}</span>
                             <span className="text-[#5f6368]">• {editingPage.key}</span>
                           </div>
                           <h2 className="text-[#1a0dab] text-lg hover:underline cursor-pointer font-medium leading-tight line-clamp-2">
@@ -1343,7 +1343,7 @@ export default function SeoAdminDashboard() {
                           </div>
                           <div className="p-4 flex flex-col space-y-1 text-left">
                             <span className="text-[10px] uppercase font-bold text-[#62826B]">
-                              {(seoSettings.websiteUrl || "https://ddspune.com").replace(/^https?:\/\//i, "").toUpperCase()}
+                              {(seoSettings.websiteUrl || "https://www.ddspune.com").replace(/^https?:\/\//i, "").toUpperCase()}
                             </span>
                             <h4 className="text-sm font-bold text-text-dark line-clamp-1">{editingPage.title}</h4>
                             <p className="text-xs text-text-muted line-clamp-2 leading-relaxed">{editingPage.description}</p>
@@ -1662,7 +1662,7 @@ export default function SeoAdminDashboard() {
                         </div>
                         <div className="bg-white rounded-xl p-4 shadow-sm border border-border-neutral/20 flex flex-col space-y-1.5 font-sans">
                           <div className="text-[11px] text-[#202124]">
-                            <span>{(seoSettings.websiteUrl || "https://ddspune.com").replace(/\/$/, "")}/blog/</span>
+                            <span>{(seoSettings.websiteUrl || "https://www.ddspune.com").replace(/\/$/, "")}/blog/</span>
                             <span className="font-mono text-gray-500">{blogSlug || "slug-url"}</span>
                           </div>
                           <h2 className="text-[#1a0dab] text-lg font-medium leading-tight hover:underline cursor-pointer">
@@ -1704,7 +1704,7 @@ export default function SeoAdminDashboard() {
                           </div>
                           <div className="p-4 flex flex-col space-y-1 text-left">
                             <span className="text-[10px] uppercase font-bold text-[#62826B]">
-                              {(seoSettings.websiteUrl || "https://ddspune.com").replace(/^https?:\/\//i, "").toUpperCase()}
+                              {(seoSettings.websiteUrl || "https://www.ddspune.com").replace(/^https?:\/\//i, "").toUpperCase()}
                             </span>
                             <h4 className="text-sm font-bold text-text-dark line-clamp-1">{blogSeoTitle || blogTitle || "Article Title"}</h4>
                             <p className="text-xs text-text-muted line-clamp-2 leading-relaxed">{blogSeoDesc || blogExcerpt || "Teaser text summary"}</p>
@@ -1979,7 +1979,7 @@ export default function SeoAdminDashboard() {
                           type="text"
                           value={seoSettings.websiteUrl || ""}
                           onChange={(e) => setSeoSettings((prev: any) => ({ ...prev, websiteUrl: e.target.value }))}
-                          placeholder="e.g. https://ddspune.com"
+                          placeholder="e.g. https://www.ddspune.com"
                           className="w-full font-instrument text-sm border border-border-neutral rounded-xl px-4 py-3 outline-none bg-white text-text-dark"
                         />
                       </div>

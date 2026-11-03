@@ -4,7 +4,7 @@ import path from "path";
 
 export default function robots(): MetadataRoute.Robots {
   const dbPath = path.join(process.cwd(), "data", "seo-db.json");
-  const defaultBaseUrl = "https://ddspune.com";
+  const defaultBaseUrl = "https://www.ddspune.com";
 
   let baseUrl = defaultBaseUrl;
 
